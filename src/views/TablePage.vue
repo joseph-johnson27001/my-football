@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="margin-bottom: 5px">Table</div>
+    <!-- Standings Table -->
     <div v-if="isLoading" class="animation-container">
       <loadingAnimation />
     </div>
@@ -8,54 +8,65 @@
       The free API has hit its limit for 10 calls every minute. Please wait and
       try again.
     </div>
-    <div>
-      <table
-        v-if="!isLoading && premierLeagueStandings.length > 0"
-        class="team-table"
-      >
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Team</th>
-            <th>Pl</th>
-            <th>W</th>
-            <th>D</th>
-            <th>L</th>
-            <th>GF</th>
-            <th>GA</th>
-            <th>GD</th>
-            <th>Form</th>
-            <th>Pts</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="(team, index) in premierLeagueStandings"
-            :key="team.team.id"
-            class="team-row"
-          >
-            <td>{{ index + 1 }}</td>
-            <td style="display: flex; align-items: center">
-              <img
-                :src="team.team.crest"
-                :alt="team.team.name"
-                class="team-crest"
-              />
-              <span>{{ team.team.name }}</span>
-            </td>
-            <td>{{ team.playedGames }}</td>
-            <td>{{ team.won }}</td>
-            <td>{{ team.draw }}</td>
-            <td>{{ team.lost }}</td>
-            <td>{{ team.goalsFor }}</td>
-            <td>{{ team.goalsAgainst }}</td>
-            <td>{{ team.goalDifference }}</td>
-            <td>{{ team.form }}</td>
-            <td>{{ team.points }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <table
+      v-if="!isLoading && premierLeagueStandings.length > 0"
+      class="team-table"
+    >
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Team</th>
+          <th>Pl</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>GF</th>
+          <th>GA</th>
+          <th>GD</th>
+          <th>Form</th>
+          <th>Pts</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="(team, index) in premierLeagueStandings"
+          :key="team.team.id"
+          class="team-row"
+        >
+          <td>{{ index + 1 }}</td>
+          <td style="display: flex; align-items: center">
+            <img
+              :src="team.team.crest"
+              :alt="team.team.name"
+              class="team-crest"
+            />
+            <span>{{ team.team.name }}</span>
+          </td>
+          <td>{{ team.playedGames }}</td>
+          <td>{{ team.won }}</td>
+          <td>{{ team.draw }}</td>
+          <td>{{ team.lost }}</td>
+          <td>{{ team.goalsFor }}</td>
+          <td>{{ team.goalsAgainst }}</td>
+          <td>{{ team.goalDifference }}</td>
+          <td>
+            <span
+              v-for="(result, idx) in team.form"
+              :key="idx"
+              :class="{
+                win: result === 'W',
+                draw: result === 'D',
+                lose: result === 'L',
+              }"
+              style="font-weight: 400"
+            >
+              {{ result }}
+            </span>
+          </td>
+          <td>{{ team.points }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -83,7 +94,7 @@ export default {
           goalsFor: 13,
           goalsAgainst: 14,
           goalDifference: 18,
-          form: "WLWDL",
+          form: "WWWWW",
           points: 26,
         },
         {
@@ -207,7 +218,6 @@ export default {
           points: 13,
         },
       ],
-
       isLoading: false,
     };
   },
@@ -236,5 +246,15 @@ export default {
   height: auto;
   max-height: 24px;
   margin-right: 8px;
+}
+
+.win {
+  color: green;
+}
+.draw {
+  color: orange;
+}
+.lose {
+  color: red;
 }
 </style>
