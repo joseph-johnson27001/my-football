@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- Standings Table -->
+    <div style="margin-bottom: 5px">Table</div>
     <div v-if="isLoading" class="animation-container">
       <loadingAnimation />
     </div>
@@ -35,12 +35,14 @@
         >
           <td>{{ index + 1 }}</td>
           <td style="display: flex; align-items: center">
-            <img
-              :src="team.team.crest"
-              :alt="team.team.name"
-              class="team-crest"
-            />
-            <span>{{ team.team.name }}</span>
+            <div class="crest-container">
+              <img
+                :src="team.team.crest"
+                :alt="team.team.name"
+                class="team-crest"
+              />
+            </div>
+            <span style="border: none !important">{{ team.team.name }}</span>
           </td>
           <td>{{ team.playedGames }}</td>
           <td>{{ team.won }}</td>
@@ -228,24 +230,36 @@ export default {
 .team-table {
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid #ddd;
 }
 
 .team-table th,
 .team-table td {
   padding: 8px;
   text-align: center;
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
-.team-row:hover {
+.team-table th {
   background-color: #f2f2f2;
 }
 
 .team-crest {
-  width: 24px;
-  height: auto;
-  max-height: 24px;
+  width: auto;
+  height: 28px;
   margin-right: 8px;
+}
+
+.crest-container {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  margin-right: 8px;
+  justify-content: center;
+}
+
+.team-row:hover {
+  background-color: #f2f2f2;
 }
 
 .win {
