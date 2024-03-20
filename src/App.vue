@@ -4,6 +4,8 @@
     <div class="background">
       <div class="content-container">
         <!-- This is where matched components will be rendered -->
+        <router-view />
+        <!-- Vue Router will render matched components here -->
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
   <nav class="navigation-bar">
     <div class="navigation-container">
       <!-- Home Icon -->
-      <router-link to="/table" class="nav-link" active-class="active-link">
+      <router-link to="/" class="nav-link" active-class="active-link">
         <img
           src="@/assets/football-icon.png"
           alt="Home"
