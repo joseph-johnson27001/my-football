@@ -8,6 +8,7 @@
           alt="Home"
           width="38"
           height="38"
+          class="icon"
         />
       </router-link>
 
@@ -35,7 +36,7 @@
 .navigation-bar {
   background-color: #228b22;
   color: #fff;
-  padding: 10px 0px;
+  padding: 8px 0px 6px 0px;
 }
 
 .navigation-container {
