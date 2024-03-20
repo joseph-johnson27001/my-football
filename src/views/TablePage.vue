@@ -239,7 +239,7 @@ export default {
 .team-table td {
   padding: 8px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
 }
 
 .team-table th {
@@ -265,7 +265,7 @@ export default {
 }
 
 .team-crest {
-  height: 40px;
+  height: 35px;
 }
 
 .team-name {
