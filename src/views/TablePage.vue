@@ -34,15 +34,17 @@
           class="team-row"
         >
           <td>{{ index + 1 }}</td>
-          <td style="display: flex; align-items: center">
-            <div class="crest-container">
-              <img
-                :src="team.team.crest"
-                :alt="team.team.name"
-                class="team-crest"
-              />
+          <td class="team-container">
+            <div class="crest-name-container">
+              <div class="crest-container">
+                <img
+                  :src="team.team.crest"
+                  :alt="team.team.name"
+                  class="team-crest"
+                />
+              </div>
+              <span class="team-name">{{ team.team.name }}</span>
             </div>
-            <span style="border: none !important">{{ team.team.name }}</span>
           </td>
           <td>{{ team.playedGames }}</td>
           <td>{{ team.won }}</td>
@@ -237,25 +239,38 @@ export default {
 .team-table td {
   padding: 8px;
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #ddd;
 }
 
 .team-table th {
   background-color: #f2f2f2;
 }
 
-.team-crest {
-  width: auto;
-  height: 28px;
-  margin-right: 8px;
+.team-container {
+  display: table-cell;
+}
+
+.crest-name-container {
+  display: flex;
+  align-items: center;
 }
 
 .crest-container {
-  display: flex;
-  height: 30px;
-  width: 30px;
   margin-right: 8px;
+  display: flex;
+  align-items: center;
+  width: 40px;
+
   justify-content: center;
+}
+
+.team-crest {
+  height: 40px;
+}
+
+.team-name {
+  flex: 1;
+  text-align: left;
 }
 
 .team-row:hover {
@@ -265,9 +280,11 @@ export default {
 .win {
   color: green;
 }
+
 .draw {
   color: orange;
 }
+
 .lose {
   color: red;
 }
