@@ -53,8 +53,4 @@
   cursor: pointer;
   font-size: 1.1rem;
 }
-
-.nav-link:hover {
-  color: lightgrey;
-}
 </style>
