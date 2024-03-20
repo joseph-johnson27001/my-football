@@ -15,7 +15,7 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Team</th>
+          <th style="text-align: left">Team</th>
           <th>Pl</th>
           <th>W</th>
           <th>D</th>
@@ -232,17 +232,19 @@ export default {
 .team-table {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
 }
 
 .team-table th,
 .team-table td {
-  padding: 8px;
   text-align: center;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 5px;
 }
 
 .team-table th {
+  padding: 15px 0px;
   background-color: #f2f2f2;
 }
 
