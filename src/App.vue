@@ -45,7 +45,8 @@ body {
   max-width: 1200px;
   width: 100%;
   padding: 20px;
-  border-radius: 4px;
+  border-radius: 8px;
+  margin: 10px 0px;
 }
 
 .animation-container {
