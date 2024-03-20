@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <NavigationBar /> -->
+    <NavigationBar />
     <div class="background">
       <div class="content-container">
         <!-- This is where matched components will be rendered -->
@@ -10,9 +10,13 @@
 </template>
 
 <script>
+import NavigationBar from "./components/NavigationBar.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    NavigationBar,
+  },
 };
 </script>
 
