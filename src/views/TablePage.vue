@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div style="margin-bottom: 5px">Table</div>
     <div v-if="isLoading" class="animation-container">
       <loadingAnimation />
     </div>
@@ -13,23 +12,23 @@
       class="team-table"
     >
       <thead>
-        <tr>
-          <th>#</th>
-          <th style="text-align: left">Team</th>
-          <th>Pl</th>
-          <th>W</th>
-          <th>D</th>
-          <th>L</th>
-          <th>GF</th>
-          <th>GA</th>
-          <th>GD</th>
-          <th>Form</th>
-          <th>Pts</th>
+        <tr class="headings">
+          <th @click="sortBy('position')">#</th>
+          <th class="team-header" @click="sortBy('team')">Team</th>
+          <th @click="sortBy('playedGames')">Pl</th>
+          <th @click="sortBy('won')">W</th>
+          <th @click="sortBy('draw')">D</th>
+          <th @click="sortBy('lost')">L</th>
+          <th @click="sortBy('goalsFor')">GF</th>
+          <th @click="sortBy('goalsAgainst')">GA</th>
+          <th @click="sortBy('goalDifference')">GD</th>
+          <th @click="sortBy('form')">Form</th>
+          <th @click="sortBy('points')">Pts</th>
         </tr>
       </thead>
       <tbody>
         <tr
-          v-for="(team, index) in premierLeagueStandings"
+          v-for="(team, index) in premierLeagueStandingsSorted"
           :key="team.team.id"
           class="team-row"
         >
@@ -63,9 +62,8 @@
                 lose: result === 'L',
               }"
               style="font-weight: 400"
+              >{{ result }}</span
             >
-              {{ result }}
-            </span>
           </td>
           <td>{{ team.points }}</td>
         </tr>
@@ -223,7 +221,42 @@ export default {
         },
       ],
       isLoading: false,
+      sortByField: "position", // Default sort by position
+      sortOrder: 1, // Default sort order (ascending)
     };
+  },
+  computed: {
+    premierLeagueStandingsSorted() {
+      // Sort the standings based on the current sortByField and sortOrder
+      return this.premierLeagueStandings.slice().sort((a, b) => {
+        const aValue = this.getFieldValue(a, this.sortByField);
+        const bValue = this.getFieldValue(b, this.sortByField);
+        if (aValue < bValue) return -1 * this.sortOrder;
+        if (aValue > bValue) return 1 * this.sortOrder;
+        return 0;
+      });
+    },
+  },
+  methods: {
+    sortBy(field) {
+      if (field === this.sortByField) {
+        // Reverse sort order if clicking on the same field
+        this.sortOrder *= -1;
+      } else {
+        // Set new sort field and default to ascending order
+        this.sortByField = field;
+        this.sortOrder = 1;
+      }
+    },
+    getFieldValue(object, field) {
+      // Helper function to get value of a nested field in an object
+      const keys = field.split(".");
+      let value = object;
+      for (const key of keys) {
+        value = value[key];
+      }
+      return value;
+    },
   },
 };
 </script>
@@ -240,12 +273,18 @@ export default {
   text-align: center;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
-  padding: 5px;
+  padding: 10px 0px;
 }
 
 .team-table th {
   padding: 15px 0px;
   background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.team-header {
+  text-align: left !important;
+  padding-left: 10px !important;
 }
 
 .team-container {
@@ -262,8 +301,12 @@ export default {
   display: flex;
   align-items: center;
   width: 40px;
-
   justify-content: center;
+}
+
+.team-heading {
+  text-align: left !important;
+  padding-left: 10px !important;
 }
 
 .team-crest {
