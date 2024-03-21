@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="heading-container">Premier League 2023/2024</div>
     <div v-if="isLoading" class="animation-container">
       <loadingAnimation />
     </div>
@@ -56,14 +57,13 @@
             <span
               v-for="(result, idx) in team.form"
               :key="idx"
-              :class="{
-                win: result === 'W',
-                draw: result === 'D',
-                lose: result === 'L',
-              }"
+              :class="getFormColorClass(result)"
               style="font-weight: 400"
-              >{{ result }}</span
             >
+              <!-- Add content inside the <span> elements -->
+              <!-- For example, you can add a placeholder content like an empty string -->
+              {{ result }}
+            </span>
           </td>
           <td>{{ team.points }}</td>
         </tr>
@@ -221,13 +221,12 @@ export default {
         },
       ],
       isLoading: false,
-      sortByField: "position", // Default sort by position
-      sortOrder: 1, // Default sort order (ascending)
+      sortByField: "position",
+      sortOrder: 1,
     };
   },
   computed: {
     premierLeagueStandingsSorted() {
-      // Sort the standings based on the current sortByField and sortOrder
       return this.premierLeagueStandings.slice().sort((a, b) => {
         const aValue = this.getFieldValue(a, this.sortByField);
         const bValue = this.getFieldValue(b, this.sortByField);
@@ -238,18 +237,26 @@ export default {
     },
   },
   methods: {
+    getFormColorClass(result) {
+      if (result === "W") {
+        return "win-square";
+      } else if (result === "D") {
+        return "draw-square";
+      } else if (result === "L") {
+        return "lose-square";
+      } else {
+        return "";
+      }
+    },
     sortBy(field) {
       if (field === this.sortByField) {
-        // Reverse sort order if clicking on the same field
         this.sortOrder *= -1;
       } else {
-        // Set new sort field and default to ascending order
         this.sortByField = field;
         this.sortOrder = 1;
       }
     },
     getFieldValue(object, field) {
-      // Helper function to get value of a nested field in an object
       const keys = field.split(".");
       let value = object;
       for (const key of keys) {
@@ -262,6 +269,10 @@ export default {
 </script>
 
 <style scoped>
+.heading-container {
+  padding: 15px 0px;
+}
+
 .team-table {
   width: 100%;
   border-collapse: collapse;
@@ -280,6 +291,7 @@ export default {
   padding: 15px 0px;
   background-color: #f2f2f2;
   cursor: pointer;
+  font-weight: 100;
 }
 
 .team-header {
@@ -322,15 +334,22 @@ export default {
   background-color: #f2f2f2;
 }
 
-.win {
-  color: green;
+.form-square {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  padding: 10px;
 }
 
-.draw {
-  color: orange;
+.win-square {
+  background-color: green;
 }
 
-.lose {
-  color: red;
+.draw-square {
+  background-color: grey;
+}
+
+.lose-square {
+  background-color: red;
 }
 </style>
