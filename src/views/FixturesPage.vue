@@ -1,3 +1,3 @@
 <template>
-  <div>Fixtures</div>
+  <div class="heading-container"><p>Fixtures</p></div>
 </template>

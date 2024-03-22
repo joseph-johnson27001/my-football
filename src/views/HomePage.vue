@@ -1,3 +1,3 @@
 <template>
-  <div>Home</div>
+  <div class="heading-container"><p>Home</p></div>
 </template>

@@ -1,17 +1,8 @@
 <template>
   <div>
-    <div class="heading-container">Premier League 2023/2024</div>
-    <div v-if="isLoading" class="animation-container">
-      <loadingAnimation />
-    </div>
-    <div v-if="!isLoading && premierLeagueStandings.length === 0">
-      The free API has hit its limit for 10 calls every minute. Please wait and
-      try again.
-    </div>
-    <table
-      v-if="!isLoading && premierLeagueStandings.length > 0"
-      class="team-table"
-    >
+    <div class="heading-container"><p>Premier League 2023/2024</p></div>
+
+    <table class="team-table">
       <thead>
         <tr class="headings">
           <th @click="sortBy('position')">#</th>
@@ -264,10 +255,6 @@ export default {
 </script>
 
 <style scoped>
-.heading-container {
-  padding: 15px 0px;
-}
-
 .team-table {
   width: 100%;
   border-collapse: collapse;

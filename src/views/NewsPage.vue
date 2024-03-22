@@ -1,7 +1,7 @@
 <template>
   <div class="news-page">
     <!-- News Heading and Team Selection -->
-    <div class="header">
+    <div class="heading-container">
       <p>News</p>
       <div class="team-selection">
         <label for="team-select">Select Team: </label>
@@ -122,18 +122,6 @@ export default {
 </script>
 
 <style scoped>
-.news-page {
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
 .team-selection {
   display: flex;
   align-items: center;
@@ -141,19 +129,18 @@ export default {
 
 .article-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
 
 .article {
   border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
 .article-image {
   width: 100%;
   height: auto;
-  border-radius: 5px 5px 0 0;
+  border: 1px solid #ccc;
 }
 
 .article-content {

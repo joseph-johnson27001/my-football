@@ -67,4 +67,11 @@ body {
   margin: auto;
   justify-content: center;
 }
+
+.heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0px;
+}
 </style>

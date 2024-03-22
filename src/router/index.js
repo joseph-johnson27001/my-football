@@ -6,7 +6,7 @@ import ResultsPage from "../views/ResultsPage.vue";
 import NewsPage from "../views/NewsPage.vue";
 import TeamsPage from "../views/TeamsPage.vue";
 import HomePage from "../views/HomePage.vue";
-import store from "../store/store.js";
+// import store from "../store/store.js";
 
 const routes = [
   {
@@ -48,12 +48,12 @@ const router = createRouter({
 
 // DUMMY LOADING EXAMPLE
 
-router.beforeEach((to, from, next) => {
-  store.dispatch("setIsLoading", true);
-  setTimeout(() => {
-    next();
-    store.dispatch("setIsLoading", false);
-  }, 750);
-});
+// router.beforeEach((to, from, next) => {
+//   store.dispatch("setIsLoading", true);
+//   setTimeout(() => {
+//     next();
+//     store.dispatch("setIsLoading", false);
+//   }, 500);
+// });
 
 export default router;
