@@ -4,7 +4,7 @@
       <!-- Home Icon -->
       <router-link to="/" class="nav-link" active-class="active-link">
         <img
-          src="@/assets/football-icon.png"
+          src="@/assets/football.png"
           alt="Home"
           width="38"
           height="38"
@@ -34,7 +34,7 @@
 
 <style scoped>
 .navigation-bar {
-  background-color: #1e7b1e;
+  background-color: #228b22;
   color: #fff;
   padding: 8px 0px 6px 0px;
 }
@@ -42,7 +42,6 @@
 .navigation-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;

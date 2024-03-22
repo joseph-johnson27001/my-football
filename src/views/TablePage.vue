@@ -14,8 +14,8 @@
           <th @click="sortBy('goalsFor')">GF</th>
           <th @click="sortBy('goalsAgainst')">GA</th>
           <th @click="sortBy('goalDifference')">GD</th>
-          <th @click="sortBy('form')">Form</th>
           <th @click="sortBy('points')">Pts</th>
+          <th @click="sortBy('form')">Form</th>
         </tr>
       </thead>
       <tbody>
@@ -44,16 +44,15 @@
           <td>{{ team.goalsFor }}</td>
           <td>{{ team.goalsAgainst }}</td>
           <td>{{ team.goalDifference }}</td>
-          <td>
-            <span v-for="(result, idx) in team.form" :key="idx">
-              <span
-                :class="getFormColorClass(result)"
-                class="form-square"
-              ></span>
-            </span>
-          </td>
-
           <td>{{ team.points }}</td>
+          <td>
+            <span
+              v-for="(result, idx) in team.form"
+              :key="idx"
+              :class="getFormColorClass(result)"
+              class="form-square"
+            ></span>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -268,7 +267,7 @@ export default {
 
 .team-table th {
   padding: 15px 0px;
-  background-color: #239023;
+  background-color: #2b7dd4;
   cursor: pointer;
   font-weight: 100;
   color: white;
@@ -316,20 +315,21 @@ export default {
 
 .form-square {
   display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px; /* add margin between squares */
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  vertical-align: middle;
 }
 
 .win-square {
-  background-color: green;
+  background-color: #4caf50;
 }
 
 .draw-square {
-  background-color: grey;
+  background-color: #9e9e9e;
 }
 
 .lose-square {
-  background-color: red;
+  background-color: #ff0000;
 }
 </style>
