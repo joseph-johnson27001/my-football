@@ -1,12 +1,18 @@
+// store.js
 import { createStore } from "vuex";
 
 export default createStore({
-  state() {
-    return {
-      isLoading: false,
-    };
+  state: {
+    isLoading: false,
   },
-  mutations: {},
-  actions: {},
-  getters: {},
+  mutations: {
+    setIsLoading(state, isLoading) {
+      state.isLoading = isLoading;
+    },
+  },
+  actions: {
+    setIsLoading({ commit }, isLoading) {
+      commit("setIsLoading", isLoading);
+    },
+  },
 });
