@@ -47,7 +47,7 @@ body {
   background-color: #f2f2f2;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 94vh;
 }
 
 .content-container {
@@ -57,7 +57,7 @@ body {
   width: 100%;
   padding: 20px;
   border-radius: 8px;
-  margin: 10px 0px;
+  margin: 10px 0px 0px 0px;
 }
 
 .animation-container {

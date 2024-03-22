@@ -62,7 +62,7 @@
             >
               <!-- Add content inside the <span> elements -->
               <!-- For example, you can add a placeholder content like an empty string -->
-              {{ result }}
+              <!-- {{ result }} -->
             </span>
           </td>
           <td>{{ team.points }}</td>
@@ -271,7 +271,7 @@ export default {
 .team-table {
   width: 100%;
   border-collapse: collapse;
-  /* border: 1px solid #ddd; */
+  border: 1px solid #ddd;
 }
 
 .team-table th,
@@ -317,7 +317,7 @@ export default {
 }
 
 .team-crest {
-  height: 35px;
+  height: 25px;
 }
 
 .team-name {
