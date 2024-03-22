@@ -45,17 +45,14 @@
           <td>{{ team.goalsAgainst }}</td>
           <td>{{ team.goalDifference }}</td>
           <td>
-            <span
-              v-for="(result, idx) in team.form"
-              :key="idx"
-              :class="getFormColorClass(result)"
-              style="font-weight: 400"
-            >
-              <!-- Add content inside the <span> elements -->
-              <!-- For example, you can add a placeholder content like an empty string -->
-              <!-- {{ result }} -->
+            <span v-for="(result, idx) in team.form" :key="idx">
+              <span
+                :class="getFormColorClass(result)"
+                class="form-square"
+              ></span>
             </span>
           </td>
+
           <td>{{ team.points }}</td>
         </tr>
       </tbody>
@@ -253,7 +250,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .team-table {
   width: 100%;
@@ -322,7 +318,7 @@ export default {
   display: inline-block;
   width: 15px;
   height: 15px;
-  padding: 10px;
+  margin-right: 5px; /* add margin between squares */
 }
 
 .win-square {
