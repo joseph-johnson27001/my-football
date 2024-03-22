@@ -4,7 +4,9 @@
     <div class="background">
       <div class="content-container">
         <!-- This is where matched components will be rendered -->
-        <LoadingAnimation v-if="isLoading" />
+        <div v-if="isLoading" class="animation-container">
+          <LoadingAnimation />
+        </div>
         <router-view v-else />
         <!-- Vue Router will render matched components here -->
       </div>
