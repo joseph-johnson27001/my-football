@@ -75,6 +75,7 @@ export default {
           description: "Description of article 1",
           content: "Content of article 1",
           image: "https://via.placeholder.com/150",
+          teamId: 1,
         },
         {
           id: 2,
@@ -82,6 +83,7 @@ export default {
           description: "Description of article 2",
           content: "Content of article 2",
           image: "https://via.placeholder.com/150",
+          teamId: 2,
         },
         {
           id: 3,
@@ -89,6 +91,7 @@ export default {
           description: "Description of article 3",
           content: "Content of article 3",
           image: "https://via.placeholder.com/150",
+          teamId: 3,
         },
         {
           id: 4,
@@ -96,6 +99,7 @@ export default {
           description: "Description of article 4",
           content: "Content of article 4",
           image: "https://via.placeholder.com/150",
+          teamId: 4,
         },
         // Add more articles as needed
       ],
