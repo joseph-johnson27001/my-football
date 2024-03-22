@@ -54,7 +54,6 @@
   text-decoration: none;
   transition: color 0.1s;
   cursor: pointer;
-  font-size: 1.1rem;
 }
 
 .active-link {
