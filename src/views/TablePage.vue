@@ -73,12 +73,7 @@
 </template>
 
 <script>
-import loadingAnimation from "@/components/LoadingAnimation.vue";
-
 export default {
-  components: {
-    loadingAnimation,
-  },
   data() {
     return {
       premierLeagueStandings: [
