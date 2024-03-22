@@ -164,4 +164,8 @@ select {
   padding: 5px;
   font-size: 16px;
 }
+
+label {
+  margin-right: 5px;
+}
 </style>
