@@ -15,7 +15,7 @@
           <th @click="sortBy('goalsAgainst')">GA</th>
           <th @click="sortBy('goalDifference')">GD</th>
           <th @click="sortBy('points')">Pts</th>
-          <th @click="sortBy('form')">Form</th>
+          <th @click="sortBy('form')" class="form-header">Form</th>
         </tr>
       </thead>
       <tbody>
@@ -249,6 +249,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .team-table {
   width: 100%;
@@ -280,6 +281,7 @@ export default {
 
 .team-container {
   display: table-cell;
+  font-weight: 500;
 }
 
 .crest-name-container {
@@ -331,5 +333,13 @@ export default {
 
 .lose-square {
   background-color: #ff0000;
+}
+
+/* Hide form area at mobile sizes */
+@media only screen and (max-width: 768px) {
+  .form-square,
+  .form-header {
+    display: none;
+  }
 }
 </style>

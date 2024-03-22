@@ -73,5 +73,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 5px 0px;
+  font-weight: 500;
 }
 </style>
