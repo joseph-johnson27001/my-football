@@ -268,7 +268,7 @@ export default {
 
 .team-table th {
   padding: 15px 0px;
-  background-color: #2b7dd4;
+  background-color: #1f3f7f;
   cursor: pointer;
   font-weight: 100;
   color: white;

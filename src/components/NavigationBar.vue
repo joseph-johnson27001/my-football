@@ -13,20 +13,21 @@
       </router-link>
 
       <!-- Other Navigation Links -->
-      <router-link to="/table" class="nav-link" active-class="active-link"
-        >Table</router-link
+      <router-link to="/news" class="nav-link" active-class="active-link"
+        >News</router-link
       >
+      <router-link to="/teams" class="nav-link" active-class="active-link"
+        >Teams</router-link
+      >
+
       <router-link to="/fixtures" class="nav-link" active-class="active-link"
         >Fixtures</router-link
       >
       <router-link to="/results" class="nav-link" active-class="active-link"
         >Results</router-link
       >
-      <router-link to="/teams" class="nav-link" active-class="active-link"
-        >Teams</router-link
-      >
-      <router-link to="/news" class="nav-link" active-class="active-link"
-        >News</router-link
+      <router-link to="/table" class="nav-link" active-class="active-link"
+        >Table</router-link
       >
     </div>
   </nav>
@@ -34,7 +35,7 @@
 
 <style scoped>
 .navigation-bar {
-  background-color: #228b22;
+  background-color: #1f3f7f;
   color: #fff;
   padding: 8px 0px 6px 0px;
 }
