@@ -7,14 +7,14 @@
         <tr class="headings">
           <th @click="sortBy('position')">#</th>
           <th class="team-header" @click="sortBy('team')">Team</th>
-          <th @click="sortBy('playedGames')">Pl</th>
-          <th @click="sortBy('won')">W</th>
-          <th @click="sortBy('draw')">D</th>
-          <th @click="sortBy('lost')">L</th>
-          <th @click="sortBy('goalsFor')">GF</th>
-          <th @click="sortBy('goalsAgainst')">GA</th>
-          <th @click="sortBy('goalDifference')">GD</th>
-          <th @click="sortBy('points')">Pts</th>
+          <th @click="sortBy('playedGames')" class="stats">Pl</th>
+          <th @click="sortBy('won')" class="stats">W</th>
+          <th @click="sortBy('draw')" class="stats">D</th>
+          <th @click="sortBy('lost')" class="stats">L</th>
+          <th @click="sortBy('goalsFor')" class="stats">GF</th>
+          <th @click="sortBy('goalsAgainst')" class="stats">GA</th>
+          <th @click="sortBy('goalDifference')" class="stats">GD</th>
+          <th @click="sortBy('points')" class="stats">Pts</th>
           <th @click="sortBy('form')" class="form-header">Form</th>
         </tr>
       </thead>
@@ -37,14 +37,14 @@
               <span class="team-name">{{ team.team.name }}</span>
             </div>
           </td>
-          <td>{{ team.playedGames }}</td>
-          <td>{{ team.won }}</td>
-          <td>{{ team.draw }}</td>
-          <td>{{ team.lost }}</td>
-          <td>{{ team.goalsFor }}</td>
-          <td>{{ team.goalsAgainst }}</td>
-          <td>{{ team.goalDifference }}</td>
-          <td class="form-points">{{ team.points }}</td>
+          <td class="stats">{{ team.playedGames }}</td>
+          <td class="stats">{{ team.won }}</td>
+          <td class="stats">{{ team.draw }}</td>
+          <td class="stats">{{ team.lost }}</td>
+          <td class="stats">{{ team.goalsFor }}</td>
+          <td class="stats">{{ team.goalsAgainst }}</td>
+          <td class="stats">{{ team.goalDifference }}</td>
+          <td class="form-points stats">{{ team.points }}</td>
           <td class="form-container">
             <span
               v-for="(result, idx) in team.form"
@@ -266,17 +266,21 @@ export default {
   cursor: pointer;
 }
 
+.team-header {
+  text-align: left !important;
+  padding-left: 10px !important;
+}
+
+.stats {
+  width: 50px;
+}
+
 .team-table th {
   padding: 15px 0px;
   background-color: #1f3f7f;
   cursor: pointer;
   font-weight: 100;
   color: white;
-}
-
-.team-header {
-  text-align: left !important;
-  padding-left: 10px !important;
 }
 
 .team-container {
@@ -295,11 +299,6 @@ export default {
   align-items: center;
   width: 40px;
   justify-content: center;
-}
-
-.team-heading {
-  text-align: left !important;
-  padding-left: 10px !important;
 }
 
 .team-crest {
