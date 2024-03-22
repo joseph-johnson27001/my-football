@@ -5,7 +5,7 @@
     <table class="team-table">
       <thead>
         <tr class="headings">
-          <th @click="sortBy('position')">#</th>
+          <th @click="sortBy('position')" class="stats">#</th>
           <th class="team-header" @click="sortBy('team')">Team</th>
           <th @click="sortBy('playedGames')" class="stats">Pl</th>
           <th @click="sortBy('won')" class="stats">W</th>
@@ -24,7 +24,7 @@
           :key="team.team.id"
           class="team-row"
         >
-          <td>{{ index + 1 }}</td>
+          <td class="stats">{{ index + 1 }}</td>
           <td class="team-container">
             <div class="crest-name-container">
               <div class="crest-container">
