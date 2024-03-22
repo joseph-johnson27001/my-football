@@ -34,7 +34,7 @@
 
 <style scoped>
 .navigation-bar {
-  background-color: #228b22;
+  background-color: #1e7b1e;
   color: #fff;
   padding: 8px 0px 6px 0px;
 }

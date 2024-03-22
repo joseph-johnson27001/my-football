@@ -79,8 +79,8 @@ export default {
           won: 8,
           draw: 2,
           lost: 0,
-          goalsFor: 13,
-          goalsAgainst: 14,
+          goalsFor: 25,
+          goalsAgainst: 7,
           goalDifference: 18,
           form: "WWWWW",
           points: 26,
@@ -267,13 +267,15 @@ export default {
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
   padding: 10px 0px;
+  cursor: pointer;
 }
 
 .team-table th {
   padding: 15px 0px;
-  background-color: #f2f2f2;
+  background-color: #239023;
   cursor: pointer;
   font-weight: 100;
+  color: white;
 }
 
 .team-header {

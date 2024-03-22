@@ -99,7 +99,7 @@ export default {
           description: "Description of article 4",
           content: "Content of article 4",
           image: "https://via.placeholder.com/150",
-          teamId: 4,
+          teamId: 3,
         },
         // Add more articles as needed
       ],
