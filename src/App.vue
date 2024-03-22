@@ -4,7 +4,8 @@
     <div class="background">
       <div class="content-container">
         <!-- This is where matched components will be rendered -->
-        <router-view />
+        <LoadingAnimation v-if="isLoading" />
+        <router-view v-else />
         <!-- Vue Router will render matched components here -->
       </div>
     </div>
@@ -12,12 +13,20 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import NavigationBar from "./components/NavigationBar.vue";
+import LoadingAnimation from "./components/LoadingAnimation.vue";
 
 export default {
   name: "App",
   components: {
     NavigationBar,
+    LoadingAnimation,
+  },
+  computed: {
+    ...mapState({
+      isLoading: (state) => state.isLoading,
+    }),
   },
 };
 </script>
