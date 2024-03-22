@@ -4,10 +4,10 @@
     <div class="background">
       <div class="content-container">
         <!-- This is where matched components will be rendered -->
-        <div v-if="isLoading" class="animation-container">
+        <div v-show="isLoading" class="animation-container">
           <LoadingAnimation />
         </div>
-        <router-view v-else />
+        <router-view v-show="!isLoading" />
         <!-- Vue Router will render matched components here -->
       </div>
     </div>

@@ -22,7 +22,8 @@
         <!-- Show all articles -->
         <div v-for="article in articles" :key="article.id" class="article">
           <img
-            :src="getRandomImage()"
+            v-if="article.image"
+            :src="article.image"
             alt="Article Image"
             class="article-image"
           />
@@ -40,7 +41,8 @@
           class="article"
         >
           <img
-            :src="getRandomImage()"
+            v-if="article.image"
+            :src="article.image"
             alt="Article Image"
             class="article-image"
           />
@@ -72,24 +74,28 @@ export default {
           title: "Article 1",
           description: "Description of article 1",
           content: "Content of article 1",
+          image: "https://via.placeholder.com/150",
         },
         {
           id: 2,
           title: "Article 2",
           description: "Description of article 2",
           content: "Content of article 2",
+          image: "https://via.placeholder.com/150",
         },
         {
           id: 3,
           title: "Article 3",
           description: "Description of article 3",
           content: "Content of article 3",
+          image: "https://via.placeholder.com/150",
         },
         {
           id: 4,
           title: "Article 4",
           description: "Description of article 4",
           content: "Content of article 4",
+          image: "https://via.placeholder.com/150",
         },
         // Add more articles as needed
       ],
@@ -106,14 +112,6 @@ export default {
           (article) => article.teamId === this.selectedTeam
         );
       }
-    },
-  },
-  methods: {
-    getRandomImage() {
-      // Generate random image URL from picsum.photos
-      const randomWidth = Math.floor(Math.random() * (600 - 300 + 1)) + 300;
-      const randomHeight = Math.floor(Math.random() * (400 - 200 + 1)) + 200;
-      return `https://picsum.photos/${randomWidth}/${randomHeight}`;
     },
   },
 };
@@ -150,8 +148,7 @@ export default {
 
 .article-image {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: auto;
   border-radius: 5px 5px 0 0;
 }
 
