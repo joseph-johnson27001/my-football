@@ -44,7 +44,7 @@
           <td>{{ team.goalsFor }}</td>
           <td>{{ team.goalsAgainst }}</td>
           <td>{{ team.goalDifference }}</td>
-          <td>{{ team.points }}</td>
+          <td class="form-points">{{ team.points }}</td>
           <td>
             <span
               v-for="(result, idx) in team.form"
@@ -262,7 +262,7 @@ export default {
   text-align: center;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
-  padding: 10px 0px;
+  padding: 10px 5px;
   cursor: pointer;
 }
 
@@ -313,6 +313,10 @@ export default {
 
 .team-row:hover {
   background-color: #f2f2f2;
+}
+
+.form-points {
+  font-weight: 600 !important;
 }
 
 .form-square {
