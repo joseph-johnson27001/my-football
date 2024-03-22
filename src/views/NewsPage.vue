@@ -1,17 +1,20 @@
 <template>
   <div class="news-page">
-    <p>News</p>
-    <!-- Team Selection Dropdown -->
-    <div class="team-selection">
-      <label for="team-select">Select Team: </label>
-      <select v-model="selectedTeam" id="team-select">
-        <option value="all">All Teams</option>
-        <!-- Generate options for teams -->
-        <option v-for="team in teams" :key="team.id" :value="team.id">
-          {{ team.name }}
-        </option>
-      </select>
+    <!-- News Heading and Team Selection -->
+    <div class="header">
+      <p>News</p>
+      <div class="team-selection">
+        <label for="team-select">Select Team: </label>
+        <select v-model="selectedTeam" id="team-select">
+          <option value="all">All Teams</option>
+          <!-- Generate options for teams -->
+          <option v-for="team in teams" :key="team.id" :value="team.id">
+            {{ team.name }}
+          </option>
+        </select>
+      </div>
     </div>
+
     <!-- Articles Section -->
     <div class="articles-section">
       <!-- Display articles based on selected team -->
@@ -120,8 +123,16 @@ export default {
   padding: 20px;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
 .team-selection {
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .article-grid {
