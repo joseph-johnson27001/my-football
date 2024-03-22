@@ -1,3 +1,3 @@
 <template>
-  <div>Teams</div>
+  <div class="heading-container"><p>Teams</p></div>
 </template>
