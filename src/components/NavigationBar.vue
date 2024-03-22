@@ -37,7 +37,7 @@
 .navigation-bar {
   background-color: #1f3f7f;
   color: #fff;
-  padding: 8px 0px 6px 0px;
+  padding: 10px 0px;
 }
 
 .navigation-container {
@@ -46,6 +46,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 10px;
 }
 
 .nav-link {
@@ -54,5 +55,9 @@
   transition: color 0.1s;
   cursor: pointer;
   font-size: 1.1rem;
+}
+
+.active-link {
+  color: gold;
 }
 </style>
