@@ -45,7 +45,7 @@
           <td>{{ team.goalsAgainst }}</td>
           <td>{{ team.goalDifference }}</td>
           <td class="form-points">{{ team.points }}</td>
-          <td>
+          <td class="form-container">
             <span
               v-for="(result, idx) in team.form"
               :key="idx"
@@ -262,7 +262,7 @@ export default {
   text-align: center;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
-  padding: 10px 5px;
+  padding: 10px 0px;
   cursor: pointer;
 }
 
@@ -342,7 +342,8 @@ export default {
 /* Hide form area at mobile sizes */
 @media only screen and (max-width: 768px) {
   .form-square,
-  .form-header {
+  .form-header,
+  .form-container {
     display: none;
   }
 }
