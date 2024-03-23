@@ -6,8 +6,13 @@
       <div class="team-selection">
         <label for="team-select">Select Team: </label>
         <select v-model="selectedTeam" id="team-select">
-          <option value="All">All Teams</option>
-          <option v-for="team in teams" :key="team.id" :value="team.id">
+          <option value="All" class="option">All Teams</option>
+          <option
+            v-for="team in teams"
+            :key="team.id"
+            :value="team.id"
+            class="option"
+          >
             {{ team.name }}
           </option>
         </select>
@@ -211,6 +216,7 @@ export default {
   border-radius: 4px;
   text-align: center !important;
   cursor: pointer;
+  transition: box-shadow 0.1s linear background-color 0.1s linear;
 }
 
 .main-article .article-image {
@@ -224,6 +230,10 @@ export default {
   padding: 10px;
 }
 
+.main-article:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .article-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -234,6 +244,13 @@ export default {
   cursor: pointer;
   border: 1px solid #ccc;
   border-radius: 4px;
+  transition: box-shadow 0.1s linear background-color 0.1s linear;
+}
+
+.article:hover,
+.main-article:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
 }
 
 .article-image {
@@ -257,10 +274,12 @@ export default {
 select {
   padding: 5px;
   font-size: 16px;
+  border: 1px solid #ccc;
+  outline: none;
 }
 
 label {
   margin-right: 5px;
-  font-size: 100;
+  font-weight: 100;
 }
 </style>
