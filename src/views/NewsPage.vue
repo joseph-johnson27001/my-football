@@ -211,9 +211,8 @@ export default {
 }
 
 .main-article {
-  border: 1px solid #ccc;
   margin-bottom: 20px;
-  border-radius: 4px;
+  border-bottom: 1px solid #ccc;
   text-align: center !important;
   cursor: pointer;
   transition: box-shadow 0.1s linear background-color 0.1s linear;
@@ -223,40 +222,33 @@ export default {
   width: 100%;
   height: auto;
   max-height: 400px;
-  border-bottom: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .main-article .article-content {
   padding: 10px;
 }
-
-.main-article:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 .article-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 25px;
 }
 
 .article {
   cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border-bottom: 1px solid #ccc;
   transition: box-shadow 0.1s linear background-color 0.1s linear;
 }
 
 .article:hover,
 .main-article:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #f5f5f5;
 }
 
 .article-image {
   width: 100%;
   height: auto;
-  border-bottom: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .article-title {
