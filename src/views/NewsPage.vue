@@ -6,8 +6,7 @@
       <div class="team-selection">
         <label for="team-select">Select Team: </label>
         <select v-model="selectedTeam" id="team-select">
-          <option value="all">All Teams</option>
-          <!-- Generate options for teams -->
+          <option value="All">All Teams</option>
           <option v-for="team in teams" :key="team.id" :value="team.id">
             {{ team.name }}
           </option>
@@ -28,7 +27,7 @@
             class="article-image"
           />
           <div class="article-content">
-            <h3>{{ article.title }}</h3>
+            <h3 class="article-title">{{ article.title }}</h3>
             <p class="article-description">{{ article.description }}</p>
           </div>
         </div>
@@ -60,55 +59,110 @@
 export default {
   data() {
     return {
-      selectedTeam: "all", // Default selected team
+      selectedTeam: "All",
       teams: [
-        // Dummy teams data
         { id: 1, name: "Team A" },
         { id: 2, name: "Team B" },
         { id: 3, name: "Team C" },
       ],
       articles: [
-        // Dummy articles data
         {
           id: 1,
-          title: "Article 1",
-          description: "Description of article 1",
-          content: "Content of article 1",
+          title: "Premier League Season Preview",
+          description:
+            "Get ready for the new Premier League season with our in-depth preview.",
+          content:
+            "Content providing insights and analysis on the upcoming Premier League season, including key players, teams to watch, and predictions.",
           image: "https://via.placeholder.com/150",
           teamId: 1,
         },
         {
           id: 2,
-          title: "Article 2",
-          description: "Description of article 2",
-          content: "Content of article 2",
+          title: "Tactical Analysis: Title Contenders' Strategies",
+          description:
+            "Analyze the tactical approaches of the top contenders for the Premier League title.",
+          content:
+            "Content dissecting the tactical strategies employed by the leading teams in the race for the Premier League championship.",
           image: "https://via.placeholder.com/150",
           teamId: 2,
         },
         {
           id: 3,
-          title: "Article 3",
-          description: "Description of article 3",
-          content: "Content of article 3",
+          title: "Key Transfers: Impact on Premier League Clubs",
+          description:
+            "Assess the impact of key transfer signings on Premier League clubs.",
+          content:
+            "Content examining the significance of major transfer deals and their potential effects on the fortunes of respective Premier League teams.",
           image: "https://via.placeholder.com/150",
           teamId: 3,
         },
         {
           id: 4,
-          title: "Article 4",
-          description: "Description of article 4",
-          content: "Content of article 4",
+          title: "Top 10 Goals of the Premier League Season",
+          description:
+            "A roundup of the most spectacular goals from the Premier League.",
+          content:
+            "Content describing the top 10 goals scored in the Premier League season so far.",
+          image: "https://via.placeholder.com/150",
+          teamId: 1,
+        },
+        {
+          id: 5,
+          title: "Rising Stars: Young Talent in the Premier League",
+          description:
+            "Exploring the emergence of promising young players in the Premier League.",
+          content:
+            "Content highlighting the young football talents making a mark in the Premier League.",
+          image: "https://via.placeholder.com/150",
+          teamId: 2,
+        },
+        {
+          id: 6,
+          title: "Matchday Analysis: Tactical Insights and Player Performances",
+          description:
+            "Analyze key moments and performances from recent Premier League matches.",
+          content:
+            "Content providing tactical insights and player analyses from select Premier League fixtures.",
           image: "https://via.placeholder.com/150",
           teamId: 3,
         },
-        // Add more articles as needed
+        {
+          id: 7,
+          title: "Evolution of Football Tactics: From Catenaccio to Tiki-Taka",
+          description:
+            "Trace the evolution of football tactics from defensive systems like Catenaccio to possession-based strategies like Tiki-Taka.",
+          content:
+            "Content exploring the historical development of football tactics and the influence of different playing styles on the modern game.",
+          image: "https://via.placeholder.com/150",
+          teamId: 1,
+        },
+        {
+          id: 8,
+          title: "Impact of VAR on Premier League Matches",
+          description:
+            "Examine the impact of Video Assistant Referee (VAR) technology on decision-making and game dynamics in the Premier League.",
+          content:
+            "Content analyzing the implementation of VAR in the Premier League and its implications for match outcomes and officiating.",
+          image: "https://via.placeholder.com/150",
+          teamId: 2,
+        },
+        {
+          id: 9,
+          title:
+            "Legendary Premier League Managers: Their Legacy and Influence",
+          description:
+            "Celebrate the legacy and influence of legendary managers who have left an indelible mark on the Premier League.",
+          content:
+            "Content highlighting the achievements, tactics, and managerial philosophies of iconic figures in Premier League history.",
+          image: "https://via.placeholder.com/150",
+          teamId: 3,
+        },
       ],
     };
   },
   computed: {
-    // Filter articles based on selected team
     filteredArticles() {
-      if (this.selectedTeam === "all") {
+      if (this.selectedTeam === "All") {
         return this.articles;
       } else {
         // Assuming each article has a teamId property
