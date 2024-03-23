@@ -326,6 +326,10 @@ export default {
   vertical-align: middle;
 }
 
+.form-container {
+  min-width: 120px;
+}
+
 .win-square {
   background-color: #4caf50;
 }

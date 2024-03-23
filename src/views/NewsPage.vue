@@ -49,7 +49,7 @@
             @error="handleImageError"
           />
           <div class="article-content">
-            <h3>{{ article.title }}</h3>
+            <h3 class="article-title">{{ article.title }}</h3>
             <p class="article-description">{{ article.description }}</p>
           </div>
         </div>
@@ -209,13 +209,15 @@ export default {
   border: 1px solid #ccc;
   margin-bottom: 20px;
   border-radius: 4px;
+  text-align: center !important;
+  cursor: pointer;
 }
 
 .main-article .article-image {
   width: 100%;
   height: auto;
   max-height: 400px;
-  cursor: pointer;
+  border-bottom: 1px solid #ccc;
 }
 
 .main-article .article-content {
@@ -237,6 +239,11 @@ export default {
 .article-image {
   width: 100%;
   height: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+.article-title {
+  font-weight: 500;
 }
 
 .article-content {
@@ -244,7 +251,7 @@ export default {
 }
 
 .article-description {
-  font-style: italic;
+  font-size: 0.95rem;
 }
 
 select {
