@@ -261,5 +261,6 @@ select {
 
 label {
   margin-right: 5px;
+  font-size: 100;
 }
 </style>
