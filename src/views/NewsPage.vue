@@ -207,14 +207,13 @@ export default {
 
 .main-article {
   border: 1px solid #ccc;
-  border-radius: 4px;
   margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 .main-article .article-image {
   width: 100%;
   height: auto;
-  border: 1px solid #ccc;
   max-height: 400px;
   cursor: pointer;
 }
@@ -238,7 +237,6 @@ export default {
 .article-image {
   width: 100%;
   height: auto;
-  border: 1px solid #ccc;
 }
 
 .article-content {
