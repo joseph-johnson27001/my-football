@@ -183,6 +183,8 @@ export default {
 }
 
 .main-article {
+  border: 1px solid #ccc;
+  border-radius: 4px;
   margin-bottom: 20px;
 }
 
@@ -191,14 +193,11 @@ export default {
   height: auto;
   border: 1px solid #ccc;
   max-height: 400px;
+  cursor: pointer;
 }
 
 .main-article .article-content {
   padding: 10px;
-}
-
-.main-article .article-description {
-  font-style: italic;
 }
 
 .article-grid {
@@ -208,7 +207,9 @@ export default {
 }
 
 .article {
+  cursor: pointer;
   border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .article-image {
