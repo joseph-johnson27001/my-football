@@ -21,6 +21,8 @@
         :src="mainArticle.image"
         alt="Main Article Image"
         class="article-image"
+        @load="checkAllImagesLoaded"
+        @error="handleImageError"
       />
       <div class="article-content">
         <h3 class="article-title">{{ mainArticle.title }}</h3>
@@ -43,6 +45,8 @@
             :src="article.image"
             alt="Article Image"
             class="article-image"
+            @load="checkAllImagesLoaded"
+            @error="handleImageError"
           />
           <div class="article-content">
             <h3>{{ article.title }}</h3>
@@ -72,7 +76,7 @@ export default {
             "Get ready for the new Premier League season with our in-depth preview.",
           content:
             "Content providing insights and analysis on the upcoming Premier League season, including key players, teams to watch, and predictions.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/1200/400",
           teamId: 1,
         },
         {
@@ -82,7 +86,7 @@ export default {
             "Analyze the tactical approaches of the top contenders for the Premier League title.",
           content:
             "Content dissecting the tactical strategies employed by the leading teams in the race for the Premier League championship.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/300?random=8",
           teamId: 2,
         },
         {
@@ -92,7 +96,7 @@ export default {
             "Assess the impact of key transfer signings on Premier League clubs.",
           content:
             "Content examining the significance of major transfer deals and their potential effects on the fortunes of respective Premier League teams.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/300?random=7",
           teamId: 3,
         },
         {
@@ -102,7 +106,7 @@ export default {
             "A roundup of the most spectacular goals from the Premier League.",
           content:
             "Content describing the top 10 goals scored in the Premier League season so far.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/300?random=6",
           teamId: 1,
         },
         {
@@ -112,7 +116,7 @@ export default {
             "Exploring the emergence of promising young players in the Premier League.",
           content:
             "Content highlighting the young football talents making a mark in the Premier League.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/300?random=5",
           teamId: 2,
         },
         {
@@ -122,7 +126,7 @@ export default {
             "Analyze key moments and performances from recent Premier League matches.",
           content:
             "Content providing tactical insights and player analyses from select Premier League fixtures.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/300?random=4",
           teamId: 3,
         },
         {
@@ -132,7 +136,7 @@ export default {
             "Trace the evolution of football tactics from defensive systems like Catenaccio to possession-based strategies like Tiki-Taka.",
           content:
             "Content exploring the historical development of football tactics and the influence of different playing styles on the modern game.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/300?random=3",
           teamId: 1,
         },
         {
@@ -142,7 +146,7 @@ export default {
             "Examine the impact of Video Assistant Referee (VAR) technology on decision-making and game dynamics in the Premier League.",
           content:
             "Content analyzing the implementation of VAR in the Premier League and its implications for match outcomes and officiating.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/300?random=2",
           teamId: 2,
         },
         {
@@ -153,11 +157,15 @@ export default {
             "Celebrate the legacy and influence of legendary managers who have left an indelible mark on the Premier League.",
           content:
             "Content highlighting the achievements, tactics, and managerial philosophies of iconic figures in Premier League history.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/300?random=1",
           teamId: 3,
         },
       ],
+      imagesLoaded: 0,
     };
+  },
+  mounted() {
+    this.$store.state.isLoading = true;
   },
   computed: {
     mainArticle() {
@@ -171,6 +179,21 @@ export default {
           .slice(1)
           .filter((article) => article.teamId === this.selectedTeam);
       }
+    },
+  },
+  methods: {
+    checkAllImagesLoaded() {
+      this.imagesLoaded++;
+      if (this.imagesLoaded === this.getTotalImageCount()) {
+        this.$store.state.isLoading = false;
+      }
+    },
+    getTotalImageCount() {
+      let count = this.mainArticle ? 1 : 0;
+      count += this.filteredArticlesExceptMain.filter(
+        (article) => article.image
+      ).length;
+      return count;
     },
   },
 };
