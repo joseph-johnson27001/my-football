@@ -14,28 +14,27 @@
       </div>
     </div>
 
+    <!-- Main Article -->
+    <div v-if="mainArticle" class="main-article">
+      <img
+        v-if="mainArticle.image"
+        :src="mainArticle.image"
+        alt="Main Article Image"
+        class="article-image"
+      />
+      <div class="article-content">
+        <h3 class="article-title">{{ mainArticle.title }}</h3>
+        <p class="article-description">{{ mainArticle.description }}</p>
+      </div>
+    </div>
+
     <!-- Articles Section -->
     <div class="articles-section">
       <!-- Display articles based on selected team -->
-      <div v-if="selectedTeam === 'all'" class="article-grid">
-        <!-- Show all articles -->
-        <div v-for="article in articles" :key="article.id" class="article">
-          <img
-            v-if="article.image"
-            :src="article.image"
-            alt="Article Image"
-            class="article-image"
-          />
-          <div class="article-content">
-            <h3 class="article-title">{{ article.title }}</h3>
-            <p class="article-description">{{ article.description }}</p>
-          </div>
-        </div>
-      </div>
-      <div v-else class="article-grid">
-        <!-- Show articles for selected team -->
+      <div class="article-grid">
+        <!-- Show articles excluding the main article -->
         <div
-          v-for="article in filteredArticles"
+          v-for="article in filteredArticlesExceptMain"
           :key="article.id"
           class="article"
         >
@@ -161,14 +160,16 @@ export default {
     };
   },
   computed: {
-    filteredArticles() {
+    mainArticle() {
+      return this.articles.length > 0 ? this.articles[0] : null;
+    },
+    filteredArticlesExceptMain() {
       if (this.selectedTeam === "All") {
-        return this.articles;
+        return this.articles.slice(1);
       } else {
-        // Assuming each article has a teamId property
-        return this.articles.filter(
-          (article) => article.teamId === this.selectedTeam
-        );
+        return this.articles
+          .slice(1)
+          .filter((article) => article.teamId === this.selectedTeam);
       }
     },
   },
@@ -179,6 +180,25 @@ export default {
 .team-selection {
   display: flex;
   align-items: center;
+}
+
+.main-article {
+  margin-bottom: 20px;
+}
+
+.main-article .article-image {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  max-height: 400px;
+}
+
+.main-article .article-content {
+  padding: 10px;
+}
+
+.main-article .article-description {
+  font-style: italic;
 }
 
 .article-grid {
