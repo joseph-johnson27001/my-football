@@ -81,7 +81,7 @@ export default {
             "Get ready for the new Premier League season with our in-depth preview.",
           content:
             "Content providing insights and analysis on the upcoming Premier League season, including key players, teams to watch, and predictions.",
-          image: "https://picsum.photos/1200/400",
+          image: "https://picsum.photos/1200/500",
           teamId: 1,
         },
         {
@@ -212,10 +212,9 @@ export default {
 
 .main-article {
   margin-bottom: 20px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #3498db;
   text-align: center !important;
   cursor: pointer;
-  transition: box-shadow 0.1s linear background-color 0.1s linear;
 }
 
 .main-article .article-image {
@@ -223,7 +222,7 @@ export default {
   height: auto;
   max-height: 500px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
 }
 
 .main-article .article-content {
@@ -238,13 +237,6 @@ export default {
 
 .article {
   cursor: pointer;
-  border-bottom: 1px solid #ccc;
-  transition: box-shadow 0.1s linear border-bottom 0.1s linear;
-}
-
-.article:hover,
-.main-article:hover {
-  background-color: #f5f5f5;
   border-bottom: 1px solid #3498db;
 }
 
@@ -260,7 +252,7 @@ export default {
 }
 
 .article-content {
-  padding: 10px;
+  padding: 0px 10px;
 }
 
 .article-description {
