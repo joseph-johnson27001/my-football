@@ -221,13 +221,15 @@ export default {
 .main-article .article-image {
   width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 500px;
   border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
 .main-article .article-content {
   padding: 10px;
 }
+
 .article-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -237,18 +239,20 @@ export default {
 .article {
   cursor: pointer;
   border-bottom: 1px solid #ccc;
-  transition: box-shadow 0.1s linear background-color 0.1s linear;
+  transition: box-shadow 0.1s linear border-bottom 0.1s linear;
 }
 
 .article:hover,
 .main-article:hover {
   background-color: #f5f5f5;
+  border-bottom: 1px solid #3498db;
 }
 
 .article-image {
   width: 100%;
   height: auto;
   border-radius: 4px;
+  border: 1px solid #ddd;
 }
 
 .article-title {
