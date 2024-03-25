@@ -454,7 +454,6 @@ export default {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  font-weight: 500;
 }
 
 .fixture-item {
@@ -469,6 +468,7 @@ export default {
   align-items: center;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
 }
 
 .fixture-item:hover {
