@@ -75,19 +75,15 @@ export default {
   },
   methods: {
     getTeamCrest(teamId) {
-      // Find the team with the matching ID in the results array
       const team = this.results.find(
         (result) =>
           result.homeTeam.id === teamId || result.awayTeam.id === teamId
       );
-      // Check if the team is found
       if (team) {
-        // Return the crest URL of the found team
         return team.homeTeam.id === teamId
           ? team.homeTeam.crest
           : team.awayTeam.crest;
       } else {
-        // If the team is not found, return a placeholder image
         return "placeholder.jpg";
       }
     },
@@ -183,7 +179,114 @@ export default {
           status: "FINISHED",
           score: { fullTime: { home: 2, away: 2 } },
         },
-        // Add more dummy results as needed
+        {
+          id: 6,
+          homeTeam: {
+            id: 1,
+            name: "Arsenal",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
+          },
+          awayTeam: {
+            id: 3,
+            name: "Manchester United",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
+          },
+          matchday: 3,
+          status: "FINISHED",
+          score: { fullTime: { home: 1, away: 2 } },
+        },
+        {
+          id: 7,
+          homeTeam: {
+            id: 3,
+            name: "Manchester United",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
+          },
+          awayTeam: {
+            id: 4,
+            name: "Liverpool",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
+          },
+          matchday: 3,
+          status: "FINISHED",
+          score: { fullTime: { home: 2, away: 1 } },
+        },
+        {
+          id: 1,
+          homeTeam: {
+            id: 5,
+            name: "Chelsea",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
+          },
+          awayTeam: {
+            id: 6,
+            name: "Tottenham Hotspur",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg",
+          },
+          matchday: 4,
+          status: "FINISHED",
+          score: { fullTime: { home: 1, away: 0 } },
+        },
+        {
+          id: 2,
+          homeTeam: {
+            id: 7,
+            name: "Leicester City",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg",
+          },
+          awayTeam: {
+            id: 8,
+            name: "Everton",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg",
+          },
+          matchday: 4,
+          status: "FINISHED",
+          score: { fullTime: { home: 2, away: 2 } },
+        },
+        {
+          id: 3,
+          homeTeam: {
+            id: 9,
+            name: "West Ham United",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg",
+          },
+          awayTeam: {
+            id: 10,
+            name: "Southampton",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/c/c9/FC_Southampton.svg",
+          },
+          matchday: 4,
+          status: "FINISHED",
+          score: { fullTime: { home: 3, away: 1 } },
+        },
+        {
+          id: 4,
+          homeTeam: {
+            id: 4,
+            name: "Liverpool",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
+          },
+          awayTeam: {
+            id: 12,
+            name: "Wolverhampton Wanderers",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg",
+          },
+          matchday: 4,
+          status: "FINISHED",
+          score: { fullTime: { home: 0, away: 1 } },
+        },
       ];
     },
   },
