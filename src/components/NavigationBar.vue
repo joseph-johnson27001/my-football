@@ -54,6 +54,9 @@
   text-decoration: none;
   transition: color 0.1s;
   cursor: pointer;
+  /* font-family: "Bebas Neue", sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 1px; */
 }
 
 .active-link {
