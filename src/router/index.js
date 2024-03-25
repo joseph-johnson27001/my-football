@@ -7,6 +7,7 @@ import NewsPage from "../views/NewsPage.vue";
 import TeamsPage from "../views/TeamsPage.vue";
 import HomePage from "../views/HomePage.vue";
 // import store from "../store/store.js";
+import TeamPage from "../views/TeamPage.vue";
 
 const routes = [
   {
@@ -33,6 +34,11 @@ const routes = [
     path: "/teams",
     name: "Teams",
     component: TeamsPage,
+  },
+  {
+    path: "/team",
+    name: "Team",
+    component: TeamPage,
   },
   {
     path: "/news",

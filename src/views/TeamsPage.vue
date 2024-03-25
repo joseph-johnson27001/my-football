@@ -153,7 +153,8 @@ export default {
   },
   methods: {
     navigateToTeamPage(team) {
-      console.log("Navigating to", team.name);
+      this.$store.state.selectedTeam = team.name;
+      this.$router.push("team");
     },
   },
 };
