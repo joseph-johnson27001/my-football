@@ -315,7 +315,7 @@ export default {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .fixture-item {
