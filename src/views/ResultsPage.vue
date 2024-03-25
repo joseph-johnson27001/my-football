@@ -143,7 +143,7 @@ export default {
             crest:
               "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
           },
-          matchday: 2,
+          matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 1, away: 1 } },
         },
@@ -161,7 +161,7 @@ export default {
             crest:
               "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
           },
-          matchday: 2,
+          matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 3, away: 2 } },
         },
@@ -179,7 +179,7 @@ export default {
             crest:
               "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
           },
-          matchday: 3,
+          matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 2, away: 2 } },
         },
@@ -197,7 +197,7 @@ export default {
             crest:
               "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
           },
-          matchday: 3,
+          matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 4, away: 2 } },
         },
@@ -215,7 +215,7 @@ export default {
             crest:
               "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
           },
-          matchday: 3,
+          matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 2, away: 1 } },
         },
@@ -233,7 +233,7 @@ export default {
             crest:
               "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg",
           },
-          matchday: 4,
+          matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 1, away: 0 } },
         },
@@ -251,7 +251,7 @@ export default {
             crest:
               "https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg",
           },
-          matchday: 4,
+          matchday: 2,
           status: "FINISHED",
           score: { fullTime: { home: 2, away: 2 } },
         },
@@ -269,7 +269,7 @@ export default {
             crest:
               "https://upload.wikimedia.org/wikipedia/en/c/c9/FC_Southampton.svg",
           },
-          matchday: 4,
+          matchday: 3,
           status: "FINISHED",
           score: { fullTime: { home: 3, away: 1 } },
         },
