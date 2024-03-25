@@ -102,24 +102,6 @@ export default {
               "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
           },
           awayTeam: {
-            id: 2,
-            name: "Manchester City",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
-          },
-          matchday: 1,
-          status: "FINISHED",
-          score: { fullTime: { home: 2, away: 1 } },
-        },
-        {
-          id: 2,
-          homeTeam: {
-            id: 3,
-            name: "Manchester United",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
-          },
-          awayTeam: {
             id: 4,
             name: "Liverpool",
             crest:
@@ -127,10 +109,10 @@ export default {
           },
           matchday: 1,
           status: "FINISHED",
-          score: { fullTime: { home: 0, away: 0 } },
+          score: { fullTime: { home: 3, away: 2 } },
         },
         {
-          id: 3,
+          id: 2,
           homeTeam: {
             id: 2,
             name: "Manchester City",
@@ -148,79 +130,7 @@ export default {
           score: { fullTime: { home: 1, away: 1 } },
         },
         {
-          id: 4,
-          homeTeam: {
-            id: 1,
-            name: "Arsenal",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
-          },
-          awayTeam: {
-            id: 4,
-            name: "Liverpool",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
-          },
-          matchday: 1,
-          status: "FINISHED",
-          score: { fullTime: { home: 3, away: 2 } },
-        },
-        {
-          id: 5,
-          homeTeam: {
-            id: 2,
-            name: "Manchester City",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
-          },
-          awayTeam: {
-            id: 4,
-            name: "Liverpool",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
-          },
-          matchday: 1,
-          status: "FINISHED",
-          score: { fullTime: { home: 2, away: 2 } },
-        },
-        {
-          id: 6,
-          homeTeam: {
-            id: 1,
-            name: "Arsenal",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
-          },
-          awayTeam: {
-            id: 3,
-            name: "Manchester United",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
-          },
-          matchday: 1,
-          status: "FINISHED",
-          score: { fullTime: { home: 4, away: 2 } },
-        },
-        {
-          id: 7,
-          homeTeam: {
-            id: 3,
-            name: "Manchester United",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
-          },
-          awayTeam: {
-            id: 4,
-            name: "Liverpool",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
-          },
-          matchday: 1,
-          status: "FINISHED",
-          score: { fullTime: { home: 2, away: 1 } },
-        },
-        {
-          id: 1,
+          id: 3,
           homeTeam: {
             id: 5,
             name: "Chelsea",
@@ -237,6 +147,133 @@ export default {
           status: "FINISHED",
           score: { fullTime: { home: 1, away: 0 } },
         },
+        {
+          id: 4,
+          homeTeam: {
+            id: 7,
+            name: "Leicester City",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg",
+          },
+          awayTeam: {
+            id: 8,
+            name: "Everton",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg",
+          },
+          matchday: 1,
+          status: "FINISHED",
+          score: { fullTime: { home: 2, away: 1 } },
+        },
+        {
+          id: 5,
+          homeTeam: {
+            id: 9,
+            name: "Aston Villa",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/de/9/9f/Aston_Villa_logo.svg",
+          },
+          awayTeam: {
+            id: 10,
+            name: "Leeds United",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg",
+          },
+          matchday: 1,
+          status: "FINISHED",
+          score: { fullTime: { home: 1, away: 1 } },
+        },
+        {
+          id: 6,
+          homeTeam: {
+            id: 11,
+            name: "Southampton",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/c/c9/FC_Southampton.svg",
+          },
+          awayTeam: {
+            id: 12,
+            name: "Brighton & Hove Albion",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg",
+          },
+          matchday: 1,
+          status: "FINISHED",
+          score: { fullTime: { home: 0, away: 0 } },
+        },
+        {
+          id: 7,
+          homeTeam: {
+            id: 13,
+            name: "Wolverhampton Wanderers",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg",
+          },
+          awayTeam: {
+            id: 14,
+            name: "Crystal Palace",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/sco/0/0c/Crystal_Palace_FC_logo.svg",
+          },
+          matchday: 1,
+          status: "FINISHED",
+          score: { fullTime: { home: 2, away: 1 } },
+        },
+        {
+          id: 8,
+          homeTeam: {
+            id: 15,
+            name: "Newcastle United",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg",
+          },
+          awayTeam: {
+            id: 16,
+            name: "Burnley",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/fr/f/f3/Logo_Burnley_FC_1960.svg",
+          },
+          matchday: 1,
+          status: "FINISHED",
+          score: { fullTime: { home: 1, away: 0 } },
+        },
+        {
+          id: 9,
+          homeTeam: {
+            id: 17,
+            name: "Fulham",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg",
+          },
+          awayTeam: {
+            id: 18,
+            name: "West Bromwich Albion",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/8/8b/West_Bromwich_Albion.svg",
+          },
+          matchday: 1,
+          status: "FINISHED",
+          score: { fullTime: { home: 2, away: 2 } },
+        },
+        {
+          id: 10,
+          homeTeam: {
+            id: 19,
+            name: "Sheffield United",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/9/9c/Sheffield_United_FC_logo.svg",
+          },
+          awayTeam: {
+            id: 20,
+            name: "West Ham United",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/e/e0/West_Ham_United_FC.svg",
+          },
+          matchday: 1,
+          status: "FINISHED",
+          score: { fullTime: { home: 0, away: 1 } },
+        },
+
         {
           id: 2,
           homeTeam: {
