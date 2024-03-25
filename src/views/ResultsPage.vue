@@ -428,6 +428,7 @@ export default {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  outline: none;
 }
 
 .matchday-label {
