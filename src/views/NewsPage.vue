@@ -2,7 +2,7 @@
   <div class="news-page">
     <!-- News Heading and Team Selection -->
     <div class="heading-container">
-      <h2>News</h2>
+      <h2>Football News</h2>
       <div class="team-selection">
         <label for="team-select">Select Team: </label>
         <select v-model="selectedTeam" id="team-select">

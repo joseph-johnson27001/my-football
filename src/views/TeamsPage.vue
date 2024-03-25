@@ -177,6 +177,8 @@ export default {
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-weight: 500;
+  padding: 20px 0px;
 }
 
 .team-item:hover {
