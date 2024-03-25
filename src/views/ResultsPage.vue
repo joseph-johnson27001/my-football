@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="heading-span">
+    <span class="heading-container heading-span">
       <p>Results</p>
       <div class="matchday-dropdown">
         <label for="matchday-select">Match Week: </label>
@@ -329,7 +329,6 @@ export default {
   grid-template-columns: 4fr 1fr 4fr;
   align-items: center;
   cursor: pointer;
-  transition: border-color 0.1s, box-shadow 0.1s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
