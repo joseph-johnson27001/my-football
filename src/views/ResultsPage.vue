@@ -3,7 +3,7 @@
     <span class="heading-span">
       <p>Results</p>
       <div class="matchday-dropdown">
-        <label for="matchday-select">Select Match Week: </label>
+        <label for="matchday-select">Match Week: </label>
         <select id="matchday-select" v-model="selectedMatchday">
           <option
             v-for="matchday in matchdays"

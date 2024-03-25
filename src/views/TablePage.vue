@@ -247,6 +247,13 @@ export default {
       return value;
     },
   },
+  mounted() {
+    // Simulating API call
+    this.$store.state.isLoading = true;
+    setTimeout(() => {
+      this.$store.state.isLoading = false;
+    }, 1000);
+  },
 };
 </script>
 
