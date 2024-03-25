@@ -195,7 +195,7 @@ export default {
           },
           matchday: 3,
           status: "FINISHED",
-          score: { fullTime: { home: 1, away: 2 } },
+          score: { fullTime: { home: 4, away: 2 } },
         },
         {
           id: 7,
