@@ -212,9 +212,13 @@ export default {
 
 .main-article {
   margin-bottom: 20px;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid #ccc;
   text-align: center !important;
   cursor: pointer;
+}
+
+.main-article:hover {
+  border-bottom: 1px solid #3498db;
 }
 
 .main-article .article-image {
@@ -237,6 +241,10 @@ export default {
 
 .article {
   cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.article:hover {
   border-bottom: 1px solid #3498db;
 }
 
@@ -260,10 +268,10 @@ export default {
 }
 
 select {
-  padding: 5px;
-  font-size: 16px;
+  padding: 8px 4px;
   border: 1px solid #ccc;
-  outline: none;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 label {

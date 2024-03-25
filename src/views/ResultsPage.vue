@@ -330,7 +330,7 @@ export default {
 }
 
 .fixture-item:hover {
-  border-color: #1f8dd6;
+  border-color: #3498db;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
