@@ -56,6 +56,7 @@
   cursor: pointer;
   font-family: "Titillium Web", sans-serif;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .active-link {

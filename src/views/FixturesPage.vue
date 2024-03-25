@@ -18,29 +18,30 @@
     <div class="fixtures-page">
       <div class="fixtures-list">
         <div
-          v-for="result in filteredFixtures"
-          :key="result.id"
+          v-for="fixture in filteredFixtures"
+          :key="fixture.id"
           class="fixture-item"
+          @click="navigateToMatchPage(fixture)"
         >
           <div class="team-container team-left">
             <span class="crest-container">
               <img
-                :src="getTeamCrest(result.homeTeam.id)"
-                :alt="result.homeTeam.name"
+                :src="getTeamCrest(fixture.homeTeam.id)"
+                :alt="fixture.homeTeam.name"
                 class="team-crest"
               />
             </span>
-            <div class="team-name">{{ result.homeTeam.name }}</div>
+            <div class="team-name">{{ fixture.homeTeam.name }}</div>
           </div>
           <div class="score-container">
             <span class="score">-</span>
           </div>
           <div class="team-container team-right">
-            <div class="team-name">{{ result.awayTeam.name }}</div>
+            <div class="team-name">{{ fixture.awayTeam.name }}</div>
             <span class="crest-container">
               <img
-                :src="getTeamCrest(result.awayTeam.id)"
-                :alt="result.awayTeam.name"
+                :src="getTeamCrest(fixture.awayTeam.id)"
+                :alt="fixture.awayTeam.name"
                 class="team-crest"
               />
             </span>
@@ -70,15 +71,15 @@ export default {
   computed: {
     filteredFixtures() {
       return this.fixtures.filter(
-        (result) => result.matchday === this.selectedMatchday
+        (fixture) => fixture.matchday === this.selectedMatchday
       );
     },
   },
   methods: {
     getTeamCrest(teamId) {
       const team = this.fixtures.find(
-        (result) =>
-          result.homeTeam.id === teamId || result.awayTeam.id === teamId
+        (fixture) =>
+          fixture.homeTeam.id === teamId || fixture.awayTeam.id === teamId
       );
       if (team) {
         return team.homeTeam.id === teamId
@@ -87,6 +88,10 @@ export default {
       } else {
         return "placeholder.jpg";
       }
+    },
+    navigateToMatchPage(fixture) {
+      this.$store.state.selectedFixture = `${fixture.homeTeam.name} V ${fixture.awayTeam.name}`;
+      this.$router.push("match");
     },
     async fetchFixtures() {
       this.fixtures = [

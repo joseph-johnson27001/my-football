@@ -149,7 +149,11 @@ export default {
     };
   },
   mounted() {
+    this.$store.state.isLoading = true;
     this.teams.sort((a, b) => a.name.localeCompare(b.name));
+    setTimeout(() => {
+      this.$store.state.isLoading = false;
+    }, 500);
   },
   methods: {
     navigateToTeamPage(team) {

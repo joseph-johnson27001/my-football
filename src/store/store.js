@@ -5,15 +5,6 @@ export default createStore({
   state: {
     isLoading: false,
     selectedName: null,
-  },
-  mutations: {
-    setIsLoading(state, isLoading) {
-      state.isLoading = isLoading;
-    },
-  },
-  actions: {
-    setIsLoading({ commit }, isLoading) {
-      commit("setIsLoading", isLoading);
-    },
+    selectedFixture: null,
   },
 });

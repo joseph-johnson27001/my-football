@@ -6,8 +6,9 @@ import ResultsPage from "../views/ResultsPage.vue";
 import NewsPage from "../views/NewsPage.vue";
 import TeamsPage from "../views/TeamsPage.vue";
 import HomePage from "../views/HomePage.vue";
-// import store from "../store/store.js";
 import TeamPage from "../views/TeamPage.vue";
+import MatchPage from "../views/MatchPage.vue";
+// import store from "../store/store.js";
 
 const routes = [
   {
@@ -44,6 +45,11 @@ const routes = [
     path: "/news",
     name: "News",
     component: NewsPage,
+  },
+  {
+    path: "/match",
+    name: "Match",
+    component: MatchPage,
   },
 ];
 

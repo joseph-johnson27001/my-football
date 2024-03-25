@@ -21,6 +21,7 @@
           v-for="result in filteredResults"
           :key="result.id"
           class="fixture-item"
+          @click="navigateToMatchPage(result)"
         >
           <div class="team-container team-left">
             <span class="crest-container">
@@ -90,6 +91,11 @@ export default {
       } else {
         return "placeholder.jpg";
       }
+    },
+    navigateToMatchPage(result) {
+      console.log(result);
+      this.$store.state.selectedFixture = `${result.homeTeam.name} ${result.score.fullTime.home} - ${result.score.fullTime.away} ${result.awayTeam.name}`;
+      this.$router.push("match");
     },
     async fetchResults() {
       this.results = [
