@@ -54,9 +54,8 @@
   text-decoration: none;
   transition: color 0.1s;
   cursor: pointer;
-  /* font-family: "Bebas Neue", sans-serif;
-  font-size: 1.3rem;
-  letter-spacing: 1px; */
+  font-family: "Titillium Web", sans-serif;
+  text-transform: uppercase;
 }
 
 .active-link {
