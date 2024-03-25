@@ -35,6 +35,8 @@
           </div>
           <div class="score-container">
             <span class="score">-</span>
+
+            <span class="fixture-date">15-10-2024</span>
           </div>
           <div class="team-container team-right">
             <div class="team-name">{{ fixture.awayTeam.name }}</div>
@@ -501,9 +503,15 @@ export default {
 
 .score-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.fixture-date {
+  font-size: 0.8em;
+  font-weight: 100;
 }
 
 .crest-container {
