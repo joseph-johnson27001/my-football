@@ -23,11 +23,13 @@
           class="fixture-item"
         >
           <div class="team-container team-left">
-            <img
-              :src="getTeamCrest(result.homeTeam.id)"
-              :alt="result.homeTeam.name"
-              class="team-crest"
-            />
+            <span class="crest-container">
+              <img
+                :src="getTeamCrest(result.homeTeam.id)"
+                :alt="result.homeTeam.name"
+                class="team-crest"
+              />
+            </span>
             <div class="team-name">{{ result.homeTeam.name }}</div>
           </div>
           <div class="score-container">
@@ -38,11 +40,13 @@
           </div>
           <div class="team-container team-right">
             <div class="team-name">{{ result.awayTeam.name }}</div>
-            <img
-              :src="getTeamCrest(result.awayTeam.id)"
-              :alt="result.awayTeam.name"
-              class="team-crest"
-            />
+            <span class="crest-container">
+              <img
+                :src="getTeamCrest(result.awayTeam.id)"
+                :alt="result.awayTeam.name"
+                class="team-crest"
+              />
+            </span>
           </div>
         </div>
       </div>
@@ -356,8 +360,17 @@ export default {
   text-align: center;
 }
 
+.crest-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+}
+
 .team-crest {
   max-width: 30px;
+  width: auto;
+  max-height: 30px;
   margin: 10px;
 }
 
