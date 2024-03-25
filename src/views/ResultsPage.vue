@@ -288,9 +288,13 @@ export default {
           score: { fullTime: { home: 0, away: 1 } },
         },
       ];
+      setTimeout(() => {
+        this.$store.state.isLoading = false;
+      }, 1000);
     },
   },
   created() {
+    this.$store.state.isLoading = true;
     this.fetchResults();
   },
 };
