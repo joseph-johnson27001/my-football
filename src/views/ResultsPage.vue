@@ -62,28 +62,22 @@ export default {
   data() {
     return {
       selectedMatchday: 1,
-      matchdays: [1, 2, 3, 4], // Dummy match week data
-      results: [], // Placeholder for results data
+      matchdays: [1, 2, 3, 4],
+      results: [],
     };
   },
   computed: {
-    // Filtered results based on selected match week
     filteredResults() {
-      // Dummy implementation, replace with actual filtering logic based on match week
       return this.results.filter(
         (result) => result.matchday === this.selectedMatchday
       );
     },
   },
   methods: {
-    // Method to get team crest URL based on team ID
     getTeamCrest(teamId) {
-      // Use the team crests data passed from props
       return this.teamCrestsData[teamId] || "placeholder.jpg";
     },
-    // Dummy method to simulate fetching results data from an API
     async fetchResults() {
-      // Dummy data for results
       this.results = [
         {
           id: 1,
@@ -101,12 +95,35 @@ export default {
           status: "FINISHED",
           score: { fullTime: { home: 0, away: 0 } },
         },
+        {
+          id: 3,
+          homeTeam: { id: 2, name: "Manchester City" },
+          awayTeam: { id: 3, name: "Manchester United" },
+          matchday: 2,
+          status: "FINISHED",
+          score: { fullTime: { home: 1, away: 1 } },
+        },
+        {
+          id: 4,
+          homeTeam: { id: 1, name: "Arsenal" },
+          awayTeam: { id: 4, name: "Liverpool" },
+          matchday: 2,
+          status: "FINISHED",
+          score: { fullTime: { home: 3, away: 2 } },
+        },
+        {
+          id: 5,
+          homeTeam: { id: 2, name: "Manchester City" },
+          awayTeam: { id: 4, name: "Liverpool" },
+          matchday: 3,
+          status: "FINISHED",
+          score: { fullTime: { home: 2, away: 2 } },
+        },
         // Add more dummy results as needed
       ];
     },
   },
   created() {
-    // Simulate fetching results data from an API
     this.fetchResults();
   },
 };
