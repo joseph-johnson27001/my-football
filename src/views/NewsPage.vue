@@ -69,9 +69,9 @@ export default {
     return {
       selectedTeam: "All",
       teams: [
-        { id: 1, name: "Team A" },
-        { id: 2, name: "Team B" },
-        { id: 3, name: "Team C" },
+        { id: 1, name: "Arsenal" },
+        { id: 2, name: "Man City" },
+        { id: 3, name: "Liverpool" },
       ],
       articles: [
         {
