@@ -149,12 +149,10 @@ export default {
     };
   },
   mounted() {
-    // Sort teams alphabetically by name
     this.teams.sort((a, b) => a.name.localeCompare(b.name));
   },
   methods: {
     navigateToTeamPage(team) {
-      // Logic to navigate to the selected team's page
       console.log("Navigating to", team.name);
     },
   },
@@ -178,25 +176,22 @@ export default {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .team-item:hover {
-  background-color: #e0e0e0;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .crest-container {
-  margin-bottom: 10px;
+  margin: 10px 0px;
 }
 
 .team-crest {
   max-width: 100px;
   width: auto;
   max-height: 100px;
-}
-
-.team-name {
-  font-weight: bold;
-  text-align: center;
 }
 </style>
