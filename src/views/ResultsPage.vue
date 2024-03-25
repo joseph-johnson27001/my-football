@@ -3,7 +3,7 @@
     <span class="heading-container heading-span">
       <p>Results</p>
       <div class="matchday-dropdown">
-        <label for="matchday-select">Match Week: </label>
+        <label for="matchday-select" class="matchday-label">Match Week: </label>
         <select id="matchday-select" v-model="selectedMatchday">
           <option
             v-for="matchday in matchdays"
@@ -391,5 +391,9 @@ export default {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+}
+
+.matchday-label {
+  font-weight: 100;
 }
 </style>
