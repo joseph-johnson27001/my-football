@@ -43,6 +43,12 @@ body {
   font-family: "Montserrat";
 }
 
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  color: #1f3f7f;
+  font-weight: 100 !important;
+}
+
 .background {
   background-color: #f2f2f2;
   display: flex;

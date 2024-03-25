@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="heading-container"><p>Premier League 2023/2024</p></div>
+    <div class="heading-container"><h2>Premier League 2023/2024</h2></div>
 
     <table class="team-table">
       <thead>

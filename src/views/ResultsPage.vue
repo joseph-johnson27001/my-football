@@ -1,7 +1,7 @@
 <template>
   <div>
     <span class="heading-container heading-span">
-      <p>Results</p>
+      <h2>Results</h2>
       <div class="matchday-dropdown">
         <label for="matchday-select" class="matchday-label">Match Week: </label>
         <select id="matchday-select" v-model="selectedMatchday">
