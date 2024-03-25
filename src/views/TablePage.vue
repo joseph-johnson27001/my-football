@@ -23,6 +23,7 @@
           v-for="(team, index) in premierLeagueStandingsSorted"
           :key="team.team.id"
           class="team-row"
+          @click="navigateToTeamPage(team)"
         >
           <td class="stats">{{ index + 1 }}</td>
           <td class="team-container">
@@ -423,6 +424,10 @@ export default {
     },
   },
   methods: {
+    navigateToTeamPage(team) {
+      this.$store.state.selectedTeam = team.team.name;
+      this.$router.push("team");
+    },
     getFormColorClass(result) {
       if (result === "W") {
         return "win-square";
@@ -452,11 +457,10 @@ export default {
     },
   },
   mounted() {
-    // Simulating API call
     this.$store.state.isLoading = true;
     setTimeout(() => {
       this.$store.state.isLoading = false;
-    }, 1000);
+    }, 500);
   },
 };
 </script>

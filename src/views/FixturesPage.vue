@@ -90,7 +90,7 @@ export default {
       }
     },
     navigateToMatchPage(fixture) {
-      this.$store.state.selectedFixture = `${fixture.homeTeam.name} V ${fixture.awayTeam.name}`;
+      this.$store.state.selectedFixture = `${fixture.homeTeam.name} v ${fixture.awayTeam.name}`;
       this.$router.push("match");
     },
     async fetchFixtures() {
@@ -438,7 +438,7 @@ export default {
       ];
       setTimeout(() => {
         this.$store.state.isLoading = false;
-      }, 1000);
+      }, 500);
     },
   },
   created() {

@@ -53,7 +53,7 @@ h2 {
   background-color: #f2f2f2;
   display: flex;
   justify-content: center;
-  min-height: 94vh;
+  min-height: 93vh;
 }
 
 .content-container {
