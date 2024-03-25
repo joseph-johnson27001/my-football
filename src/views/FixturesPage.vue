@@ -35,8 +35,7 @@
           </div>
           <div class="score-container">
             <span class="score">-</span>
-
-            <span class="fixture-date">15-10-2024</span>
+            <span class="fixture-time">{{ fixture.time }} </span>
           </div>
           <div class="team-container team-right">
             <div class="team-name">{{ fixture.awayTeam.name }}</div>
@@ -113,6 +112,7 @@ export default {
           },
           matchday: 1,
           status: "SCHEDULED",
+          time: "17:30",
         },
         {
           id: 2,
@@ -130,6 +130,7 @@ export default {
           },
           matchday: 1,
           status: "SCHEDULED",
+          time: "17:30",
         },
         {
           id: 3,
@@ -147,6 +148,7 @@ export default {
           },
           matchday: 1,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 4,
@@ -164,6 +166,7 @@ export default {
           },
           matchday: 1,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 5,
@@ -181,6 +184,7 @@ export default {
           },
           matchday: 1,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 6,
@@ -198,6 +202,7 @@ export default {
           },
           matchday: 1,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 7,
@@ -215,6 +220,7 @@ export default {
           },
           matchday: 1,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 8,
@@ -232,6 +238,7 @@ export default {
           },
           matchday: 1,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 9,
@@ -249,6 +256,7 @@ export default {
           },
           matchday: 1,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 10,
@@ -266,6 +274,7 @@ export default {
           },
           matchday: 1,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 11,
@@ -283,6 +292,7 @@ export default {
           },
           matchday: 2,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 12,
@@ -300,6 +310,7 @@ export default {
           },
           matchday: 2,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 13,
@@ -317,6 +328,7 @@ export default {
           },
           matchday: 2,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 14,
@@ -334,6 +346,7 @@ export default {
           },
           matchday: 2,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 15,
@@ -351,6 +364,7 @@ export default {
           },
           matchday: 2,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 16,
@@ -368,6 +382,7 @@ export default {
           },
           matchday: 2,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 17,
@@ -385,6 +400,7 @@ export default {
           },
           matchday: 2,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 18,
@@ -402,6 +418,7 @@ export default {
           },
           matchday: 2,
           status: "SCHEDULED",
+          time: "15:00",
         },
         {
           id: 19,
@@ -419,6 +436,7 @@ export default {
           },
           matchday: 2,
           status: "SCHEDULED",
+          time: "17:30",
         },
         {
           id: 20,
@@ -436,6 +454,7 @@ export default {
           },
           matchday: 3,
           status: "SCHEDULED",
+          time: "17:30",
         },
       ];
       setTimeout(() => {
@@ -509,7 +528,7 @@ export default {
   text-align: center;
 }
 
-.fixture-date {
+.fixture-time {
   font-size: 0.8em;
   font-weight: 100;
 }

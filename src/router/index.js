@@ -8,7 +8,6 @@ import TeamsPage from "../views/TeamsPage.vue";
 import HomePage from "../views/HomePage.vue";
 import TeamPage from "../views/TeamPage.vue";
 import MatchPage from "../views/MatchPage.vue";
-// import store from "../store/store.js";
 
 const routes = [
   {
@@ -57,15 +56,5 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
-
-// DUMMY LOADING EXAMPLE
-
-// router.beforeEach((to, from, next) => {
-//   store.dispatch("setIsLoading", true);
-//   setTimeout(() => {
-//     next();
-//     store.dispatch("setIsLoading", false);
-//   }, 500);
-// });
 
 export default router;
