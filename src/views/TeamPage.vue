@@ -12,12 +12,12 @@
     <div class="navigation-container">
       <nav class="team-navigation">
         <ul>
-          <li><a href="#news">News</a></li>
-          <li><a href="#highlights">Highlights</a></li>
-          <li><a href="#fixtures">Fixtures</a></li>
-          <li><a href="#results">Results</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#stats">Stats</a></li>
+          <li><p>News</p></li>
+          <li><p>Fixtures</p></li>
+          <li><p>Results</p></li>
+          <li><p>Team</p></li>
+          <li><p>Stats</p></li>
+          <li><p>Highlights</p></li>
         </ul>
       </nav>
     </div>
@@ -204,11 +204,6 @@ export default {
   border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
 }
-
-.team-navigation {
-  padding: 10px 0;
-}
-
 .team-navigation ul {
   display: flex;
   flex-direction: row;
@@ -220,16 +215,13 @@ export default {
 
 .team-navigation ul li {
   padding: 5px 30px;
+  width: 100%;
+  text-align: center;
 }
 
 .team-navigation ul li:hover {
   background-color: #f2f2f2;
   cursor: pointer;
   height: 100%;
-}
-
-.team-navigation a {
-  text-decoration: none;
-  color: #333;
 }
 </style>
