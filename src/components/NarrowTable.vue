@@ -6,9 +6,7 @@
           <th>#</th>
           <th class="team-header">Team</th>
           <th>P</th>
-          <th>W</th>
-          <th>D</th>
-          <th>L</th>
+          <th>GD</th>
           <th>Pts</th>
         </tr>
       </thead>
@@ -30,9 +28,7 @@
             </div>
           </td>
           <td>{{ team.playedGames }}</td>
-          <td>{{ team.won }}</td>
-          <td>{{ team.draw }}</td>
-          <td>{{ team.lost }}</td>
+          <td>{{ team.goalDifference }}</td>
           <td>{{ team.points }}</td>
         </tr>
       </tbody>
@@ -410,7 +406,7 @@ export default {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid #ddd;
-  font-size: small;
+  font-size: 0.9rem;
 }
 
 .team-table th,
