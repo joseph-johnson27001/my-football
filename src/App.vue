@@ -43,6 +43,7 @@ h2 {
   color: #1f3f7f;
   font-weight: 100 !important;
   margin-bottom: 15px;
+  padding-left: 5px;
 }
 
 .background {
