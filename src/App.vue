@@ -46,6 +46,14 @@ h2 {
   padding-left: 5px;
 }
 
+h3 {
+  font-weight: 500 !important;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
 .background {
   background-color: #f2f2f2;
   display: flex;

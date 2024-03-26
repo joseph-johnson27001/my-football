@@ -263,10 +263,6 @@ export default {
   padding: 0px 10px;
 }
 
-.article-description {
-  font-size: 0.95rem;
-}
-
 select {
   padding: 8px 4px;
   border: 1px solid #ccc;

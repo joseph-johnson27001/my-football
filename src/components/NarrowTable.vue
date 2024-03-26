@@ -393,12 +393,6 @@ export default {
       this.$router.push("team");
     },
   },
-  mounted() {
-    this.$store.state.isLoading = true;
-    setTimeout(() => {
-      this.$store.state.isLoading = false;
-    }, 500);
-  },
 };
 </script>
 

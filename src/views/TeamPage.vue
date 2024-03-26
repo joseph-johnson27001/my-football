@@ -13,9 +13,10 @@
               :src="mainArticle.image"
               :alt="mainArticle.title"
               class="main-news-image"
+              @load="checkAllImagesLoaded"
             />
             <div class="news-content">
-              <p class="main-news-title">{{ mainArticle.title }}</p>
+              <h3 class="main-news-title">{{ mainArticle.title }}</h3>
               <p class="main-news-description">{{ mainArticle.description }}</p>
             </div>
           </div>
@@ -24,9 +25,14 @@
             :key="index"
             class="news-item"
           >
-            <img :src="article.image" :alt="article.title" class="news-image" />
+            <img
+              :src="article.image"
+              :alt="article.title"
+              class="news-image"
+              @load="checkAllImagesLoaded"
+            />
             <div class="news-content">
-              <p class="news-title">{{ article.title }}</p>
+              <h3 class="news-title">{{ article.title }}</h3>
               <p class="news-description">{{ article.description }}</p>
             </div>
           </div>
@@ -91,7 +97,24 @@ export default {
           "Get the latest scoop on the transfer rumors swirling around the Premier League's top clubs as they gear up for the upcoming season.",
         image: "https://picsum.photos/600/300?random=9",
       },
+      imagesLoaded: 0,
     };
+  },
+  mounted() {
+    this.$store.state.isLoading = true;
+  },
+  methods: {
+    checkAllImagesLoaded() {
+      this.imagesLoaded++;
+      if (this.imagesLoaded === this.getTotalImageCount()) {
+        this.$store.state.isLoading = false;
+      }
+    },
+    getTotalImageCount() {
+      let count = this.mainArticle ? 1 : 0;
+      count += this.newsArticles.filter((article) => article.image).length;
+      return count;
+    },
   },
 };
 </script>
@@ -148,9 +171,5 @@ export default {
 
 .news-content {
   padding: 0px 10px;
-}
-
-.news-description {
-  font-size: 0.95rem;
 }
 </style>
