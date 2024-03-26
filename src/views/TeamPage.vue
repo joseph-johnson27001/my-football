@@ -1,7 +1,10 @@
 <template>
   <div class="team-page">
     <div class="heading-container">
-      <h2>{{ this.$store.state.selectedTeam }}</h2>
+      <h2 v-if="this.$store.state.selectedTeam">
+        {{ this.$store.state.selectedTeam }}
+      </h2>
+      <h2 v-else>Arsenal</h2>
     </div>
 
     <div class="top-half-grid">
