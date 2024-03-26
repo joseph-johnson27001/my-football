@@ -34,11 +34,6 @@ export default {
 </script>
 
 <style>
-/* body {
-  margin: 0;
-  padding: 0;
-} */
-
 #app {
   font-family: "Montserrat";
 }
@@ -47,6 +42,7 @@ h2 {
   font-family: "Bebas Neue", sans-serif;
   color: #1f3f7f;
   font-weight: 100 !important;
+  margin-bottom: 15px;
 }
 
 .background {

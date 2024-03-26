@@ -218,7 +218,7 @@ export default {
 }
 
 .main-article:hover {
-  border-bottom: 1px solid #3498db;
+  background-color: #f2f2f2;
 }
 
 .main-article .article-image {
@@ -245,7 +245,7 @@ export default {
 }
 
 .article:hover {
-  border-bottom: 1px solid #3498db;
+  background-color: #f2f2f2;
 }
 
 .article-image {

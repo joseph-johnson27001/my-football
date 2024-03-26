@@ -7,6 +7,18 @@
     <div class="top-half-grid">
       <div class="team-news">
         <div class="latest-news">
+          <!-- Main article -->
+          <div v-if="mainArticle" class="news-item main-article">
+            <img
+              :src="mainArticle.image"
+              :alt="mainArticle.title"
+              class="main-news-image"
+            />
+            <div class="news-content">
+              <p class="main-news-title">{{ mainArticle.title }}</p>
+              <p class="main-news-description">{{ mainArticle.description }}</p>
+            </div>
+          </div>
           <div
             v-for="(article, index) in newsArticles"
             :key="index"
@@ -73,6 +85,12 @@ export default {
           image: "https://picsum.photos/150?random=3",
         },
       ],
+      mainArticle: {
+        title: "Exciting Transfer Rumors Rock Premier League Clubs",
+        description:
+          "Get the latest scoop on the transfer rumors swirling around the Premier League's top clubs as they gear up for the upcoming season.",
+        image: "https://picsum.photos/600/300?random=9",
+      },
     };
   },
 };
@@ -86,6 +104,11 @@ export default {
 }
 
 .news-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-item {
   display: grid;
   grid-template-columns: 1fr 4fr;
   gap: 5px;
@@ -94,9 +117,13 @@ export default {
   cursor: pointer;
 }
 
+.main-article {
+  display: block;
+  padding-top: 0px;
+}
+
 .news-item:hover {
   background-color: #f2f2f2;
-  border-bottom: 1px solid #3498db;
 }
 
 .news-image {
@@ -104,8 +131,19 @@ export default {
   border: 1px solid #ccc;
 }
 
+.main-news-image {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
 .news-title {
   font-weight: 500;
+}
+
+.main-news-title {
+  font-weight: 500;
+  text-align: center;
 }
 
 .news-content {
