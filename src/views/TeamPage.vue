@@ -4,6 +4,7 @@
       <h2 v-if="this.$store.state.selectedTeam">
         {{ this.$store.state.selectedTeam }}
       </h2>
+      <!-- TO DO - REMOVE THIS BACKUP HEADING -->
       <h2 v-else>Arsenal</h2>
     </div>
 
@@ -174,5 +175,13 @@ export default {
 
 .news-content {
   padding: 0px 10px;
+}
+
+.crest-container {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  width: 40px;
+  justify-content: center;
 }
 </style>

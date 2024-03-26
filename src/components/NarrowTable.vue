@@ -18,13 +18,15 @@
           class="table-row"
         >
           <td>{{ index + 1 }}</td>
-          <td>
+          <td style="padding-left: 0px">
             <div class="team-info">
-              <img
-                :src="team.team.crest"
-                :alt="team.team.name"
-                class="team-crest"
-              />
+              <div class="crest-container">
+                <img
+                  :src="team.team.crest"
+                  :alt="team.team.name"
+                  class="team-crest"
+                />
+              </div>
               <p class="team-name">{{ team.team.name }}</p>
             </div>
           </td>
@@ -429,6 +431,7 @@ export default {
 .team-info {
   display: flex;
   align-items: center;
+  padding-left: 0px;
 }
 
 .stats {
@@ -454,11 +457,11 @@ export default {
 }
 
 .crest-container {
-  margin-right: 8px;
   display: flex;
   align-items: center;
-  width: 40px;
+  width: 30px;
   justify-content: center;
+  margin-right: 5px;
 }
 
 .team-crest {
@@ -468,7 +471,6 @@ export default {
 .team-name {
   flex: 1;
   text-align: left;
-  margin-left: 5px;
 }
 
 .team-row:hover {
