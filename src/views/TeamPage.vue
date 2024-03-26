@@ -11,10 +11,7 @@
             v-for="(article, index) in newsArticles"
             :key="index"
             class="news-item"
-            :style="{
-              borderBottom:
-                index < newsArticles.length - 1 ? '1px solid #ddd' : 'none',
-            }"
+            style="border-bottom: 1px solid #ddd; margin-bottom: 5px"
           >
             <img :src="article.image" :alt="article.title" class="news-image" />
             <div class="news-content">
@@ -70,5 +67,12 @@ export default {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 5px;
+  border-bottom: 1px #ddd;
 }
 </style>
