@@ -8,6 +8,18 @@
       <h2 v-else>Arsenal</h2>
     </div>
 
+    <!-- Navigation area -->
+    <div class="navigation-container">
+      <nav class="team-navigation">
+        <ul>
+          <li><a href="#news">News</a></li>
+          <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#stats">Stats</a></li>
+        </ul>
+      </nav>
+    </div>
+
     <div class="top-half-grid">
       <div class="team-news">
         <div class="latest-news">
@@ -155,13 +167,13 @@ export default {
 
 .news-image {
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
 }
 
 .main-news-image {
   width: 100%;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
 }
 
 .news-title {
@@ -183,5 +195,32 @@ export default {
   align-items: center;
   width: 40px;
   justify-content: center;
+}
+
+.navigation-container {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.team-navigation {
+  padding: 10px 0;
+}
+
+.team-navigation ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-navigation ul li {
+  padding: 2px 30px;
+}
+
+.team-navigation a {
+  text-decoration: none;
+  color: #333;
 }
 </style>
