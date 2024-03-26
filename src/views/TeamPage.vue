@@ -11,7 +11,11 @@
             v-for="(article, index) in newsArticles"
             :key="index"
             class="news-item"
-            style="border-bottom: 1px solid #ddd; margin-bottom: 5px"
+            style="
+              border-bottom: 1px solid #ddd;
+              margin-bottom: 5px;
+              padding: 10px 0px;
+            "
           >
             <img :src="article.image" :alt="article.title" class="news-image" />
             <div class="news-content">
@@ -22,19 +26,18 @@
         </div>
       </div>
 
-      <div class="premier-league-table">
-        <img
-          src="premier_league_table.jpg"
-          alt="Premier League Table"
-          class="table-image"
-        />
-      </div>
+      <div class="premier-league-table"><NarrowTable /></div>
     </div>
   </div>
 </template>
 
 <script>
+import NarrowTable from "@/components/NarrowTable.vue";
+
 export default {
+  components: {
+    NarrowTable,
+  },
   data() {
     return {
       newsArticles: [
@@ -42,19 +45,19 @@ export default {
           title: "Manchester United signs new striker",
           description:
             "Manchester United completes the signing of a new striker for the upcoming season.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/150?random=8",
         },
         {
           title: "Liverpool announces new sponsorship deal",
           description:
             "Liverpool Football Club announces a new sponsorship deal with a major international brand.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/150?random=7",
         },
         {
           title: "Premier League introduces new rule changes",
           description:
             "The Premier League reveals new rule changes for the upcoming season to enhance fair play.",
-          image: "https://via.placeholder.com/150",
+          image: "https://picsum.photos/150?random=6",
         },
       ],
     };
@@ -74,5 +77,10 @@ export default {
   grid-template-columns: 1fr 4fr;
   gap: 5px;
   border-bottom: 1px #ddd;
+}
+
+.news-image {
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 </style>
