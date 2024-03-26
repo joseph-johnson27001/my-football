@@ -73,15 +73,15 @@ export default {
           image: "https://picsum.photos/150?random=6",
         },
         {
-          title: "Chelsea FC unveils plans for stadium expansion",
+          title: "Arsenal FC unveils plans for stadium expansion",
           description:
-            "Chelsea FC announces ambitious plans for expanding their stadium capacity to accommodate more fans.",
+            "Arsenal FC announces ambitious plans for expanding their stadium capacity to accommodate more fans.",
           image: "https://picsum.photos/150?random=5",
         },
         {
-          title: "Arsenal FC appoints new head coach",
+          title: "Chelsea FC appoints new head coach",
           description:
-            "Arsenal FC appoints a new head coach ahead of the upcoming season, aiming for a fresh start.",
+            "Chelsea FC appoints a new head coach ahead of the upcoming season, aiming for a fresh start.",
           image: "https://picsum.photos/150?random=4",
         },
         {
