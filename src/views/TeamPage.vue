@@ -11,11 +11,6 @@
             v-for="(article, index) in newsArticles"
             :key="index"
             class="news-item"
-            style="
-              border-bottom: 1px solid #ddd;
-              margin-bottom: 5px;
-              padding: 10px 0px;
-            "
           >
             <img :src="article.image" :alt="article.title" class="news-image" />
             <div class="news-content">
@@ -94,7 +89,14 @@ export default {
   display: grid;
   grid-template-columns: 1fr 4fr;
   gap: 5px;
-  border-bottom: 1px #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0px;
+  cursor: pointer;
+}
+
+.news-item:hover {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #3498db;
 }
 
 .news-image {

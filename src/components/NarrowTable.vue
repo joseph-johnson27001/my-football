@@ -15,6 +15,7 @@
           v-for="(team, index) in premierLeagueStandings"
           :key="index"
           @click="navigateToTeamPage(team)"
+          class="table-row"
         >
           <td>{{ index + 1 }}</td>
           <td>
@@ -416,6 +417,14 @@ export default {
   border-top: 1px solid #ccc;
   cursor: pointer;
   padding: 0px 10px;
+}
+
+.table-row {
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background-color: #f2f2f2;
 }
 
 .team-header {
