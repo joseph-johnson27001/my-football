@@ -103,4 +103,16 @@ export default {
   border-radius: 4px;
   border: 1px solid #ccc;
 }
+
+.news-title {
+  font-weight: 500;
+}
+
+.news-content {
+  padding: 0px 10px;
+}
+
+.news-description {
+  font-size: 0.95rem;
+}
 </style>
