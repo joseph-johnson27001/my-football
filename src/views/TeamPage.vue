@@ -59,7 +59,7 @@ export default {
             "The Premier League reveals new rule changes for the upcoming season to enhance fair play.",
           image: "https://via.placeholder.com/150",
         },
-        // Add more news articles as needed      ],
+      ],
     };
   },
 };
