@@ -170,6 +170,7 @@ export default {
 .news-image {
   border-radius: 4px;
   border: 1px solid #ddd;
+  margin-left: 10px;
 }
 
 .main-news-image {
