@@ -59,6 +59,18 @@ export default {
             "The Premier League reveals new rule changes for the upcoming season to enhance fair play.",
           image: "https://picsum.photos/150?random=6",
         },
+        {
+          title: "Chelsea FC unveils plans for stadium expansion",
+          description:
+            "Chelsea FC announces ambitious plans for expanding their stadium capacity to accommodate more fans.",
+          image: "https://picsum.photos/150?random=5",
+        },
+        {
+          title: "Arsenal FC appoints new head coach",
+          description:
+            "Arsenal FC appoints a new head coach ahead of the upcoming season, aiming for a fresh start.",
+          image: "https://picsum.photos/150?random=4",
+        },
       ],
     };
   },

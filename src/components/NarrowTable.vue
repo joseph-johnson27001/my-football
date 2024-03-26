@@ -395,25 +395,6 @@ export default {
       this.$store.state.selectedTeam = team.team.name;
       this.$router.push("team");
     },
-    getFormColorClass(result) {
-      if (result === "W") {
-        return "win-square";
-      } else if (result === "D") {
-        return "draw-square";
-      } else if (result === "L") {
-        return "lose-square";
-      } else {
-        return "";
-      }
-    },
-    getFieldValue(object, field) {
-      const keys = field.split(".");
-      let value = object;
-      for (const key of keys) {
-        value = value[key];
-      }
-      return value;
-    },
   },
   mounted() {
     this.$store.state.isLoading = true;
