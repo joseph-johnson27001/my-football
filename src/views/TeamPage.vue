@@ -14,6 +14,8 @@
         <ul>
           <li><a href="#news">News</a></li>
           <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#fixtures">Fixtures</a></li>
+          <li><a href="#results">Results</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#stats">Stats</a></li>
         </ul>
@@ -210,13 +212,20 @@ export default {
 .team-navigation ul {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   list-style: none;
-  padding: 0;
+  padding: 0px;
   margin: 0;
 }
 
 .team-navigation ul li {
-  padding: 2px 30px;
+  padding: 5px 30px;
+}
+
+.team-navigation ul li:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+  height: 100%;
 }
 
 .team-navigation a {
