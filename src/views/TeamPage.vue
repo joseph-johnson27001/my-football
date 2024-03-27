@@ -56,18 +56,25 @@
           </div>
         </div>
       </div>
+      <div>
+        <NextFixture />
 
-      <div class="premier-league-table"><NarrowTable /></div>
+        <div class="premier-league-table">
+          <NarrowTable />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import NarrowTable from "@/components/NarrowTable.vue";
+import NextFixture from "@/components/NextFixture.vue";
 
 export default {
   components: {
     NarrowTable,
+    NextFixture,
   },
   data() {
     return {
@@ -138,6 +145,11 @@ export default {
 </script>
 
 <style scoped>
+.side-heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .top-half-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
