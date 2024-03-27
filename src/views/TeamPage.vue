@@ -17,7 +17,7 @@
           <li><p>Results</p></li>
           <li><p>Team</p></li>
           <li><p>Stats</p></li>
-          <li><p>Highlights</p></li>
+          <li @click="navigateToVideos"><p>Videos</p></li>
         </ul>
       </nav>
     </div>
@@ -114,12 +114,6 @@ export default {
             "Chelsea FC appoints a new head coach ahead of the upcoming season, aiming for a fresh start.",
           image: "https://picsum.photos/150?random=4",
         },
-        {
-          title: "Manchester City launches new community outreach program",
-          description:
-            "Manchester City launches a new initiative aimed at fostering community engagement and social responsibility.",
-          image: "https://picsum.photos/150?random=3",
-        },
       ],
       mainArticle: {
         title: "Exciting Transfer Rumors Rock Premier League Clubs",
@@ -134,6 +128,9 @@ export default {
     this.$store.state.isLoading = true;
   },
   methods: {
+    navigateToVideos() {
+      this.$router.push("videos");
+    },
     checkAllImagesLoaded() {
       this.imagesLoaded++;
       if (this.imagesLoaded === this.getTotalImageCount()) {
