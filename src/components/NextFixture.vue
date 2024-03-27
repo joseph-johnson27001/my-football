@@ -176,26 +176,4 @@ export default {
   max-height: 30px;
   margin: 10px;
 }
-
-.matchday-dropdown {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.matchday-dropdown label {
-  margin-right: 10px;
-}
-
-.matchday-dropdown select {
-  padding: 8px 4px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  outline: none;
-}
-
-.matchday-label {
-  font-weight: 100;
-}
 </style>
