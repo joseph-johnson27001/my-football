@@ -1,7 +1,7 @@
 <template>
   <div class="videos-page">
     <div class="heading-container">
-      <h2 v-if="teamNam != null">Latest {{ teamName }} Videos</h2>
+      <h2 v-if="teamName != null">Latest {{ teamName }} Videos</h2>
       <h2 v-else>Latest Football Videos</h2>
     </div>
 

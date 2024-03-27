@@ -26,11 +26,11 @@
       <router-link to="/results" class="nav-link" active-class="active-link"
         >Results</router-link
       >
-      <router-link to="/table" class="nav-link" active-class="active-link"
-        >Table</router-link
-      >
       <router-link to="/videos" class="nav-link" active-class="active-link"
         >Videos</router-link
+      >
+      <router-link to="/table" class="nav-link" active-class="active-link"
+        >Table</router-link
       >
     </div>
   </nav>
