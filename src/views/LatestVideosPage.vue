@@ -11,7 +11,20 @@
         :key="index"
         class="video-item"
       >
-        <video :src="video.src" controls class="video"></video>
+        <!-- Check if the video is a YouTube video -->
+        <div v-if="isYouTubeVideo(video)">
+          <iframe
+            width="100%"
+            height="315"
+            :src="video.src"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- If not a YouTube video, display the video using video tag -->
+        <div v-else>
+          <video :src="video.src" controls class="video"></video>
+        </div>
         <div class="video-description">
           <h3>{{ video.title }}</h3>
           <p>{{ video.description }}</p>
@@ -20,7 +33,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -37,7 +49,7 @@ export default {
     this.$store.state.isLoading = true;
     this.latestVideos = [
       {
-        src: "path/to/video1.mp4",
+        src: "https://www.youtube.com/embed/t5EhsXZwn4o?si=EiFsFIn-B4BM6dUP",
         title: this.teamName + " V Liverpool",
         description:
           "Highlights of the recent match between " +
@@ -45,32 +57,32 @@ export default {
           " and Liverpool.",
       },
       {
-        src: "path/to/video2.mp4",
+        src: "https://www.youtube.com/embed/t5EhsXZwn4o?si=EiFsFIn-B4BM6dUP",
         title: "Goals of the season",
         description: this.teamName + "'s top goals this season.",
       },
       {
-        src: "path/to/video3.mp4",
+        src: "https://www.youtube.com/embed/t5EhsXZwn4o?si=EiFsFIn-B4BM6dUP",
         title: this.teamName + " training sessions best bits",
         description:
-          "Best moments from  " + this.teamName + " training sessions.",
+          "Best moments from " + this.teamName + " training sessions.",
       },
       {
-        src: "path/to/video4.mp4",
+        src: "https://www.youtube.com/embed/t5EhsXZwn4o?si=EiFsFIn-B4BM6dUP",
         title: "Interview",
         description:
-          "Interview with the  " +
+          "Interview with the " +
           this.teamName +
           " coach discussing their strategies for their upcoming matches.",
       },
       {
-        src: "path/to/video5.mp4",
+        src: "https://www.youtube.com/embed/t5EhsXZwn4o?si=EiFsFIn-B4BM6dUP",
         title: this.teamName + " Matchday Analysis",
         description:
-          "Analysis of the recent  " + this.teamName + " performances.",
+          "Analysis of the recent " + this.teamName + " performances.",
       },
       {
-        src: "path/to/video6.mp4",
+        src: "https://www.youtube.com/embed/t5EhsXZwn4o?si=EiFsFIn-B4BM6dUP",
         title: this.teamName + " Insights",
         description:
           "Insights into the journey of " +
@@ -82,13 +94,18 @@ export default {
       this.$store.state.isLoading = false;
     }, 500);
   },
+  methods: {
+    isYouTubeVideo(video) {
+      return video.src.includes("youtube.com");
+    },
+  },
 };
 </script>
 
 <style scoped>
 .videos-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 20px;
 }
 
