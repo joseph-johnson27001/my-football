@@ -29,6 +29,9 @@
       <router-link to="/table" class="nav-link" active-class="active-link"
         >Table</router-link
       >
+      <router-link to="/videos" class="nav-link" active-class="active-link"
+        >Videos</router-link
+      >
     </div>
   </nav>
 </template>
