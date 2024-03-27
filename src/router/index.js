@@ -7,7 +7,8 @@ import NewsPage from "../views/NewsPage.vue";
 import TeamsPage from "../views/TeamsPage.vue";
 import HomePage from "../views/HomePage.vue";
 import TeamPage from "../views/TeamPage.vue";
-import MatchPage from "../views/MatchPage.vue";
+import FixturePage from "../views/FixturePage.vue";
+import ResultPage from "../views/ResultPage.vue";
 import LatestVideosPage from "@/views/LatestVideosPage.vue";
 import SquadPage from "@/views/SquadPage.vue";
 import StatsPage from "@/views/StatsPage.vue";
@@ -64,9 +65,14 @@ const routes = [
     component: LatestVideosPage,
   },
   {
-    path: "/match",
-    name: "Match",
-    component: MatchPage,
+    path: "/fixture",
+    name: "fixture",
+    component: FixturePage,
+  },
+  {
+    path: "/result",
+    name: "result",
+    component: ResultPage,
   },
 ];
 

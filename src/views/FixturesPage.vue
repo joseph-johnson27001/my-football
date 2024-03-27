@@ -92,7 +92,7 @@ export default {
     },
     navigateToMatchPage(fixture) {
       this.$store.state.selectedFixture = `${fixture.homeTeam.name} v ${fixture.awayTeam.name}`;
-      this.$router.push("match");
+      this.$router.push("fixture");
     },
     async fetchFixtures() {
       this.fixtures = [
