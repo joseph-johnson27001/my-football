@@ -57,9 +57,12 @@
         </div>
       </div>
       <div>
+        <h2 class="side-heading">Next Fixture</h2>
         <NextFixture />
+        <h2 class="side-heading">Latest Result</h2>
         <LatestResult />
         <div class="premier-league-table">
+          <h2 class="side-heading">Standings</h2>
           <NarrowTable />
         </div>
       </div>
@@ -149,7 +152,8 @@ export default {
 <style scoped>
 .side-heading {
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
+  padding-left: 0px;
 }
 
 .top-half-grid {
