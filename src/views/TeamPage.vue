@@ -15,7 +15,7 @@
           <li @click="navigateToPage('/news')"><p>News</p></li>
           <li @click="navigateToPage('/fixtures')"><p>Fixtures</p></li>
           <li @click="navigateToPage('/results')"><p>Results</p></li>
-          <li @click="navigateToPage('/team')"><p>Team</p></li>
+          <li @click="navigateToPage('/squad')"><p>Squad</p></li>
           <li @click="navigateToPage('/stats')"><p>Stats</p></li>
           <li @click="navigateToPage('/videos')"><p>Videos</p></li>
         </ul>

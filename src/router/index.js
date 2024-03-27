@@ -9,6 +9,8 @@ import HomePage from "../views/HomePage.vue";
 import TeamPage from "../views/TeamPage.vue";
 import MatchPage from "../views/MatchPage.vue";
 import LatestVideosPage from "@/views/LatestVideosPage.vue";
+import SquadPage from "@/views/SquadPage.vue";
+import StatsPage from "@/views/StatsPage.vue";
 
 const routes = [
   {
@@ -45,6 +47,16 @@ const routes = [
     path: "/news",
     name: "News",
     component: NewsPage,
+  },
+  {
+    path: "/squad",
+    name: "Squad",
+    component: SquadPage,
+  },
+  {
+    path: "/stats",
+    name: "Stats",
+    component: StatsPage,
   },
   {
     path: "/videos",
