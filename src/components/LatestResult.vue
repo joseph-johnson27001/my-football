@@ -68,7 +68,7 @@ export default {
     },
     navigateToMatchPage(result) {
       this.$store.state.selectedFixture = `${result.homeTeam.name} ${result.score.fullTime.home} - ${result.score.fullTime.away} ${result.awayTeam.name}`;
-      this.$router.push("match");
+      this.$router.push("result");
     },
     async fetchResults() {
       this.results = [
