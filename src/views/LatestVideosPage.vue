@@ -34,6 +34,7 @@ export default {
     },
   },
   created() {
+    this.$store.state.isLoading = true;
     this.latestVideos = [
       {
         src: "path/to/video1.mp4",
@@ -45,18 +46,18 @@ export default {
       },
       {
         src: "path/to/video2.mp4",
-        title: "Video 2",
+        title: "Goals of the season",
         description: this.teamName + "'s top goals this season.",
       },
       {
         src: "path/to/video3.mp4",
-        title: "Video 3",
+        title: this.teamName + " training sessions best bits",
         description:
           "Best moments from  " + this.teamName + " training sessions.",
       },
       {
         src: "path/to/video4.mp4",
-        title: "Video 4",
+        title: "Interview",
         description:
           "Interview with the  " +
           this.teamName +
@@ -64,19 +65,22 @@ export default {
       },
       {
         src: "path/to/video5.mp4",
-        title: "Video 5",
+        title: this.teamName + " Matchday Analysis",
         description:
           "Analysis of the recent  " + this.teamName + " performances.",
       },
       {
         src: "path/to/video6.mp4",
-        title: "Video 6",
+        title: this.teamName + " Insights",
         description:
           "Insights into the journey of " +
           this.teamName +
           " in the league so far.",
       },
     ];
+    setTimeout(() => {
+      this.$store.state.isLoading = false;
+    }, 500);
   },
 };
 </script>
@@ -86,6 +90,15 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
+}
+
+.video-item {
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.video-item:hover {
+  background-color: #f2f2f2;
 }
 
 .video {
