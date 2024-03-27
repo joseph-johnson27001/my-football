@@ -114,10 +114,11 @@ export default {
 
 .fixture-item {
   background-color: #f8f8f8;
-  padding: 10px;
+  padding: 10px 0px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  margin: 10px 0;
+  margin: 0px;
+  margin-bottom: 10px;
   width: 100%;
   display: grid;
   grid-template-columns: 4fr 1fr 4fr;

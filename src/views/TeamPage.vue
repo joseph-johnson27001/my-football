@@ -58,7 +58,7 @@
       </div>
       <div>
         <NextFixture />
-
+        <LatestResult />
         <div class="premier-league-table">
           <NarrowTable />
         </div>
@@ -70,11 +70,13 @@
 <script>
 import NarrowTable from "@/components/NarrowTable.vue";
 import NextFixture from "@/components/NextFixture.vue";
+import LatestResult from "@/components/LatestResult.vue";
 
 export default {
   components: {
     NarrowTable,
     NextFixture,
+    LatestResult,
   },
   data() {
     return {
