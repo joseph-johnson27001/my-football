@@ -12,12 +12,12 @@
     <div class="navigation-container">
       <nav class="team-navigation">
         <ul>
-          <li><p>News</p></li>
-          <li><p>Fixtures</p></li>
-          <li><p>Results</p></li>
-          <li><p>Team</p></li>
-          <li><p>Stats</p></li>
-          <li @click="navigateToVideos"><p>Videos</p></li>
+          <li @click="navigateToPage('/news')"><p>News</p></li>
+          <li @click="navigateToPage('/fixtures')"><p>Fixtures</p></li>
+          <li @click="navigateToPage('/results')"><p>Results</p></li>
+          <li @click="navigateToPage('/team')"><p>Team</p></li>
+          <li @click="navigateToPage('/stats')"><p>Stats</p></li>
+          <li @click="navigateToPage('/videos')"><p>Videos</p></li>
         </ul>
       </nav>
     </div>
@@ -128,8 +128,8 @@ export default {
     this.$store.state.isLoading = true;
   },
   methods: {
-    navigateToVideos() {
-      this.$router.push("videos");
+    navigateToPage(route) {
+      this.$router.push(route);
     },
     checkAllImagesLoaded() {
       this.imagesLoaded++;
