@@ -16,18 +16,23 @@
     <div class="fixture-content">
       <!-- Match Preview -->
       <div class="match-preview">
-        <h2>Match Preview</h2>
+        <h2 style="margin-top: 10px">Match Preview</h2>
         <img
           :src="fixtureDetails.image"
           alt="Match Preview Image"
-          style="max-width: 100%; border-radius: 4px; margin-bottom: 10px"
+          style="
+            max-width: 100%;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+          "
         />
         <p>{{ matchPreview }}</p>
       </div>
 
       <!-- Team Lineups -->
       <div class="team-lineups">
-        <h2 style="margin-bottom: 0px">Expected Lineups</h2>
+        <h2 style="margin-bottom: 0px; margin-top: 10px">Expected Lineups</h2>
         <div class="lineup-details">
           <div class="home-lineup">
             <h3>{{ fixtureDetails.homeTeam }}</h3>
@@ -169,5 +174,6 @@ export default {
 
 .team-lineups li p {
   margin-bottom: 5px;
+  line-height: 15px;
 }
 </style>
