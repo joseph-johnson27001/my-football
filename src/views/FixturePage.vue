@@ -144,6 +144,10 @@ export default {
 </script>
 
 <style scoped>
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+}
+
 .fixture-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
