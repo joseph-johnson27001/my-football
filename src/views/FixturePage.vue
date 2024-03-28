@@ -8,10 +8,9 @@
     </div>
     <!-- Fixture Details -->
     <div class="fixture-details">
-      <p style="margin-top: 0px">
-        {{ fixtureDetails.date }} - {{ fixtureDetails.time }}
-      </p>
-      <p>Venue: {{ fixtureDetails.venue }}</p>
+      <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3>
+      <h3>Venue: {{ fixtureDetails.venue }}</h3>
+      <h3>Referee: {{ fixtureDetails.referee }}</h3>
     </div>
     <div class="fixture-content">
       <!-- Match Preview -->
@@ -95,6 +94,7 @@ export default {
         date: "April 1, 2024",
         time: "15:00",
         venue: "Old Trafford",
+        referee: "Martin Atkinson",
         homeTeam: "Manchester United",
         awayTeam: "Liverpool",
         image: "https://picsum.photos/800/400",
@@ -149,7 +149,7 @@ h3 {
 
 .fixture-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 30px;
 }
 
@@ -160,7 +160,9 @@ h3 {
 }
 
 .fixture-details {
-  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .fixture-details p {
