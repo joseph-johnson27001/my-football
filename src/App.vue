@@ -46,6 +46,7 @@ h2 {
 }
 
 h3 {
+  font-family: "Bebas Neue", sans-serif;
   font-weight: 500 !important;
 }
 

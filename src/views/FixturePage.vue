@@ -3,39 +3,45 @@
     <div class="heading-container">
       <h2>{{ this.$store.state.selectedFixture }}</h2>
     </div>
+    <!-- Fixture Details -->
+    <div class="fixture-details">
+      <p style="margin-top: 0px">
+        {{ fixtureDetails.date }} - {{ fixtureDetails.time }}
+      </p>
+      <p>Venue: {{ fixtureDetails.venue }}</p>
+    </div>
     <div class="fixture-content">
-      <!-- Fixture Details -->
-      <div class="fixture-details">
-        <p style="margin-top: 0px">
-          {{ fixtureDetails.date }} - {{ fixtureDetails.time }}
-        </p>
-        <p>Venue: {{ fixtureDetails.venue }}</p>
-      </div>
-
       <!-- Match Preview -->
       <div class="match-preview">
         <h2>Match Preview</h2>
+        <img
+          :src="fixtureDetails.image"
+          alt="Match Preview Image"
+          style="max-width: 100%; border-radius: 4px; margin-bottom: 10px"
+        />
         <p>{{ matchPreview }}</p>
       </div>
 
       <!-- Team Lineups -->
       <div class="team-lineups">
         <h2>Expected Lineups</h2>
-        <div class="home-lineup">
-          <h2>{{ fixtureDetails.homeTeam }}</h2>
-          <ul>
-            <li v-for="player in homeLineup" :key="player.id">
-              {{ player.name }}
-            </li>
-          </ul>
-        </div>
-        <div class="away-lineup">
-          <h2>{{ fixtureDetails.awayTeam }}</h2>
-          <ul>
-            <li v-for="player in awayLineup" :key="player.id">
-              {{ player.name }}
-            </li>
-          </ul>
+        <div class="lineup-details">
+          <div class="home-lineup">
+            <h3>{{ fixtureDetails.homeTeam }}</h3>
+            <ul>
+              <li v-for="player in homeLineup" :key="player.id">
+                {{ player.name }}
+              </li>
+            </ul>
+          </div>
+          <div class="away-lineup">
+            <h3>{{ fixtureDetails.awayTeam }}</h3>
+            <ul>
+              <li v-for="player in awayLineup" :key="player.id">
+                {{ player.name }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -48,19 +54,25 @@
       <!-- Supporter Engagement -->
       <div class="supporter-engagement">
         <h2>Engage with the Fixture</h2>
-        <!-- Add supporter engagement features here (e.g., comment section, prediction form) -->
+        <p>
+          This section can include features like a comment section, prediction
+          form, or social media integration.
+        </p>
       </div>
 
       <!-- Live Updates (if available) -->
       <div class="live-updates">
         <h2>Live Updates</h2>
-        <!-- Add live updates section here (e.g., live stream links, score updates) -->
+        <p>Live updates will be available during the match.</p>
       </div>
 
       <!-- Additional Content -->
       <div class="additional-content">
         <h2>Additional Content</h2>
-        <!-- Add related news articles, multimedia content, etc. -->
+        <p>
+          This section can include related news articles, multimedia content, or
+          links to match highlights.
+        </p>
       </div>
     </div>
   </div>
@@ -76,9 +88,10 @@ export default {
         venue: "Old Trafford",
         homeTeam: "Manchester United",
         awayTeam: "Liverpool",
+        image: "https://picsum.photos/800/400",
       },
       matchPreview:
-        "Manchester United and Liverpool face off in a highly anticipated clash at Old Trafford.",
+        "Manchester United and Liverpool face off in a highly anticipated clash at Old Trafford. This is a dummy match preview.",
       homeLineup: [
         { id: 1, name: "David De Gea" },
         { id: 2, name: "Aaron Wan-Bissaka" },
@@ -94,52 +107,45 @@ export default {
         { id: 5, name: "Sadio Mané" },
       ],
       matchAnalysis:
-        "Both teams have been in good form, and this match promises to be an exciting contest.",
+        "Both teams have been in good form, and this match promises to be an exciting contest. This is a dummy match analysis.",
     };
   },
 };
 </script>
 
 <style scoped>
-/* Overall layout */
 .fixture-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 30px;
 }
 
-/* Fixture Details */
 .fixture-details {
   grid-column: span 2;
 }
 
 .fixture-details p {
-  font-size: 16px;
   margin-bottom: 10px;
 }
 
-/* Match Preview */
 .match-preview,
 .team-lineups,
 .match-analysis,
 .supporter-engagement,
 .live-updates,
 .additional-content {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
+  border-radius: 4px;
+  border-bottom: 1px solid #ddd;
 }
 
-.match-preview p,
-.team-lineups ul,
-.match-analysis p {
-  font-size: 16px;
-  line-height: 1.6;
+.home-lineup h2,
+.away-lineup h2 {
+  margin-top: 0px;
 }
 
-.team-lineups h4 {
-  font-size: 18px;
-  font-weight: bold;
+.lineup-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .team-lineups ul {
@@ -148,16 +154,6 @@ export default {
 }
 
 .team-lineups li {
-  font-size: 16px;
   margin-bottom: 5px;
-}
-
-.additional-content {
-  border-top: 1px solid #ccc;
-}
-
-.additional-content p {
-  font-size: 16px;
-  line-height: 1.6;
 }
 </style>
