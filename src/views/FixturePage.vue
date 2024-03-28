@@ -26,6 +26,7 @@
             margin-bottom: 10px;
             border: 1px solid #ddd;
           "
+          @load="handleImageLoad"
         />
         <p>{{ matchPreview }}</p>
       </div>
@@ -129,6 +130,15 @@ export default {
       matchAnalysis:
         "Both teams have been in good form, and this match promises to be an exciting contest. This is a dummy match analysis.",
     };
+  },
+  methods: {
+    handleImageLoad() {
+      // This method will be called when the image has fully loaded
+      this.$store.state.isLoading = false;
+    },
+  },
+  created() {
+    this.$store.state.isLoading = true;
   },
 };
 </script>
