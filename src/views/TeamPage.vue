@@ -24,6 +24,7 @@
 
     <div class="top-half-grid">
       <div class="team-news">
+        <h2 class="side-heading">Latest News</h2>
         <div class="latest-news">
           <!-- Main article -->
           <div v-if="mainArticle" class="news-item main-article">
