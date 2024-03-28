@@ -1,7 +1,10 @@
 <template>
   <div class="fixture-page">
     <div class="heading-container">
-      <h2>{{ this.$store.state.selectedFixture }}</h2>
+      <h2 v-if="this.$store.state.selectedFixture">
+        {{ this.$store.state.selectedFixture }}
+      </h2>
+      <h2 v-else>Manchester United V Liverpool</h2>
     </div>
     <!-- Fixture Details -->
     <div class="fixture-details">
@@ -24,13 +27,13 @@
 
       <!-- Team Lineups -->
       <div class="team-lineups">
-        <h2>Expected Lineups</h2>
+        <h2 style="margin-bottom: 0px">Expected Lineups</h2>
         <div class="lineup-details">
           <div class="home-lineup">
             <h3>{{ fixtureDetails.homeTeam }}</h3>
             <ul>
               <li v-for="player in homeLineup" :key="player.id">
-                {{ player.name }}
+                <p>{{ player.name }}</p>
               </li>
             </ul>
           </div>
@@ -38,7 +41,7 @@
             <h3>{{ fixtureDetails.awayTeam }}</h3>
             <ul>
               <li v-for="player in awayLineup" :key="player.id">
-                {{ player.name }}
+                <p>{{ player.name }}</p>
               </li>
             </ul>
           </div>
@@ -96,15 +99,27 @@ export default {
         { id: 1, name: "David De Gea" },
         { id: 2, name: "Aaron Wan-Bissaka" },
         { id: 3, name: "Harry Maguire" },
-        { id: 4, name: "Paul Pogba" },
-        { id: 5, name: "Bruno Fernandes" },
+        { id: 4, name: "Raphael Varane" },
+        { id: 5, name: "Luke Shaw" },
+        { id: 6, name: "Scott McTominay" },
+        { id: 7, name: "Fred" },
+        { id: 8, name: "Bruno Fernandes" },
+        { id: 9, name: "Jadon Sancho" },
+        { id: 10, name: "Cristiano Ronaldo" },
+        { id: 11, name: "Marcus Rashford" },
       ],
       awayLineup: [
         { id: 1, name: "Alisson Becker" },
         { id: 2, name: "Trent Alexander-Arnold" },
         { id: 3, name: "Virgil van Dijk" },
-        { id: 4, name: "Mohamed Salah" },
-        { id: 5, name: "Sadio Mané" },
+        { id: 4, name: "Joel Matip" },
+        { id: 5, name: "Andrew Robertson" },
+        { id: 6, name: "Fabinho" },
+        { id: 7, name: "Jordan Henderson" },
+        { id: 8, name: "Georginio Wijnaldum" },
+        { id: 9, name: "Mohamed Salah" },
+        { id: 10, name: "Roberto Firmino" },
+        { id: 11, name: "Sadio Mané" },
       ],
       matchAnalysis:
         "Both teams have been in good form, and this match promises to be an exciting contest. This is a dummy match analysis.",
@@ -134,7 +149,6 @@ export default {
 .supporter-engagement,
 .live-updates,
 .additional-content {
-  border-radius: 4px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -153,7 +167,7 @@ export default {
   padding: 0;
 }
 
-.team-lineups li {
+.team-lineups li p {
   margin-bottom: 5px;
 }
 </style>
