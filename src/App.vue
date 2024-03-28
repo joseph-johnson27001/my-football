@@ -52,6 +52,7 @@ h3 {
 
 p {
   font-size: 0.9rem;
+  line-height: 1.4rem;
 }
 
 .background {
