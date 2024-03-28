@@ -133,7 +133,6 @@ export default {
   },
   methods: {
     handleImageLoad() {
-      // This method will be called when the image has fully loaded
       this.$store.state.isLoading = false;
     },
   },
@@ -152,6 +151,12 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .fixture-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 .fixture-details {
