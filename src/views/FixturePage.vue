@@ -2,16 +2,19 @@
   <div class="fixture-page">
     <div class="heading-container">
       <h2 v-if="this.$store.state.selectedFixture">
-        {{ this.$store.state.selectedFixture }}
+        {{ this.$store.state.selectedFixture }} ({{ fixtureDetails.date }} -
+        {{ fixtureDetails.time }})
       </h2>
-      <h2 v-else>Manchester United V Liverpool</h2>
+      <h2 v-else>
+        Manchester United V Liverpool ({{ fixtureDetails.date }} -
+        {{ fixtureDetails.time }})
+      </h2>
     </div>
-    <!-- Fixture Details -->
-    <div class="fixture-details">
-      <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3>
-      <h3>Venue: {{ fixtureDetails.venue }}</h3>
-      <h3>Referee: {{ fixtureDetails.referee }}</h3>
-    </div>
+    <!-- <div class="fixture-details">
+      <div class="fixture-info">
+        <p>{{ fixtureDetails.venue }}</p>
+      </div>
+    </div> -->
     <div class="fixture-content">
       <!-- Match Preview -->
       <div class="match-preview">
@@ -49,6 +52,9 @@
                 <p>{{ player.name }}</p>
               </li>
             </ul>
+          </div>
+          <div class="referee-info">
+            <p>Referee: {{ fixtureDetails.referee }}</p>
           </div>
         </div>
       </div>
@@ -91,7 +97,7 @@ export default {
   data() {
     return {
       fixtureDetails: {
-        date: "April 1, 2024",
+        date: "15/05/2024",
         time: "15:00",
         venue: "Old Trafford",
         referee: "Martin Atkinson",
@@ -162,7 +168,13 @@ h3 {
 .fixture-details {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.referee-info p {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
 }
 
 .fixture-details p {
