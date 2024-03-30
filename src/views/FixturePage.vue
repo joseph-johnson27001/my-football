@@ -2,12 +2,14 @@
   <div class="fixture-page">
     <div class="heading-container">
       <h2 v-if="this.$store.state.selectedFixture">
-        {{ this.$store.state.selectedFixture }} ({{ fixtureDetails.date }} -
-        {{ fixtureDetails.time }})
+        {{ this.$store.state.selectedFixture }}
+        <!-- ({{ fixtureDetails.date }} -
+        {{ fixtureDetails.time }}) -->
       </h2>
       <h2 v-else>
-        Manchester United V Liverpool ({{ fixtureDetails.date }} -
-        {{ fixtureDetails.time }})
+        Manchester United V Liverpool
+        <!-- ({{ fixtureDetails.date }} -
+        {{ fixtureDetails.time }}) -->
       </h2>
     </div>
     <!-- <div class="fixture-details">

@@ -38,6 +38,10 @@ export default {
   font-family: "Montserrat";
 }
 
+body {
+  margin: 0px;
+}
+
 h2 {
   font-family: "Bebas Neue", sans-serif;
   color: #1f3f7f;
@@ -58,7 +62,7 @@ p {
   background-color: #f2f2f2;
   display: flex;
   justify-content: center;
-  min-height: 93vh;
+  min-height: 100vh;
 }
 
 .content-container {
