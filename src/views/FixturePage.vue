@@ -52,6 +52,7 @@
           </div>
           <div class="referee-info">
             <p>Referee: {{ fixtureDetails.referee }}</p>
+            <p>Venue: {{ fixtureDetails.venue }}</p>
           </div>
         </div>
       </div>
@@ -191,10 +192,6 @@ export default {
 </script>
 
 <style scoped>
-h3 {
-  font-family: "Bebas Neue", sans-serif;
-}
-
 .fixture-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -211,12 +208,6 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-.referee-info p {
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
 }
 
 .fixture-details p {
