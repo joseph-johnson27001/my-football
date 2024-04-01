@@ -62,7 +62,7 @@
   font-weight: 600;
 }
 
-.active-link {
+.nav-link:hover {
   color: gold;
 }
 </style>

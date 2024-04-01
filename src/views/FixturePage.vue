@@ -25,6 +25,7 @@
             "
             @load="handleImageLoad"
           />
+          <h3>{{ matchPreviewHeading }}</h3>
           <p>{{ matchPreview }}</p>
         </div>
       </div>
@@ -136,6 +137,7 @@ export default {
       },
       matchPreview:
         "Manchester United and Liverpool face off in a highly anticipated clash at Old Trafford. This is a dummy match preview.",
+      matchPreviewHeading: "Manchester United V Liverpool Pre-Match Analysis",
       homeLineup: [
         { id: 1, name: "David De Gea" },
         { id: 2, name: "Aaron Wan-Bissaka" },
