@@ -20,7 +20,16 @@
     <div class="fixture-content">
       <!-- Match Preview -->
       <div class="match-preview">
-        <h2 style="margin-top: 10px">Match Preview</h2>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <h2 style="margin-top: 10px">Match Preview</h2>
+          <p>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</p>
+        </div>
         <img
           :src="fixtureDetails.image"
           alt="Match Preview Image"
@@ -106,7 +115,7 @@ export default {
   data() {
     return {
       fixtureDetails: {
-        date: "15/05/2024",
+        date: "15th May 2024",
         time: "15:00",
         venue: "Old Trafford",
         referee: "Martin Atkinson",
