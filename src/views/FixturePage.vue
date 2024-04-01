@@ -13,18 +13,20 @@
           <h2 style="margin-top: 10px">Match Preview</h2>
           <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3>
         </div>
-        <img
-          :src="fixtureDetails.image"
-          alt="Match Preview Image"
-          style="
-            max-width: 100%;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-          "
-          @load="handleImageLoad"
-        />
-        <p>{{ matchPreview }}</p>
+        <div class="match-preview-content">
+          <img
+            :src="fixtureDetails.image"
+            alt="Match Preview Image"
+            style="
+              max-width: 100%;
+              border-radius: 4px;
+              margin-bottom: 10px;
+              border: 1px solid #ddd;
+            "
+            @load="handleImageLoad"
+          />
+          <p>{{ matchPreview }}</p>
+        </div>
       </div>
 
       <!-- Team Lineups -->
@@ -97,7 +99,6 @@
       <!-- Live Updates (if available) -->
       <div class="live-updates">
         <h2>Live Updates</h2>
-        <p>Live updates will be available during the match.</p>
         <p>Live updates will be available during the match.</p>
       </div>
 
@@ -235,6 +236,14 @@ h3 {
   justify-content: space-between;
 }
 
+.match-preview-content {
+  cursor: pointer;
+}
+
+.match-preview-content:hover {
+  background-color: #f2f2f2;
+}
+
 .match-analysis {
   display: flex;
   justify-content: space-between;
@@ -272,6 +281,7 @@ h3 {
   font-size: 24px;
   color: #1f3f7f;
   text-decoration: none;
+  padding-bottom: 10px;
 }
 
 .social-media-link:hover {
