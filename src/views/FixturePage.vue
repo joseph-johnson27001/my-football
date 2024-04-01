@@ -20,13 +20,7 @@
     <div class="fixture-content">
       <!-- Match Preview -->
       <div class="match-preview">
-        <div
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          "
-        >
+        <div class="match-preview-container">
           <h2 style="margin-top: 10px">Match Preview</h2>
           <p>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</p>
         </div>
@@ -220,6 +214,12 @@ h3 {
 .live-updates,
 .additional-content {
   border-bottom: 1px solid #ddd;
+}
+
+.match-preview-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .match-analysis {
