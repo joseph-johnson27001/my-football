@@ -64,23 +64,32 @@
         </div>
       </div>
       <!-- Match Analysis -->
-      <div>
-        <h2>Match Analysis</h2>
-        <div class="match-analysis">
-          <div class="recent-history">
-            <h3>Recent Form</h3>
-            <div class="form">
-              <div class="home-form">
-                <p>{{ fixtureDetails.homeTeam }}: {{ homeTeamForm }}</p>
-              </div>
-              <div class="away-form">
-                <p>{{ fixtureDetails.awayTeam }}: {{ awayTeamForm }}</p>
-              </div>
+      <div class="match-analysis">
+        <div class="recent-history">
+          <h2>Recent Form</h2>
+          <div class="form">
+            <div class="home-form">
+              <h3>{{ fixtureDetails.homeTeam }}:</h3>
+              <span
+                v-for="(result, idx) in homeTeamForm.split('')"
+                :key="idx"
+                :class="getFormColorClass(result)"
+                class="form-square"
+              ></span>
+            </div>
+            <div class="away-form">
+              <h3>{{ fixtureDetails.awayTeam }}:</h3>
+              <span
+                v-for="(result, idx) in awayTeamForm.split('')"
+                :key="idx"
+                :class="getFormColorClass(result)"
+                class="form-square"
+              ></span>
             </div>
           </div>
-          <div class="head-to-head">
-            <h3>Head-to-Head</h3>
-          </div>
+        </div>
+        <div class="head-to-head">
+          <h2>Head-to-Head</h2>
         </div>
       </div>
 
@@ -96,6 +105,7 @@
       <!-- Live Updates (if available) -->
       <div class="live-updates">
         <h2>Live Updates</h2>
+        <p>Live updates will be available during the match.</p>
         <p>Live updates will be available during the match.</p>
       </div>
 
@@ -164,6 +174,17 @@ export default {
     };
   },
   methods: {
+    getFormColorClass(result) {
+      if (result === "W") {
+        return "win-square";
+      } else if (result === "D") {
+        return "draw-square";
+      } else if (result === "L") {
+        return "lose-square";
+      } else {
+        return "";
+      }
+    },
     handleImageLoad() {
       this.$store.state.isLoading = false;
     },
@@ -182,7 +203,7 @@ h3 {
 .fixture-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 30px;
+  column-gap: 30px;
 }
 
 @media screen and (max-width: 768px) {
@@ -225,6 +246,7 @@ h3 {
 .match-analysis {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 .home-lineup h2,
@@ -262,5 +284,25 @@ h3 {
 
 .social-media-link:hover {
   color: #007bff;
+}
+
+.form-square {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.win-square {
+  background-color: #4caf50;
+}
+
+.draw-square {
+  background-color: #9e9e9e;
+}
+
+.lose-square {
+  background-color: #ff0000;
 }
 </style>
