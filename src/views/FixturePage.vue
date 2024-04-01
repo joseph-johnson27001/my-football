@@ -3,26 +3,15 @@
     <div class="heading-container">
       <h2 v-if="this.$store.state.selectedFixture">
         {{ this.$store.state.selectedFixture }}
-        <!-- ({{ fixtureDetails.date }} -
-        {{ fixtureDetails.time }}) -->
       </h2>
-      <h2 v-else>
-        Manchester United V Liverpool
-        <!-- ({{ fixtureDetails.date }} -
-        {{ fixtureDetails.time }}) -->
-      </h2>
+      <h2 v-else>Manchester United V Liverpool</h2>
     </div>
-    <!-- <div class="fixture-details">
-      <div class="fixture-info">
-        <p>{{ fixtureDetails.venue }}</p>
-      </div>
-    </div> -->
     <div class="fixture-content">
       <!-- Match Preview -->
       <div class="match-preview">
         <div class="match-preview-container">
           <h2 style="margin-top: 10px">Match Preview</h2>
-          <p>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</p>
+          <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3>
         </div>
         <img
           :src="fixtureDetails.image"
@@ -90,6 +79,9 @@
         </div>
         <div class="head-to-head">
           <h2>Head-to-Head</h2>
+          <p>{{ fixtureDetails.homeTeam }} Wins: 15</p>
+          <p>Draws: 9</p>
+          <p>{{ fixtureDetails.awayTeam }} Wins: 13</p>
         </div>
       </div>
 
