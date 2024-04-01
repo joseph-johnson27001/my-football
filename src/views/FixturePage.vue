@@ -63,7 +63,7 @@
 
       <!-- Match Analysis -->
       <div class="match-analysis">
-        <h2>Match Analysis</h2>
+        <h2>Socials</h2>
         <p>{{ matchAnalysis }}</p>
       </div>
 
@@ -228,7 +228,7 @@ h3 {
 .social-media-link {
   margin: 0 10px;
   font-size: 24px;
-  color: #555;
+  color: #1f3f7f;
   text-decoration: none;
 }
 
