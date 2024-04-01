@@ -69,11 +69,40 @@
           </div>
         </div>
       </div>
-
       <!-- Match Analysis -->
-      <div class="match-analysis">
+      <div>
         <h2>Match Analysis</h2>
-        <p>{{ matchAnalysis }}</p>
+        <div class="match-analysis">
+          <div class="recent-history">
+            <h3>Recent Form</h3>
+            <div class="form">
+              <div class="home-form">
+                <p>{{ fixtureDetails.homeTeam }}: {{ homeTeamForm }}</p>
+              </div>
+              <div class="away-form">
+                <p>{{ fixtureDetails.awayTeam }}: {{ awayTeamForm }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="head-to-head">
+            <h3>Head-to-Head</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Content -->
+      <div class="additional-content">
+        <h2>Latest News</h2>
+        <p>
+          This section can include related news articles, multimedia content, or
+          links to match highlights.
+        </p>
+      </div>
+
+      <!-- Live Updates (if available) -->
+      <div class="live-updates">
+        <h2>Live Updates</h2>
+        <p>Live updates will be available during the match.</p>
       </div>
 
       <!-- Supporter Engagement -->
@@ -90,21 +119,6 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-      </div>
-
-      <!-- Live Updates (if available) -->
-      <div class="live-updates">
-        <h2>Live Updates</h2>
-        <p>Live updates will be available during the match.</p>
-      </div>
-
-      <!-- Additional Content -->
-      <div class="additional-content">
-        <h2>Additional Content</h2>
-        <p>
-          This section can include related news articles, multimedia content, or
-          links to match highlights.
-        </p>
       </div>
     </div>
   </div>
@@ -151,8 +165,8 @@ export default {
         { id: 10, name: "Roberto Firmino" },
         { id: 11, name: "Sadio Mané" },
       ],
-      matchAnalysis:
-        "Both teams have been in good form, and this match promises to be an exciting contest. This is a dummy match analysis.",
+      homeTeamForm: "WWWWL",
+      awayTeamForm: "DWWDL",
     };
   },
   methods: {
@@ -206,6 +220,11 @@ h3 {
 .live-updates,
 .additional-content {
   border-bottom: 1px solid #ddd;
+}
+
+.match-analysis {
+  display: flex;
+  justify-content: space-between;
 }
 
 .home-lineup h2,
