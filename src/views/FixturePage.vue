@@ -63,13 +63,13 @@
 
       <!-- Match Analysis -->
       <div class="match-analysis">
-        <h2>Socials</h2>
+        <h2>Match Analysis</h2>
         <p>{{ matchAnalysis }}</p>
       </div>
 
       <!-- Supporter Engagement -->
       <div class="supporter-engagement">
-        <h2>Engage with the Fixture</h2>
+        <h2>Socials</h2>
         <div class="social-media-links">
           <a href="#" class="social-media-link">
             <i class="fab fa-twitter"></i>
@@ -221,7 +221,7 @@ h3 {
 
 .social-media-links {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-top: 20px;
 }
 
