@@ -70,10 +70,17 @@
       <!-- Supporter Engagement -->
       <div class="supporter-engagement">
         <h2>Engage with the Fixture</h2>
-        <p>
-          This section can include features like a comment section, prediction
-          form, or social media integration.
-        </p>
+        <div class="social-media-links">
+          <a href="#" class="social-media-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-media-link">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-media-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
       </div>
 
       <!-- Live Updates (if available) -->
@@ -210,5 +217,22 @@ h3 {
 .team-lineups li p {
   margin-bottom: 5px;
   line-height: 15px;
+}
+
+.social-media-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-media-link {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #555;
+  text-decoration: none;
+}
+
+.social-media-link:hover {
+  color: #007bff;
 }
 </style>
