@@ -1,16 +1,13 @@
 <template>
   <div class="fixture-page">
-    <div class="heading-container">
-      <h2 v-if="this.$store.state.selectedFixture">
-        {{ this.$store.state.selectedFixture }}
-      </h2>
-      <h2 v-else>Manchester United V Liverpool</h2>
-    </div>
     <div class="fixture-content">
       <!-- Match Preview -->
       <div class="match-preview">
         <div class="match-preview-container">
-          <h2 style="margin-top: 10px">Match Preview</h2>
+          <h2 v-if="this.$store.state.selectedFixture">
+            {{ this.$store.state.selectedFixture }}
+          </h2>
+          <h2 v-else>Manchester United V Liverpool</h2>
           <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3>
         </div>
         <div class="match-preview-content">
@@ -21,6 +18,7 @@
               max-width: 100%;
               border-radius: 4px;
               margin-bottom: 10px;
+              margin-top: 5px;
               border: 1px solid #ddd;
             "
             @load="handleImageLoad"
@@ -32,7 +30,7 @@
 
       <!-- Team Lineups -->
       <div class="team-lineups">
-        <h2 style="margin-bottom: 0px; margin-top: 10px">Expected Lineups</h2>
+        <h2 style="margin-top: 15px">Expected Lineups</h2>
         <div class="lineup-details">
           <div class="home-lineup">
             <h3>{{ fixtureDetails.homeTeam }}</h3>
@@ -192,6 +190,10 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+  margin-bottom: auto !important;
+}
+
 .fixture-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
