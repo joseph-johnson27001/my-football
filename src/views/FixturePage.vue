@@ -18,7 +18,6 @@
               max-width: 100%;
               border-radius: 4px;
               margin-bottom: 10px;
-              margin-top: 5px;
               border: 1px solid #ddd;
             "
             @load="handleImageLoad"
@@ -237,6 +236,13 @@ h2 {
 
 .match-preview-content:hover {
   background-color: #f2f2f2;
+}
+
+.match-preview p {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
 }
 
 .match-analysis {
