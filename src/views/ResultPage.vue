@@ -7,11 +7,26 @@
       <h2 v-else>Manchester United V Liverpool</h2>
     </div>
     <div class="fixture-content">
-      <!-- Match Preview -->
-      <div class="match-preview">
-        <div class="match-preview-container">
-          <h2 style="margin-top: 10px">Match Details</h2>
+      <!-- Match Overview -->
+      <div class="match-overview">
+        <div class="match-overview-container">
+          <h2 style="margin-top: 10px">Match Oveview</h2>
           <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3>
+        </div>
+        <div class="match-overview-content">
+          <img
+            :src="fixtureDetails.image"
+            alt="Match Overview Image"
+            style="
+              max-width: 100%;
+              border-radius: 4px;
+              margin-bottom: 10px;
+              border: 1px solid #ddd;
+            "
+            @load="handleImageLoad"
+          />
+          <h3>{{ matchOverviewHeading }}</h3>
+          <p>{{ matchOverview }}</p>
         </div>
       </div>
 
@@ -42,7 +57,9 @@
         </div>
       </div>
       <!-- Match Analysis -->
-      <div class="match-analysis"></div>
+      <div class="match-analysis">
+        <h2 style="margin-bottom: 0px; margin-top: 10px">Statistics</h2>
+      </div>
 
       <!-- Supporter Engagement -->
       <div class="supporter-engagement">
@@ -76,9 +93,9 @@ export default {
         awayTeam: "Liverpool",
         image: "https://picsum.photos/800/400",
       },
-      matchPreview:
-        "Manchester United and Liverpool face off in a highly anticipated clash at Old Trafford. This is a dummy match preview.",
-      matchPreviewHeading: "Manchester United V Liverpool Pre-Match Analysis",
+      matchOverview:
+        "Manchester United and Liverpool face off in a highly anticipated clash at Old Trafford. This is a dummy match overview.",
+      matchOverviewHeading: "Manchester United V Liverpool Pre-Match Analysis",
       homeLineup: [
         { id: 1, name: "David De Gea" },
         { id: 2, name: "Aaron Wan-Bissaka" },
@@ -148,7 +165,7 @@ export default {
   margin-bottom: 10px;
 }
 
-.match-preview,
+.match-overview,
 .team-lineups,
 .match-analysis,
 .supporter-engagement,
@@ -157,17 +174,17 @@ export default {
   border-bottom: 1px solid #ddd;
 }
 
-.match-preview-container {
+.match-overview-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.match-preview-content {
+.match-overview-content {
   cursor: pointer;
 }
 
-.match-preview-content:hover {
+.match-overview-content:hover {
   background-color: #f2f2f2;
 }
 
