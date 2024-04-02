@@ -1,16 +1,13 @@
 <template>
   <div class="fixture-page">
-    <div class="heading-container">
-      <h2 v-if="this.$store.state.selectedFixture">
-        {{ this.$store.state.selectedFixture }}
-      </h2>
-      <h2 v-else>Manchester United V Liverpool</h2>
-    </div>
     <div class="fixture-content">
       <!-- Match Overview -->
       <div class="match-overview">
         <div class="match-overview-container">
-          <h2 style="margin-top: 10px">Match Oveview</h2>
+          <h2 v-if="this.$store.state.selectedFixture">
+            {{ this.$store.state.selectedFixture }}
+          </h2>
+          <h2 v-else>Manchester United V Liverpool</h2>
           <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3>
         </div>
         <div class="match-overview-content">
@@ -32,7 +29,7 @@
 
       <!-- Team Lineups -->
       <div class="team-lineups">
-        <h2 style="margin-bottom: 0px; margin-top: 10px">Teams</h2>
+        <h2 style="margin-top: 15px">Lineups</h2>
         <div class="lineup-details">
           <div class="home-lineup">
             <h3>{{ fixtureDetails.homeTeam }}</h3>
@@ -56,9 +53,10 @@
           </div>
         </div>
       </div>
-      <!-- Match Analysis -->
-      <div class="match-analysis">
-        <h2 style="margin-bottom: 0px; margin-top: 10px">Statistics</h2>
+
+      <!-- Match Statistics -->
+      <div class="statistics">
+        <h2 style="margin-top: 15px">Stats</h2>
       </div>
 
       <!-- Supporter Engagement -->
@@ -95,7 +93,7 @@ export default {
       },
       matchOverview:
         "Manchester United and Liverpool face off in a highly anticipated clash at Old Trafford. This is a dummy match overview.",
-      matchOverviewHeading: "Manchester United V Liverpool Pre-Match Analysis",
+      matchOverviewHeading: "Manchester United V Liverpool Analysis",
       homeLineup: [
         { id: 1, name: "David De Gea" },
         { id: 2, name: "Aaron Wan-Bissaka" },
@@ -138,11 +136,21 @@ export default {
         return "";
       }
     },
+    handleImageLoad() {
+      this.$store.state.isLoading = false;
+    },
+  },
+  created() {
+    this.$store.state.isLoading = true;
   },
 };
 </script>
 
 <style scoped>
+h2 {
+  margin-bottom: auto !important;
+}
+
 .fixture-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -186,6 +194,13 @@ export default {
 
 .match-overview-content:hover {
   background-color: #f2f2f2;
+}
+
+.match-overview p {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
 }
 
 .match-analysis {
