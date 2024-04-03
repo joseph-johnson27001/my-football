@@ -38,6 +38,14 @@
                 <p>{{ player.name }}</p>
               </li>
             </ul>
+            <div>
+              <h3>Subs</h3>
+              <ul>
+                <li v-for="player in homeSubstitutes" :key="player.id">
+                  <p>{{ player.name }}</p>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="away-lineup">
             <h3>{{ fixtureDetails.awayTeam }}</h3>
@@ -46,6 +54,14 @@
                 <p>{{ player.name }}</p>
               </li>
             </ul>
+            <div>
+              <h3>Subs</h3>
+              <ul>
+                <li v-for="player in awaySubstitutes" :key="player.id">
+                  <p>{{ player.name }}</p>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="referee-info">
             <p>Referee: {{ fixtureDetails.referee }}</p>
@@ -119,6 +135,16 @@ export default {
         { id: 9, name: "Mohamed Salah" },
         { id: 10, name: "Roberto Firmino" },
         { id: 11, name: "Sadio Mané" },
+      ],
+      homeSubstitutes: [
+        { id: 12, name: "Dean Henderson" },
+        { id: 13, name: "Eric Bailly" },
+        { id: 14, name: "Nemanja Matic" },
+      ],
+      awaySubstitutes: [
+        { id: 12, name: "Adrián" },
+        { id: 13, name: "Joe Gomez" },
+        { id: 14, name: "James Milner" },
       ],
       homeTeamForm: "WWWWL",
       awayTeamForm: "DWWDL",
