@@ -8,7 +8,7 @@
             {{ this.$store.state.selectedFixture }}
           </h2>
           <h2 v-else>Manchester United V Liverpool</h2>
-          <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3>
+          <!-- <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3> -->
         </div>
         <div class="match-preview-content">
           <img
@@ -29,7 +29,7 @@
 
       <!-- Team Lineups -->
       <div class="team-lineups">
-        <h2 style="margin-top: 15px">Expected Lineups</h2>
+        <h2>Expected Lineups</h2>
         <div class="lineup-details">
           <div class="home-lineup">
             <h3>{{ fixtureDetails.homeTeam }}</h3>
@@ -49,7 +49,7 @@
           </div>
           <div class="referee-info">
             <p>Referee: {{ fixtureDetails.referee }}</p>
-            <p>Venue: {{ fixtureDetails.venue }}</p>
+            <!-- <p>Venue: {{ fixtureDetails.venue }}</p> -->
           </div>
         </div>
       </div>
@@ -228,6 +228,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .match-preview-content {
