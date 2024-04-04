@@ -3,14 +3,11 @@
     <span class="heading-container heading-span">
       <h2>Results</h2>
       <div class="matchday-dropdown">
-        <label for="matchday-select" class="matchday-label">Match Week: </label>
-        <select id="matchday-select" v-model="selectedMatchday">
-          <option
-            v-for="matchday in matchdays"
-            :key="matchday"
-            :value="matchday"
-          >
-            {{ matchday }}
+        <label for="team-dropdown" class="matchday-label">Select Team:</label>
+        <select v-model="selectedTeam" id="team-dropdown">
+          <option value="">All Teams</option>
+          <option v-for="team in teamList" :key="team" :value="team">
+            {{ team }}
           </option>
         </select>
       </div>
@@ -66,15 +63,22 @@ export default {
   },
   data() {
     return {
-      selectedMatchday: 1,
-      matchdays: [1, 2, 3, 4],
+      selectedTeam: "", // Initially no team selected
       results: [],
+      teamList: [], // Array to hold team names
     };
   },
   computed: {
     filteredResults() {
+      if (!this.selectedTeam) {
+        // If no team selected, return all results
+        return this.results;
+      }
+      // Filter results based on selected team
       return this.results.filter(
-        (result) => result.matchday === this.selectedMatchday
+        (result) =>
+          result.homeTeam.name === this.selectedTeam ||
+          result.awayTeam.name === this.selectedTeam
       );
     },
   },
@@ -335,13 +339,21 @@ export default {
           score: { fullTime: { home: 0, away: 1 } },
         },
       ];
+      this.getTeamList();
       setTimeout(() => {
         this.$store.state.isLoading = false;
       }, 500);
     },
+    getTeamList() {
+      const teams = new Set();
+      this.results.forEach((result) => {
+        teams.add(result.homeTeam.name);
+        teams.add(result.awayTeam.name);
+      });
+      this.teamList = Array.from(teams).sort();
+    },
   },
   created() {
-    this.$store.state.isLoading = true;
     this.fetchResults();
   },
 };
