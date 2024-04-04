@@ -187,9 +187,6 @@ export default {
 </script>
 
 <style scoped>
-.live-fixture {
-  padding: 20px;
-}
 .teams {
   display: flex;
   justify-content: space-between;
