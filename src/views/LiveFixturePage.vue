@@ -61,8 +61,8 @@ export default {
         },
         homeScore: 3,
         awayScore: 1,
-        status: "In Progress",
-        time: "45+2'",
+        status: "Full Time",
+        time: "90+5",
         comments: [
           {
             id: 1,
