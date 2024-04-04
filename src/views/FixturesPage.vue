@@ -15,35 +15,37 @@
       </span>
       <div class="fixtures-list">
         <div
-          v-for="fixture in filteredFixtures"
-          :key="fixture.id"
+          v-for="date in Object.keys(groupedFixtures)"
+          :key="date"
           class="fixture-wrapper"
         >
-          <h2 class="fixture-date">{{ fixture.date }}</h2>
-          <div class="fixture-item" @click="navigateToMatchPage(fixture)">
-            <div class="team-container team-left">
-              <span class="crest-container">
-                <img
-                  :src="getTeamCrest(fixture.homeTeam.id)"
-                  :alt="fixture.homeTeam.name"
-                  class="team-crest"
-                />
-              </span>
-              <div class="team-name">{{ fixture.homeTeam.name }}</div>
-            </div>
-            <div class="score-container">
-              <span class="score">-</span>
-              <span class="fixture-time">{{ fixture.time }}</span>
-            </div>
-            <div class="team-container team-right">
-              <div class="team-name">{{ fixture.awayTeam.name }}</div>
-              <span class="crest-container">
-                <img
-                  :src="getTeamCrest(fixture.awayTeam.id)"
-                  :alt="fixture.awayTeam.name"
-                  class="team-crest"
-                />
-              </span>
+          <h3 class="fixture-date">{{ date }}</h3>
+          <div v-for="fixture in groupedFixtures[date]" :key="fixture.id">
+            <div class="fixture-item" @click="navigateToMatchPage(fixture)">
+              <div class="team-container team-left">
+                <span class="crest-container">
+                  <img
+                    :src="getTeamCrest(fixture.homeTeam.id)"
+                    :alt="fixture.homeTeam.name"
+                    class="team-crest"
+                  />
+                </span>
+                <div class="team-name">{{ fixture.homeTeam.name }}</div>
+              </div>
+              <div class="score-container">
+                <span class="score">-</span>
+                <span class="fixture-time">{{ fixture.time }}</span>
+              </div>
+              <div class="team-container team-right">
+                <div class="team-name">{{ fixture.awayTeam.name }}</div>
+                <span class="crest-container">
+                  <img
+                    :src="getTeamCrest(fixture.awayTeam.id)"
+                    :alt="fixture.awayTeam.name"
+                    class="team-crest"
+                  />
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -69,6 +71,16 @@ export default {
     };
   },
   computed: {
+    groupedFixtures() {
+      const grouped = {};
+      this.filteredFixtures.forEach((fixture) => {
+        if (!grouped[fixture.date]) {
+          grouped[fixture.date] = [];
+        }
+        grouped[fixture.date].push(fixture);
+      });
+      return grouped;
+    },
     filteredFixtures() {
       if (!this.selectedTeam) {
         return this.fixtures.slice().reverse();
@@ -531,7 +543,7 @@ export default {
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
-
+  margin: 10px 0px;
   display: grid;
   grid-template-columns: 4fr 1fr 4fr;
   align-items: center;
@@ -574,6 +586,10 @@ export default {
 .fixture-time {
   font-size: 0.8em;
   font-weight: 100;
+}
+
+.fixture-date {
+  margin-top: 0px;
 }
 
 .crest-container {
