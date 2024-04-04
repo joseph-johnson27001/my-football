@@ -71,13 +71,16 @@ export default {
   computed: {
     filteredFixtures() {
       if (!this.selectedTeam) {
-        return this.fixtures;
+        return this.fixtures.slice().reverse();
       }
-      return this.fixtures.filter(
-        (fixture) =>
-          fixture.homeTeam.name === this.selectedTeam ||
-          fixture.awayTeam.name === this.selectedTeam
-      );
+      return this.fixtures
+        .filter(
+          (fixture) =>
+            fixture.homeTeam.name === this.selectedTeam ||
+            fixture.awayTeam.name === this.selectedTeam
+        )
+        .slice()
+        .reverse();
     },
   },
   methods: {
