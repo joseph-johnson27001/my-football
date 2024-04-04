@@ -32,7 +32,7 @@
       <div class="live-commentary">
         <table>
           <tbody>
-            <tr v-for="comment in liveFixture.comments" :key="comment.id">
+            <tr v-for="comment in orderedComments" :key="comment.id">
               <td class="comment-time">{{ comment.time }}</td>
               <td>{{ comment.text }}</td>
             </tr>
@@ -177,6 +177,11 @@ export default {
         ],
       },
     };
+  },
+  computed: {
+    orderedComments() {
+      return this.liveFixture.comments.slice().reverse();
+    },
   },
 };
 </script>
