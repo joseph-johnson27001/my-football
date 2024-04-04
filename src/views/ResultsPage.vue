@@ -33,10 +33,10 @@
                 <div class="team-name">{{ result.homeTeam.name }}</div>
               </div>
               <div class="score-container">
-                <span class="score"
-                  >{{ result.homeScore }} - {{ result.awayScore }}</span
-                >
-                <span class="fixture-time">{{ result.time }}</span>
+                <span class="score" v-if="result.status === 'FINISHED'">
+                  {{ result.score.fullTime.home }} -
+                  {{ result.score.fullTime.away }}
+                </span>
               </div>
               <div class="team-container team-right">
                 <div class="team-name">{{ result.awayTeam.name }}</div>
