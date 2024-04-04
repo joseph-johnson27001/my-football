@@ -1,50 +1,54 @@
 <template>
   <div>
-    <span class="heading-container heading-span">
-      <h2>Results</h2>
-      <div class="matchday-dropdown">
-        <label for="team-dropdown" class="matchday-label">Select Team:</label>
-        <select v-model="selectedTeam" id="team-dropdown">
-          <option value="">All Teams</option>
-          <option v-for="team in teamList" :key="team" :value="team">
-            {{ team }}
-          </option>
-        </select>
-      </div>
-    </span>
-    <div class="results-page">
+    <div class="fixtures-page">
+      <span class="heading-container heading-span">
+        <h2>Results</h2>
+        <div class="matchday-dropdown">
+          <label for="team-dropdown" class="matchday-label">Select Team:</label>
+          <select v-model="selectedTeam" id="team-dropdown">
+            <option value="">All Teams</option>
+            <option v-for="team in teamList" :key="team" :value="team">
+              {{ team }}
+            </option>
+          </select>
+        </div>
+      </span>
       <div class="fixtures-list">
         <div
-          v-for="result in filteredResults"
-          :key="result.id"
-          class="fixture-item"
-          @click="navigateToMatchPage(result)"
+          v-for="date in Object.keys(groupedResults)"
+          :key="date"
+          class="fixture-wrapper"
         >
-          <div class="team-container team-left">
-            <span class="crest-container">
-              <img
-                :src="getTeamCrest(result.homeTeam.id)"
-                :alt="result.homeTeam.name"
-                class="team-crest"
-              />
-            </span>
-            <div class="team-name">{{ result.homeTeam.name }}</div>
-          </div>
-          <div class="score-container">
-            <span class="score" v-if="result.status === 'FINISHED'">
-              {{ result.score.fullTime.home }} -
-              {{ result.score.fullTime.away }}
-            </span>
-          </div>
-          <div class="team-container team-right">
-            <div class="team-name">{{ result.awayTeam.name }}</div>
-            <span class="crest-container">
-              <img
-                :src="getTeamCrest(result.awayTeam.id)"
-                :alt="result.awayTeam.name"
-                class="team-crest"
-              />
-            </span>
+          <h3 class="fixture-date">{{ date }}</h3>
+          <div v-for="result in groupedResults[date]" :key="result.id">
+            <div class="fixture-item">
+              <div class="team-container team-left">
+                <span class="crest-container">
+                  <img
+                    :src="getTeamCrest(result.homeTeam.id)"
+                    :alt="result.homeTeam.name"
+                    class="team-crest"
+                  />
+                </span>
+                <div class="team-name">{{ result.homeTeam.name }}</div>
+              </div>
+              <div class="score-container">
+                <span class="score"
+                  >{{ result.homeScore }} - {{ result.awayScore }}</span
+                >
+                <span class="fixture-time">{{ result.time }}</span>
+              </div>
+              <div class="team-container team-right">
+                <div class="team-name">{{ result.awayTeam.name }}</div>
+                <span class="crest-container">
+                  <img
+                    :src="getTeamCrest(result.awayTeam.id)"
+                    :alt="result.awayTeam.name"
+                    class="team-crest"
+                  />
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -69,35 +73,42 @@ export default {
     };
   },
   computed: {
+    groupedResults() {
+      const grouped = {};
+      this.filteredResults.forEach((result) => {
+        if (!grouped[result.date]) {
+          grouped[result.date] = [];
+        }
+        grouped[result.date].push(result);
+      });
+      return grouped;
+    },
     filteredResults() {
       if (!this.selectedTeam) {
-        return this.results;
+        return this.results.slice().reverse();
       }
-      return this.results.filter(
-        (result) =>
-          result.homeTeam.name === this.selectedTeam ||
-          result.awayTeam.name === this.selectedTeam
-      );
+      return this.results
+        .filter(
+          (result) =>
+            result.homeTeam.name === this.selectedTeam ||
+            result.awayTeam.name === this.selectedTeam
+        )
+        .slice()
+        .reverse();
     },
   },
   methods: {
     getTeamCrest(teamId) {
-      const team = this.results.find(
-        (result) =>
-          result.homeTeam.id === teamId || result.awayTeam.id === teamId
+      const result = this.results.find(
+        (r) => r.homeTeam.id === teamId || r.awayTeam.id === teamId
       );
-      if (team) {
-        return team.homeTeam.id === teamId
-          ? team.homeTeam.crest
-          : team.awayTeam.crest;
+      if (result) {
+        return result.homeTeam.id === teamId
+          ? result.homeTeam.crest
+          : result.awayTeam.crest;
       } else {
         return "placeholder.jpg";
       }
-    },
-    navigateToMatchPage(result) {
-      console.log(result);
-      this.$store.state.selectedFixture = `${result.homeTeam.name} ${result.score.fullTime.home} - ${result.score.fullTime.away} ${result.awayTeam.name}`;
-      this.$router.push("result");
     },
     async fetchResults() {
       this.results = [
@@ -330,10 +341,6 @@ export default {
           date: "Saturday 30th January",
         },
       ];
-      this.getTeamList();
-      setTimeout(() => {
-        this.$store.state.isLoading = false;
-      }, 500);
     },
     getTeamList() {
       const teams = new Set();
@@ -346,6 +353,14 @@ export default {
   },
   created() {
     this.fetchResults();
+  },
+  watch: {
+    results: {
+      handler() {
+        this.getTeamList();
+      },
+      immediate: true,
+    },
   },
 };
 </script>
@@ -363,13 +378,17 @@ export default {
   align-items: center;
 }
 
+.fixture-wrapper {
+  margin: 10px 0;
+  width: 100%;
+}
+
 .fixture-item {
   background-color: #f8f8f8;
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  margin: 10px 0;
-  width: 100%;
+  margin: 10px 0px;
   display: grid;
   grid-template-columns: 4fr 1fr 4fr;
   align-items: center;
@@ -381,6 +400,10 @@ export default {
 .fixture-item:hover {
   border-color: #3498db;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.fixture-date {
+  margin-top: 0px;
 }
 
 .team-container {
