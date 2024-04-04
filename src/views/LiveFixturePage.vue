@@ -245,6 +245,7 @@ export default {
   .comment-time {
     width: 50px;
     font-weight: bold;
+    text-align: center;
   }
 }
 </style>
