@@ -1,21 +1,18 @@
 <template>
   <div>
-    <span class="heading-container heading-span">
-      <h2>Fixtures</h2>
-      <div class="matchday-dropdown">
-        <label for="matchday-select" class="matchday-label">Match Week: </label>
-        <select id="matchday-select" v-model="selectedMatchday">
-          <option
-            v-for="matchday in matchdays"
-            :key="matchday"
-            :value="matchday"
-          >
-            {{ matchday }}
-          </option>
-        </select>
-      </div>
-    </span>
     <div class="fixtures-page">
+      <span class="heading-container heading-span">
+        <h2>Fixtures</h2>
+        <div class="matchday-dropdown">
+          <label for="team-dropdown" class="matchday-label">Select Team:</label>
+          <select v-model="selectedTeam" id="team-dropdown">
+            <option value="">All Teams</option>
+            <option v-for="team in teamList" :key="team" :value="team">
+              {{ team }}
+            </option>
+          </select>
+        </div>
+      </span>
       <div class="fixtures-list">
         <div
           v-for="fixture in filteredFixtures"
@@ -64,15 +61,21 @@ export default {
   },
   data() {
     return {
-      selectedMatchday: 1,
-      matchdays: [1, 2, 3, 4],
+      selectedTeam: "", // Initially no team selected
       fixtures: [],
     };
   },
   computed: {
     filteredFixtures() {
+      if (!this.selectedTeam) {
+        // If no team selected, return all fixtures
+        return this.fixtures;
+      }
+      // Filter fixtures based on selected team
       return this.fixtures.filter(
-        (fixture) => fixture.matchday === this.selectedMatchday
+        (fixture) =>
+          fixture.homeTeam.name === this.selectedTeam ||
+          fixture.awayTeam.name === this.selectedTeam
       );
     },
   },
@@ -95,6 +98,7 @@ export default {
       this.$router.push("fixture");
     },
     async fetchFixtures() {
+      // Simulated data fetching
       this.fixtures = [
         {
           id: 1,
@@ -457,18 +461,13 @@ export default {
           time: "17:30",
         },
       ];
-      setTimeout(() => {
-        this.$store.state.isLoading = false;
-      }, 500);
     },
   },
   created() {
-    this.$store.state.isLoading = true;
     this.fetchFixtures();
   },
 };
 </script>
-
 <style scoped>
 .heading-span {
   display: flex;
