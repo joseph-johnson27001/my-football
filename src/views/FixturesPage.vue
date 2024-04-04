@@ -63,6 +63,7 @@ export default {
     return {
       selectedTeam: "", // Initially no team selected
       fixtures: [],
+      teamList: [], // Array to hold team names
     };
   },
   computed: {
@@ -462,12 +463,30 @@ export default {
         },
       ];
     },
+    getTeamList() {
+      const teams = new Set();
+      this.fixtures.forEach((fixture) => {
+        teams.add(fixture.homeTeam.name);
+        teams.add(fixture.awayTeam.name);
+      });
+      this.teamList = Array.from(teams);
+    },
   },
   created() {
     this.fetchFixtures();
   },
+  watch: {
+    // Watch for changes in fixtures data to update team list
+    fixtures: {
+      handler() {
+        this.getTeamList();
+      },
+      immediate: true,
+    },
+  },
 };
 </script>
+
 <style scoped>
 .heading-span {
   display: flex;
