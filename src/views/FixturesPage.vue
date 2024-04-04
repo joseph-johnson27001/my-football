@@ -33,7 +33,8 @@
                 <div class="team-name">{{ fixture.homeTeam.name }}</div>
               </div>
               <div class="score-container">
-                <span class="score">-</span>
+                <span v-if="fixture.status == 'LIVE'">{{ fixture.score }}</span>
+                <span v-else class="score">-</span>
                 <span class="fixture-time">{{ fixture.time }}</span>
               </div>
               <div class="team-container team-right">
@@ -134,9 +135,10 @@ export default {
               "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
           },
           matchday: 1,
-          status: "SCHEDULED",
-          time: "15:00",
+          status: "LIVE",
+          time: "90+5",
           date: "Live",
+          score: "4-1",
         },
         {
           id: 1,
