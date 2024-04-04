@@ -12,6 +12,7 @@ import ResultPage from "../views/ResultPage.vue";
 import LatestVideosPage from "@/views/LatestVideosPage.vue";
 import SquadPage from "@/views/SquadPage.vue";
 import StatsPage from "@/views/StatsPage.vue";
+import LiveFixturePage from "@/views/LiveFixturePage.vue";
 
 const routes = [
   {
@@ -73,6 +74,16 @@ const routes = [
     path: "/result",
     name: "result",
     component: ResultPage,
+  },
+  {
+    path: "/result",
+    name: "result",
+    component: ResultPage,
+  },
+  {
+    path: "/live",
+    name: "live",
+    component: LiveFixturePage,
   },
 ];
 
