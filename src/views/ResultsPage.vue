@@ -63,18 +63,16 @@ export default {
   },
   data() {
     return {
-      selectedTeam: "", // Initially no team selected
+      selectedTeam: "",
       results: [],
-      teamList: [], // Array to hold team names
+      teamList: [],
     };
   },
   computed: {
     filteredResults() {
       if (!this.selectedTeam) {
-        // If no team selected, return all results
         return this.results;
       }
-      // Filter results based on selected team
       return this.results.filter(
         (result) =>
           result.homeTeam.name === this.selectedTeam ||
