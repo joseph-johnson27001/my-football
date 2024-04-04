@@ -31,6 +31,30 @@
         }}</span>
         <span class="match-time">{{ liveFixture.time }}</span>
       </div>
+      <!-- GOALSCORERS -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr">
+        <div style="display: flex; justify-content: end">
+          <ul style="list-style-type: none; text-align: right">
+            <li
+              v-for="scorer in liveFixture.homeTeam.goalScorers"
+              :key="scorer"
+            >
+              {{ scorer.name }} [{{ scorer.minute }}]
+            </li>
+          </ul>
+        </div>
+        <div style="text-align: start">
+          <ul style="list-style-type: none; text-align: left">
+            <li
+              v-for="scorer in liveFixture.awayTeam.goalScorers"
+              :key="scorer"
+            >
+              {{ scorer.name }} [{{ scorer.minute }}]
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div class="live-commentary">
         <table>
           <tbody>
@@ -55,11 +79,18 @@ export default {
           name: "Arsenal",
           crest:
             "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
+          goalScorers: [
+            { name: "William Saliba", minute: 4 },
+            { name: "Gabriel", minute: 25 },
+            { name: "Gabriel Jesus", minute: 45 },
+            { name: "Bukayo Saka", minute: 84 },
+          ],
         },
         awayTeam: {
           name: "Manchester City",
           crest:
             "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
+          goalScorers: [{ name: "Earling Haaland", minute: 15 }],
         },
         homeScore: 4,
         awayScore: 1,
