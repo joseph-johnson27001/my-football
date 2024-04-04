@@ -117,6 +117,7 @@ export default {
           matchday: 1,
           status: "SCHEDULED",
           time: "17:30",
+          date: "Wednesday 27th January",
         },
         {
           id: 2,
@@ -135,6 +136,7 @@ export default {
           matchday: 1,
           status: "SCHEDULED",
           time: "17:30",
+          date: "Wednesday 27th January",
         },
         {
           id: 3,
@@ -153,6 +155,7 @@ export default {
           matchday: 1,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Wednesday 27th January",
         },
         {
           id: 4,
@@ -171,6 +174,7 @@ export default {
           matchday: 1,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Wednesday 27th January",
         },
         {
           id: 5,
@@ -189,7 +193,9 @@ export default {
           matchday: 1,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Wednesday 27th January",
         },
+        // Remaining fixtures with dummy dates
         {
           id: 6,
           homeTeam: {
@@ -207,6 +213,7 @@ export default {
           matchday: 1,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Thursday 28th January",
         },
         {
           id: 7,
@@ -225,6 +232,7 @@ export default {
           matchday: 1,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Thursday 28th January",
         },
         {
           id: 8,
@@ -243,6 +251,7 @@ export default {
           matchday: 1,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Thursday 28th January",
         },
         {
           id: 9,
@@ -261,6 +270,7 @@ export default {
           matchday: 1,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Thursday 28th January",
         },
         {
           id: 10,
@@ -279,6 +289,7 @@ export default {
           matchday: 1,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Thursday 28th January",
         },
         {
           id: 11,
@@ -297,6 +308,7 @@ export default {
           matchday: 2,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Friday 29th January",
         },
         {
           id: 12,
@@ -315,6 +327,7 @@ export default {
           matchday: 2,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Friday 29th January",
         },
         {
           id: 13,
@@ -333,6 +346,7 @@ export default {
           matchday: 2,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Friday 29th January",
         },
         {
           id: 14,
@@ -351,6 +365,7 @@ export default {
           matchday: 2,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Friday 29th January",
         },
         {
           id: 15,
@@ -369,6 +384,7 @@ export default {
           matchday: 2,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Friday 29th January",
         },
         {
           id: 16,
@@ -387,6 +403,7 @@ export default {
           matchday: 2,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Friday 29th January",
         },
         {
           id: 17,
@@ -405,6 +422,7 @@ export default {
           matchday: 2,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Friday 29th January",
         },
         {
           id: 18,
@@ -423,6 +441,7 @@ export default {
           matchday: 2,
           status: "SCHEDULED",
           time: "15:00",
+          date: "Friday 29th January",
         },
         {
           id: 19,
@@ -441,6 +460,7 @@ export default {
           matchday: 2,
           status: "SCHEDULED",
           time: "17:30",
+          date: "Friday 29th January",
         },
         {
           id: 20,
@@ -459,6 +479,7 @@ export default {
           matchday: 3,
           status: "SCHEDULED",
           time: "17:30",
+          date: "Saturday 30th January",
         },
       ];
     },
