@@ -26,7 +26,9 @@
         </div>
       </div>
       <div class="match-details">
-        <span class="match-status">{{ liveFixture.status }}</span>
+        <span v-if="liveFixture.status != ''" class="match-status">{{
+          liveFixture.status
+        }}</span>
         <span class="match-time">{{ liveFixture.time }}</span>
       </div>
       <div class="live-commentary">
@@ -61,7 +63,7 @@ export default {
         },
         homeScore: 4,
         awayScore: 1,
-        status: "Full Time",
+        status: "",
         time: "90+5",
         comments: [
           {
@@ -169,11 +171,11 @@ export default {
             text: "Injury scare for the home team's key player. The medical team rushes onto the field to provide treatment. Hopefully, it's nothing serious.",
             time: "90'",
           },
-          {
-            id: 22,
-            text: "Full-time whistle blows. The home team emerges victorious with a convincing performance, securing all three points.",
-            time: "FT",
-          },
+          // {
+          //   id: 22,
+          //   text: "Full-time whistle blows. The home team emerges victorious with a convincing performance, securing all three points.",
+          //   time: "FT",
+          // },
         ],
       },
     };
