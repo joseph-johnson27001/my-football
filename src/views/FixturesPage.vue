@@ -17,32 +17,34 @@
         <div
           v-for="fixture in filteredFixtures"
           :key="fixture.id"
-          class="fixture-item"
-          @click="navigateToMatchPage(fixture)"
+          class="fixture-wrapper"
         >
-          <div class="team-container team-left">
-            <span class="crest-container">
-              <img
-                :src="getTeamCrest(fixture.homeTeam.id)"
-                :alt="fixture.homeTeam.name"
-                class="team-crest"
-              />
-            </span>
-            <div class="team-name">{{ fixture.homeTeam.name }}</div>
-          </div>
-          <div class="score-container">
-            <span class="score">-</span>
-            <span class="fixture-time">{{ fixture.time }} </span>
-          </div>
-          <div class="team-container team-right">
-            <div class="team-name">{{ fixture.awayTeam.name }}</div>
-            <span class="crest-container">
-              <img
-                :src="getTeamCrest(fixture.awayTeam.id)"
-                :alt="fixture.awayTeam.name"
-                class="team-crest"
-              />
-            </span>
+          <h2 class="fixture-date">{{ fixture.date }}</h2>
+          <div class="fixture-item" @click="navigateToMatchPage(fixture)">
+            <div class="team-container team-left">
+              <span class="crest-container">
+                <img
+                  :src="getTeamCrest(fixture.homeTeam.id)"
+                  :alt="fixture.homeTeam.name"
+                  class="team-crest"
+                />
+              </span>
+              <div class="team-name">{{ fixture.homeTeam.name }}</div>
+            </div>
+            <div class="score-container">
+              <span class="score">-</span>
+              <span class="fixture-time">{{ fixture.time }}</span>
+            </div>
+            <div class="team-container team-right">
+              <div class="team-name">{{ fixture.awayTeam.name }}</div>
+              <span class="crest-container">
+                <img
+                  :src="getTeamCrest(fixture.awayTeam.id)"
+                  :alt="fixture.awayTeam.name"
+                  class="team-crest"
+                />
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -61,18 +63,16 @@ export default {
   },
   data() {
     return {
-      selectedTeam: "", // Initially no team selected
+      selectedTeam: "",
       fixtures: [],
-      teamList: [], // Array to hold team names
+      teamList: [],
     };
   },
   computed: {
     filteredFixtures() {
       if (!this.selectedTeam) {
-        // If no team selected, return all fixtures
         return this.fixtures;
       }
-      // Filter fixtures based on selected team
       return this.fixtures.filter(
         (fixture) =>
           fixture.homeTeam.name === this.selectedTeam ||
@@ -195,7 +195,6 @@ export default {
           time: "15:00",
           date: "Wednesday 27th January",
         },
-        // Remaining fixtures with dummy dates
         {
           id: 6,
           homeTeam: {
@@ -483,7 +482,6 @@ export default {
         },
       ];
     },
-
     getTeamList() {
       const teams = new Set();
       this.fixtures.forEach((fixture) => {
@@ -520,13 +518,17 @@ export default {
   align-items: center;
 }
 
+.fixture-wrapper {
+  margin: 10px 0;
+  width: 100%;
+}
+
 .fixture-item {
   background-color: #f8f8f8;
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  margin: 10px 0;
-  width: 100%;
+
   display: grid;
   grid-template-columns: 4fr 1fr 4fr;
   align-items: center;
