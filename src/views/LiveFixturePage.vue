@@ -196,6 +196,7 @@ export default {
 
 .team {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -214,7 +215,7 @@ export default {
 }
 
 .team-crest {
-  width: 50px;
+  width: 70px;
   height: auto;
   margin: auto 10px;
 }
