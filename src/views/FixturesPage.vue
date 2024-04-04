@@ -111,10 +111,33 @@ export default {
     },
     navigateToMatchPage(fixture) {
       this.$store.state.selectedFixture = `${fixture.homeTeam.name} v ${fixture.awayTeam.name}`;
-      this.$router.push("fixture");
+      if (fixture.date === "Live") {
+        this.$router.push("live");
+      } else {
+        this.$router.push("fixture");
+      }
     },
     async fetchFixtures() {
       this.fixtures = [
+        {
+          id: 6,
+          homeTeam: {
+            id: 1,
+            name: "Arsenal",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
+          },
+          awayTeam: {
+            id: 2,
+            name: "Manchester City",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
+          },
+          matchday: 1,
+          status: "SCHEDULED",
+          time: "15:00",
+          date: "Live",
+        },
         {
           id: 1,
           homeTeam: {
@@ -209,25 +232,6 @@ export default {
           status: "SCHEDULED",
           time: "15:00",
           date: "Wednesday 27th January",
-        },
-        {
-          id: 6,
-          homeTeam: {
-            id: 1,
-            name: "Arsenal",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
-          },
-          awayTeam: {
-            id: 2,
-            name: "Manchester City",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
-          },
-          matchday: 1,
-          status: "SCHEDULED",
-          time: "15:00",
-          date: "Thursday 28th January",
         },
         {
           id: 7,

@@ -55,9 +55,9 @@ export default {
             "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
         },
         awayTeam: {
-          name: "Manchester United",
+          name: "Manchester City",
           crest:
-            "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
+            "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
         },
         homeScore: 4,
         awayScore: 1,
