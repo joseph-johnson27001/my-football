@@ -120,6 +120,7 @@ export default {
           matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 3, away: 2 } },
+          date: "Wednesday 27th January",
         },
         {
           id: 2,
@@ -138,6 +139,7 @@ export default {
           matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 1, away: 1 } },
+          date: "Wednesday 27th January",
         },
         {
           id: 3,
@@ -156,6 +158,7 @@ export default {
           matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 1, away: 0 } },
+          date: "Wednesday 27th January",
         },
         {
           id: 4,
@@ -174,6 +177,7 @@ export default {
           matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 2, away: 1 } },
+          date: "Wednesday 27th January",
         },
         {
           id: 5,
@@ -192,6 +196,7 @@ export default {
           matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 1, away: 1 } },
+          date: "Wednesday 27th January",
         },
         {
           id: 6,
@@ -210,6 +215,7 @@ export default {
           matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 0, away: 0 } },
+          date: "Wednesday 27th January",
         },
         {
           id: 7,
@@ -228,6 +234,7 @@ export default {
           matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 2, away: 1 } },
+          date: "Wednesday 27th January",
         },
         {
           id: 8,
@@ -246,6 +253,7 @@ export default {
           matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 1, away: 0 } },
+          date: "Wednesday 27th January",
         },
         {
           id: 9,
@@ -264,26 +272,8 @@ export default {
           matchday: 1,
           status: "FINISHED",
           score: { fullTime: { home: 2, away: 2 } },
+          date: "Wednesday 27th January",
         },
-        {
-          id: 10,
-          homeTeam: {
-            id: 19,
-            name: "Sheffield United",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/9/9c/Sheffield_United_FC_logo.svg",
-          },
-          awayTeam: {
-            id: 20,
-            name: "West Ham United",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/e/e0/West_Ham_United_FC.svg",
-          },
-          matchday: 1,
-          status: "FINISHED",
-          score: { fullTime: { home: 0, away: 1 } },
-        },
-
         {
           id: 2,
           homeTeam: {
@@ -301,6 +291,7 @@ export default {
           matchday: 2,
           status: "FINISHED",
           score: { fullTime: { home: 2, away: 2 } },
+          date: "Thursday 28th January",
         },
         {
           id: 3,
@@ -319,6 +310,7 @@ export default {
           matchday: 3,
           status: "FINISHED",
           score: { fullTime: { home: 3, away: 1 } },
+          date: "Friday 29th January",
         },
         {
           id: 4,
@@ -337,6 +329,7 @@ export default {
           matchday: 4,
           status: "FINISHED",
           score: { fullTime: { home: 0, away: 1 } },
+          date: "Saturday 30th January",
         },
       ];
       this.getTeamList();
