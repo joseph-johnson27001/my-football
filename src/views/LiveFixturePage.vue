@@ -237,9 +237,10 @@ export default {
     width: 100%;
     border-collapse: collapse;
   }
+
   td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 20px 8px;
   }
   .comment-time {
     width: 50px;
