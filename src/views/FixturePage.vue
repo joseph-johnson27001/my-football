@@ -189,10 +189,6 @@ export default {
 </script>
 
 <style scoped>
-h2 {
-  margin-bottom: auto !important;
-}
-
 .fixture-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
