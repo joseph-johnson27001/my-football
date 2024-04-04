@@ -21,7 +21,7 @@
         >
           <h3 class="fixture-date">{{ date }}</h3>
           <div v-for="result in groupedResults[date]" :key="result.id">
-            <div class="fixture-item">
+            <div class="fixture-item" @click="navigateToMatchPage(result)">
               <div class="team-container team-left">
                 <span class="crest-container">
                   <img
@@ -98,6 +98,10 @@ export default {
     },
   },
   methods: {
+    navigateToMatchPage(result) {
+      this.$store.state.selectedFixture = `${result.homeTeam.name} ${result.score.fullTime.home} - ${result.score.fullTime.away} ${result.awayTeam.name}`;
+      this.$router.push("result");
+    },
     getTeamCrest(teamId) {
       const result = this.results.find(
         (r) => r.homeTeam.id === teamId || r.awayTeam.id === teamId
@@ -341,6 +345,10 @@ export default {
           date: "Saturday 30th January",
         },
       ];
+      this.$store.state.isLoading = true;
+      setTimeout(() => {
+        this.$store.state.isLoading = false;
+      }, 500);
     },
     getTeamList() {
       const teams = new Set();

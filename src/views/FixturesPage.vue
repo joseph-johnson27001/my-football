@@ -496,6 +496,10 @@ export default {
           date: "Saturday 30th January",
         },
       ];
+      this.$store.state.isLoading = true;
+      setTimeout(() => {
+        this.$store.state.isLoading = false;
+      }, 500);
     },
     getTeamList() {
       const teams = new Set();
