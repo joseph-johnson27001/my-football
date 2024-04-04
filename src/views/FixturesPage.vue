@@ -99,7 +99,6 @@ export default {
       this.$router.push("fixture");
     },
     async fetchFixtures() {
-      // Simulated data fetching
       this.fixtures = [
         {
           id: 1,
@@ -463,20 +462,20 @@ export default {
         },
       ];
     },
+
     getTeamList() {
       const teams = new Set();
       this.fixtures.forEach((fixture) => {
         teams.add(fixture.homeTeam.name);
         teams.add(fixture.awayTeam.name);
       });
-      this.teamList = Array.from(teams);
+      this.teamList = Array.from(teams).sort();
     },
   },
   created() {
     this.fetchFixtures();
   },
   watch: {
-    // Watch for changes in fixtures data to update team list
     fixtures: {
       handler() {
         this.getTeamList();
