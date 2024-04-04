@@ -37,9 +37,7 @@
 
     <!-- Articles Section -->
     <div class="articles-section">
-      <!-- Display articles based on selected team -->
       <div class="article-grid">
-        <!-- Show articles excluding the main article -->
         <div
           v-for="article in filteredArticlesExceptMain"
           :key="article.id"
@@ -70,9 +68,27 @@ export default {
       selectedTeam: "All",
       teams: [
         { id: 1, name: "Arsenal" },
-        { id: 2, name: "Man City" },
-        { id: 3, name: "Liverpool" },
+        { id: 2, name: "Aston Villa" },
+        { id: 3, name: "Brentford" },
+        { id: 4, name: "Brighton & Hove Albion" },
+        { id: 5, name: "Burnley" },
+        { id: 6, name: "Chelsea" },
+        { id: 7, name: "Crystal Palace" },
+        { id: 8, name: "Everton" },
+        { id: 9, name: "Leeds United" },
+        { id: 10, name: "Leicester City" },
+        { id: 11, name: "Liverpool" },
+        { id: 12, name: "Manchester City" },
+        { id: 13, name: "Manchester United" },
+        { id: 14, name: "Newcastle United" },
+        { id: 15, name: "Norwich City" },
+        { id: 16, name: "Southampton" },
+        { id: 17, name: "Tottenham Hotspur" },
+        { id: 18, name: "Watford" },
+        { id: 19, name: "West Ham United" },
+        { id: 20, name: "Wolverhampton Wanderers" },
       ],
+
       articles: [
         {
           id: 1,

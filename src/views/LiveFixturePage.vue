@@ -59,7 +59,7 @@ export default {
           crest:
             "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
         },
-        homeScore: 3,
+        homeScore: 4,
         awayScore: 1,
         status: "Full Time",
         time: "90+5",
@@ -191,7 +191,6 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .team {
