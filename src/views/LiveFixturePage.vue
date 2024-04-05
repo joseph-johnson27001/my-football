@@ -79,6 +79,10 @@
               :style="{ width: awayTeamShotsPercentage + '%' }"
             ></div>
           </div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.shots }}</div>
+            <div class="away-value">{{ liveFixture.awayTeam.shots }}</div>
+          </div>
         </div>
         <div class="statistic">
           <div class="statistic-label">Shots on Target</div>
@@ -91,6 +95,14 @@
               class="bar away-team"
               :style="{ width: awayTeamShotsOnTargetPercentage + '%' }"
             ></div>
+          </div>
+          <div class="statistic-values">
+            <div class="home-value">
+              {{ liveFixture.homeTeam.shotsOnTarget }}
+            </div>
+            <div class="away-value">
+              {{ liveFixture.awayTeam.shotsOnTarget }}
+            </div>
           </div>
         </div>
         <div class="statistic">
@@ -105,6 +117,10 @@
               :style="{ width: awayTeamXGPercentage + '%' }"
             ></div>
           </div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
+            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
+          </div>
         </div>
         <div class="statistic">
           <div class="statistic-label">Yellow Cards</div>
@@ -118,6 +134,10 @@
               :style="{ width: awayTeamYellowCardsPercentage + '%' }"
             ></div>
           </div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.yellowCards }}</div>
+            <div class="away-value">{{ liveFixture.awayTeam.yellowCards }}</div>
+          </div>
         </div>
         <div class="statistic">
           <div class="statistic-label">Red Cards</div>
@@ -130,6 +150,10 @@
               class="bar away-team"
               :style="{ width: awayTeamRedCardsPercentage + '%' }"
             ></div>
+          </div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.redCards }}</div>
+            <div class="away-value">{{ liveFixture.awayTeam.redCards }}</div>
           </div>
         </div>
         <!-- Add other stats similarly -->
@@ -500,5 +524,10 @@ export default {
 
 .away-team {
   background-color: #28a745; /* Green color for away team */
+}
+
+.statistic-values {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
