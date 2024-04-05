@@ -9,7 +9,9 @@
             alt="Home Team Crest"
             class="team-crest"
           />
-          <span class="team-name">{{ liveFixture.homeTeam.name }}</span>
+          <span class="team-name">
+            <h3>{{ liveFixture.homeTeam.name }}</h3></span
+          >
         </div>
         <div class="score-container">
           <span class="team-score"> {{ liveFixture.homeScore }}</span>
@@ -17,7 +19,9 @@
           <span class="team-score">{{ liveFixture.awayScore }}</span>
         </div>
         <div class="team">
-          <span class="team-name">{{ liveFixture.awayTeam.name }} </span>
+          <span class="team-name"
+            ><h3>{{ liveFixture.awayTeam.name }}</h3>
+          </span>
           <img
             :src="liveFixture.awayTeam.crest"
             alt="Away Team Crest"
