@@ -53,7 +53,7 @@
               v-for="scorer in liveFixture.awayTeam.goalScorers"
               :key="scorer"
             >
-              {{ scorer.name }} [{{ scorer.minute }}]
+              [{{ scorer.minute }}] {{ scorer.name }}
             </li>
           </ul>
         </div>
@@ -239,6 +239,7 @@ export default {
 
 .team-name {
   font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .score-container {
