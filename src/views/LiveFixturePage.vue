@@ -39,7 +39,14 @@
       <!-- GOALSCORERS -->
       <div style="display: grid; grid-template-columns: 1fr 1fr">
         <div style="display: flex; justify-content: end">
-          <ul style="list-style-type: none; text-align: right">
+          <ul
+            style="
+              list-style-type: none;
+              text-align: right;
+              padding-left: 0px;
+              padding-right: 15px;
+            "
+          >
             <li
               v-for="scorer in liveFixture.homeTeam.goalScorers"
               :key="scorer"
@@ -49,7 +56,14 @@
           </ul>
         </div>
         <div style="text-align: start">
-          <ul style="list-style-type: none; text-align: left">
+          <ul
+            style="
+              list-style-type: none;
+              text-align: left;
+              padding-right: 0px;
+              padding-left: 15px;
+            "
+          >
             <li
               v-for="scorer in liveFixture.awayTeam.goalScorers"
               :key="scorer"
@@ -330,6 +344,9 @@ export default {
     orderedComments() {
       return this.liveFixture.comments.slice().reverse();
     },
+
+    // NEED TO CHANGE THESE FUNCTIONS INTO ONE FUNCTION INSTEAD OF INDIVUDAL
+
     homeTeamShotsPercentage() {
       return (this.liveFixture.homeTeam.shots / this.maxShots) * 100;
     },
@@ -467,7 +484,6 @@ export default {
 
 .match-details {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .match-status {
@@ -497,6 +513,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .statistic {
@@ -519,11 +536,11 @@ export default {
 }
 
 .home-team {
-  background-color: #007bff; /* Blue color for home team */
+  background-color: #007bff;
 }
 
 .away-team {
-  background-color: #28a745; /* Green color for away team */
+  background-color: #28a745;
 }
 
 .statistic-values {
