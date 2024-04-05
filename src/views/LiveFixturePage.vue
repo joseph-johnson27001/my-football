@@ -220,6 +220,12 @@ export default {
       return this.liveFixture.comments.slice().reverse();
     },
   },
+  mounted() {
+    this.$store.state.isLoading = true;
+    setTimeout(() => {
+      this.$store.state.isLoading = false;
+    }, 500);
+  },
 };
 </script>
 
