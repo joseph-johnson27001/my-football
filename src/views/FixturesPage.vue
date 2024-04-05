@@ -482,25 +482,6 @@ export default {
           time: "17:30",
           date: "Friday 29th January",
         },
-        {
-          id: 20,
-          homeTeam: {
-            id: 13,
-            name: "Wolverhampton Wanderers",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg",
-          },
-          awayTeam: {
-            id: 14,
-            name: "Crystal Palace",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/sco/0/0c/Crystal_Palace_FC_logo.svg",
-          },
-          matchday: 3,
-          status: "SCHEDULED",
-          time: "17:30",
-          date: "Saturday 30th January",
-        },
       ];
       this.$store.state.isLoading = true;
       setTimeout(() => {

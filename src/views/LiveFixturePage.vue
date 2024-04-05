@@ -247,8 +247,8 @@ export default {
 }
 
 .team-crest {
-  width: 70px;
-  height: auto;
+  max-height: 150px;
+  width: auto;
   margin: auto 10px;
 }
 
@@ -271,6 +271,7 @@ export default {
   td {
     border: 1px solid #ddd;
     padding: 20px 8px;
+    text-align: justify;
   }
   .comment-time {
     width: 50px;
