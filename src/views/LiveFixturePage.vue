@@ -1,6 +1,7 @@
 <template>
   <div class="live-fixture-page">
     <h2>LIVE</h2>
+
     <div class="live-fixture">
       <div class="teams">
         <div class="team">
@@ -59,7 +60,18 @@
         </div>
       </div>
 
-      <div class="live-commentary">
+      <div class="toggle-buttons">
+        <button @click="showStatistics = false">Commentary</button>
+        <button @click="showStatistics = true">Statistics</button>
+      </div>
+
+      <div v-if="showStatistics">
+        <!-- Statistics section -->
+        <!-- Insert your statistics content here -->
+        <!-- For example, you can display goal scorers, possession, etc. -->
+      </div>
+
+      <div v-else class="live-commentary">
         <table>
           <tbody>
             <tr v-for="comment in orderedComments" :key="comment.id">
@@ -78,6 +90,7 @@ export default {
   name: "LiveFixturePage",
   data() {
     return {
+      showStatistics: false,
       liveFixture: {
         homeTeam: {
           name: "Arsenal",
@@ -230,6 +243,14 @@ export default {
 </script>
 
 <style scoped>
+.toggle-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.toggle-buttons button {
+  margin-right: 10px;
+}
+
 .teams {
   display: flex;
   justify-content: space-between;
