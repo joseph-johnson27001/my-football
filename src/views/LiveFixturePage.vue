@@ -244,11 +244,23 @@ export default {
 
 <style scoped>
 .toggle-buttons {
-  text-align: center;
+  text-align: right;
   margin-bottom: 20px;
 }
+
 .toggle-buttons button {
   margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1f3f7f;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-buttons button:hover {
+  color: gold;
 }
 
 .teams {
