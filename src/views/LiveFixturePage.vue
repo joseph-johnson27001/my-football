@@ -61,14 +61,78 @@
       </div>
 
       <div class="toggle-buttons">
-        <button @click="showStatistics = false">Commentary</button>
-        <button @click="showStatistics = true">Statistics</button>
+        <button v-if="showStatistics" @click="showStatistics = false">
+          Commentary
+        </button>
+        <button v-else @click="showStatistics = true">Stats</button>
       </div>
-
-      <div v-if="showStatistics">
-        <!-- Statistics section -->
-        <!-- Insert your statistics content here -->
-        <!-- For example, you can display goal scorers, possession, etc. -->
+      <div v-if="showStatistics" class="statistics-section">
+        <div class="statistic">
+          <div class="statistic-label">Shots</div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamShotsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamShotsPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-label">Shots on Target</div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamShotsOnTargetPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamShotsOnTargetPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-label">xG (Expected Goals)</div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamXGPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamXGPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-label">Yellow Cards</div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamYellowCardsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamYellowCardsPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-label">Red Cards</div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamRedCardsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamRedCardsPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <!-- Add other stats similarly -->
       </div>
 
       <div v-else class="live-commentary">
@@ -94,6 +158,11 @@ export default {
       liveFixture: {
         homeTeam: {
           name: "Arsenal",
+          shots: 10,
+          shotsOnTarget: 6,
+          xG: 1.8,
+          yellowCards: 2,
+          redCards: 0,
           crest:
             "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
           goalScorers: [
@@ -105,6 +174,11 @@ export default {
         },
         awayTeam: {
           name: "Manchester City",
+          shots: 8,
+          shotsOnTarget: 4,
+          xG: 1.2,
+          yellowCards: 1,
+          redCards: 1,
           crest:
             "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
           goalScorers: [{ name: "Earling Haaland", minute: 15 }],
@@ -232,6 +306,74 @@ export default {
     orderedComments() {
       return this.liveFixture.comments.slice().reverse();
     },
+    homeTeamShotsPercentage() {
+      return (this.liveFixture.homeTeam.shots / this.maxShots) * 100;
+    },
+    awayTeamShotsPercentage() {
+      return (this.liveFixture.awayTeam.shots / this.maxShots) * 100;
+    },
+    homeTeamShotsOnTargetPercentage() {
+      return (
+        (this.liveFixture.homeTeam.shotsOnTarget / this.maxShotsOnTarget) * 100
+      );
+    },
+    awayTeamShotsOnTargetPercentage() {
+      return (
+        (this.liveFixture.awayTeam.shotsOnTarget / this.maxShotsOnTarget) * 100
+      );
+    },
+    homeTeamXGPercentage() {
+      return (this.liveFixture.homeTeam.xG / this.maxXG) * 100;
+    },
+    awayTeamXGPercentage() {
+      return (this.liveFixture.awayTeam.xG / this.maxXG) * 100;
+    },
+    homeTeamYellowCardsPercentage() {
+      return (
+        (this.liveFixture.homeTeam.yellowCards / this.maxYellowCards) * 100
+      );
+    },
+    awayTeamYellowCardsPercentage() {
+      return (
+        (this.liveFixture.awayTeam.yellowCards / this.maxYellowCards) * 100
+      );
+    },
+    homeTeamRedCardsPercentage() {
+      return (this.liveFixture.homeTeam.redCards / this.maxRedCards) * 100;
+    },
+    awayTeamRedCardsPercentage() {
+      return (this.liveFixture.awayTeam.redCards / this.maxRedCards) * 100;
+    },
+    maxShots() {
+      return Math.max(
+        this.liveFixture.homeTeam.shots,
+        this.liveFixture.awayTeam.shots
+      );
+    },
+    maxShotsOnTarget() {
+      return Math.max(
+        this.liveFixture.homeTeam.shotsOnTarget,
+        this.liveFixture.awayTeam.shotsOnTarget
+      );
+    },
+    maxXG() {
+      return Math.max(
+        this.liveFixture.homeTeam.xG,
+        this.liveFixture.awayTeam.xG
+      );
+    },
+    maxYellowCards() {
+      return Math.max(
+        this.liveFixture.homeTeam.yellowCards,
+        this.liveFixture.awayTeam.yellowCards
+      );
+    },
+    maxRedCards() {
+      return Math.max(
+        this.liveFixture.homeTeam.redCards,
+        this.liveFixture.awayTeam.redCards
+      );
+    },
   },
   mounted() {
     this.$store.state.isLoading = true;
@@ -325,5 +467,38 @@ export default {
     font-weight: bold;
     text-align: center;
   }
+}
+
+.statistics-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statistic {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.statistic-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.bar-container {
+  display: flex;
+  height: 20px;
+}
+
+.bar {
+  height: 100%;
+}
+
+.home-team {
+  background-color: #007bff; /* Blue color for home team */
+}
+
+.away-team {
+  background-color: #28a745; /* Green color for away team */
 }
 </style>
