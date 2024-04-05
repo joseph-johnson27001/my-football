@@ -257,6 +257,9 @@ export default {
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: "Titillium Web", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .toggle-buttons button:hover {
