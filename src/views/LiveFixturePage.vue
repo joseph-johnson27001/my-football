@@ -154,6 +154,57 @@
           </div>
         </div>
         <div class="statistic">
+          <div class="statistic-label">Corners</div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamXGPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamXGPercentage + '%' }"
+            ></div>
+          </div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
+            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-label">Fouls</div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamXGPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamXGPercentage + '%' }"
+            ></div>
+          </div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
+            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-label">Tackles</div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamXGPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamXGPercentage + '%' }"
+            ></div>
+          </div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
+            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
+          </div>
+        </div>
+        <div class="statistic">
           <div class="statistic-label">Yellow Cards</div>
           <div class="bar-container">
             <div
