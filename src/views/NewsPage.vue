@@ -4,7 +4,7 @@
     <div class="heading-container">
       <h2>Football News</h2>
       <div class="team-selection">
-        <label for="team-select">Select Team: </label>
+        <!-- <label for="team-select">Select Team: </label> -->
         <select v-model="selectedTeam" id="team-select">
           <option value="All" class="option">All Teams</option>
           <option

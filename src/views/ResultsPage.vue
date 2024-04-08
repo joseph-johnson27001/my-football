@@ -4,7 +4,7 @@
       <span class="heading-container heading-span">
         <h2>Results</h2>
         <div class="matchday-dropdown">
-          <label for="team-dropdown" class="matchday-label">Select Team:</label>
+          <!-- <label for="team-dropdown" class="matchday-label">Select Team:</label> -->
           <select v-model="selectedTeam" id="team-dropdown">
             <option value="">All Teams</option>
             <option v-for="team in teamList" :key="team" :value="team">

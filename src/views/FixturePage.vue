@@ -274,7 +274,7 @@ h2 {
 .social-media-links {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin: 20px 0px;
 }
 
 .social-media-link {
