@@ -82,6 +82,23 @@
       </div>
       <div v-if="showStatistics" class="statistics-section">
         <div class="statistic">
+          <div class="statistic-label">Goals</div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamGoalsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamGoalsPercentage + '%' }"
+            ></div>
+          </div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeScore }}</div>
+            <div class="away-value">{{ liveFixture.awayScore }}</div>
+          </div>
+        </div>
+        <div class="statistic">
           <div class="statistic-label">Shots</div>
           <div class="bar-container">
             <div
@@ -345,7 +362,13 @@ export default {
       return this.liveFixture.comments.slice().reverse();
     },
 
-    // NEED TO CHANGE THESE FUNCTIONS INTO ONE FUNCTION INSTEAD OF INDIVUDAL
+    homeTeamGoalsPercentage() {
+      return (this.liveFixture.homeScore / this.maxGoals) * 100;
+    },
+
+    awayTeamGoalsPercentage() {
+      return (this.liveFixture.awayScore / this.maxGoals) * 100;
+    },
 
     homeTeamShotsPercentage() {
       return (this.liveFixture.homeTeam.shots / this.maxShots) * 100;
@@ -414,6 +437,9 @@ export default {
         this.liveFixture.homeTeam.redCards,
         this.liveFixture.awayTeam.redCards
       );
+    },
+    maxGoals() {
+      return Math.max(this.liveFixture.homeScore, this.liveFixture.awayScore);
     },
   },
   mounted() {
