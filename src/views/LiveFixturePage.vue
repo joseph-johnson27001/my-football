@@ -82,7 +82,11 @@
       </div>
       <div v-if="showStatistics" class="statistics-section">
         <div class="statistic">
-          <div class="statistic-label">Goals</div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeScore }}</div>
+            <div class="statistic-label">Goals</div>
+            <div class="away-value">{{ liveFixture.awayScore }}</div>
+          </div>
           <div class="bar-container">
             <div
               class="bar home-team"
@@ -93,13 +97,13 @@
               :style="{ width: awayTeamGoalsPercentage + '%' }"
             ></div>
           </div>
-          <div class="statistic-values">
-            <div class="home-value">{{ liveFixture.homeScore }}</div>
-            <div class="away-value">{{ liveFixture.awayScore }}</div>
-          </div>
         </div>
         <div class="statistic">
-          <div class="statistic-label">Shots</div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.shots }}</div>
+            <div class="statistic-label">Shots</div>
+            <div class="away-value">{{ liveFixture.awayTeam.shots }}</div>
+          </div>
           <div class="bar-container">
             <div
               class="bar home-team"
@@ -110,13 +114,17 @@
               :style="{ width: awayTeamShotsPercentage + '%' }"
             ></div>
           </div>
-          <div class="statistic-values">
-            <div class="home-value">{{ liveFixture.homeTeam.shots }}</div>
-            <div class="away-value">{{ liveFixture.awayTeam.shots }}</div>
-          </div>
         </div>
         <div class="statistic">
-          <div class="statistic-label">Shots on Target</div>
+          <div class="statistic-values">
+            <div class="home-value">
+              {{ liveFixture.homeTeam.shotsOnTarget }}
+            </div>
+            <div class="statistic-label">Shots on Target</div>
+            <div class="away-value">
+              {{ liveFixture.awayTeam.shotsOnTarget }}
+            </div>
+          </div>
           <div class="bar-container">
             <div
               class="bar home-team"
@@ -127,17 +135,13 @@
               :style="{ width: awayTeamShotsOnTargetPercentage + '%' }"
             ></div>
           </div>
-          <div class="statistic-values">
-            <div class="home-value">
-              {{ liveFixture.homeTeam.shotsOnTarget }}
-            </div>
-            <div class="away-value">
-              {{ liveFixture.awayTeam.shotsOnTarget }}
-            </div>
-          </div>
         </div>
         <div class="statistic">
-          <div class="statistic-label">xG (Expected Goals)</div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
+            <div class="statistic-label">xG (Expected Goals)</div>
+            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
+          </div>
           <div class="bar-container">
             <div
               class="bar home-team"
@@ -148,13 +152,13 @@
               :style="{ width: awayTeamXGPercentage + '%' }"
             ></div>
           </div>
-          <div class="statistic-values">
-            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
-            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
-          </div>
         </div>
         <div class="statistic">
-          <div class="statistic-label">Corners</div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
+            <div class="statistic-label">Corners</div>
+            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
+          </div>
           <div class="bar-container">
             <div
               class="bar home-team"
@@ -165,13 +169,13 @@
               :style="{ width: awayTeamXGPercentage + '%' }"
             ></div>
           </div>
-          <div class="statistic-values">
-            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
-            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
-          </div>
         </div>
         <div class="statistic">
-          <div class="statistic-label">Fouls</div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
+            <div class="statistic-label">Fouls</div>
+            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
+          </div>
           <div class="bar-container">
             <div
               class="bar home-team"
@@ -182,13 +186,13 @@
               :style="{ width: awayTeamXGPercentage + '%' }"
             ></div>
           </div>
-          <div class="statistic-values">
-            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
-            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
-          </div>
         </div>
         <div class="statistic">
-          <div class="statistic-label">Tackles</div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
+            <div class="statistic-label">Tackles</div>
+            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
+          </div>
           <div class="bar-container">
             <div
               class="bar home-team"
@@ -199,13 +203,13 @@
               :style="{ width: awayTeamXGPercentage + '%' }"
             ></div>
           </div>
-          <div class="statistic-values">
-            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
-            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
-          </div>
         </div>
         <div class="statistic">
-          <div class="statistic-label">Yellow Cards</div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.yellowCards }}</div>
+            <div class="statistic-label">Yellow Cards</div>
+            <div class="away-value">{{ liveFixture.awayTeam.yellowCards }}</div>
+          </div>
           <div class="bar-container">
             <div
               class="bar home-team"
@@ -216,13 +220,13 @@
               :style="{ width: awayTeamYellowCardsPercentage + '%' }"
             ></div>
           </div>
-          <div class="statistic-values">
-            <div class="home-value">{{ liveFixture.homeTeam.yellowCards }}</div>
-            <div class="away-value">{{ liveFixture.awayTeam.yellowCards }}</div>
-          </div>
         </div>
         <div class="statistic">
-          <div class="statistic-label">Red Cards</div>
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.redCards }}</div>
+            <div class="statistic-label">Red Cards</div>
+            <div class="away-value">{{ liveFixture.awayTeam.redCards }}</div>
+          </div>
           <div class="bar-container">
             <div
               class="bar home-team"
@@ -232,10 +236,6 @@
               class="bar away-team"
               :style="{ width: awayTeamRedCardsPercentage + '%' }"
             ></div>
-          </div>
-          <div class="statistic-values">
-            <div class="home-value">{{ liveFixture.homeTeam.redCards }}</div>
-            <div class="away-value">{{ liveFixture.awayTeam.redCards }}</div>
           </div>
         </div>
         <!-- Add other stats similarly -->
