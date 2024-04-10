@@ -624,5 +624,6 @@ export default {
 .statistic-values {
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
 }
 </style>
