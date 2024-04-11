@@ -280,7 +280,7 @@ export default {
           shotsOnTarget: 6,
           xG: 1.8,
           yellowCards: 2,
-          redCards: 0,
+          redCards: 1,
           crest:
             "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
           goalScorers: [
@@ -627,10 +627,14 @@ export default {
 
 .home-team {
   background-color: #007bff;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
 .away-team {
   background-color: #28a745;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .statistic-values {
