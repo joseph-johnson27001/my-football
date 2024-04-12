@@ -250,7 +250,6 @@
             ></div>
           </div>
         </div>
-        <!-- Add other stats similarly -->
       </div>
 
       <div v-else class="live-commentary">
