@@ -467,8 +467,9 @@ export default {
   padding: 8px 4px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px;
   outline: none;
+  font-family: "Montserrat";
+  font-size: 0.9em;
 }
 
 .matchday-label {
