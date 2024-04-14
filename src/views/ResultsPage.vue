@@ -465,6 +465,7 @@ export default {
 
 .matchday-dropdown select {
   padding: 8px 4px;
+  background-color: #f8f8f8;
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
