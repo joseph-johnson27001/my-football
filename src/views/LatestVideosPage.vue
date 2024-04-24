@@ -47,6 +47,7 @@ export default {
   data() {
     return {
       latestVideos: [],
+      selectedTeam: "",
       teamList: [
         "Arsenal",
         "Aston Villa",
