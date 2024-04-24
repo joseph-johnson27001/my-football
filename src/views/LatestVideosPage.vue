@@ -1,9 +1,17 @@
 <template>
   <div class="videos-page">
-    <div class="heading-container">
-      <h2 v-if="teamName != null">Latest {{ teamName }} Videos</h2>
-      <h2 v-else>Latest Football Videos</h2>
-    </div>
+    <span class="heading-container heading-span">
+      <h2>Latest Videos</h2>
+      <div class="matchday-dropdown">
+        <!-- <label for="team-dropdown" class="matchday-label">Select Team:</label> -->
+        <select v-model="selectedTeam" id="team-dropdown">
+          <option value="">All Teams</option>
+          <option v-for="team in teamList" :key="team" :value="team">
+            {{ team }}
+          </option>
+        </select>
+      </div>
+    </span>
 
     <div class="videos-list">
       <!-- Loop through videos and display each with its description -->
@@ -123,5 +131,35 @@ export default {
 
 .video {
   width: 100%;
+}
+
+.heading-span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.matchday-dropdown {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.matchday-dropdown label {
+  margin-right: 10px;
+}
+
+.matchday-dropdown select {
+  padding: 8px 4px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-family: "Montserrat";
+  font-size: 0.9em;
+}
+
+.matchday-label {
+  font-weight: 100;
 }
 </style>
