@@ -47,6 +47,28 @@ export default {
   data() {
     return {
       latestVideos: [],
+      teamList: [
+        "Arsenal",
+        "Aston Villa",
+        "Brighton & Hove Albion",
+        "Burnley",
+        "Chelsea",
+        "Crystal Palace",
+        "Everton",
+        "Fulham",
+        "Leeds United",
+        "Leicester City",
+        "Liverpool",
+        "Manchester City",
+        "Manchester United",
+        "Newcastle United",
+        "Sheffield United",
+        "Southampton",
+        "Tottenham Hotspur",
+        "West Bromwich Albion",
+        "West Ham United",
+        "Wolverhampton Wanderers",
+      ],
     };
   },
   computed: {
