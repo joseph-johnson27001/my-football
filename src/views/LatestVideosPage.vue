@@ -3,7 +3,6 @@
     <span class="heading-container heading-span">
       <h2>Latest Videos</h2>
       <div class="matchday-dropdown">
-        <!-- <label for="team-dropdown" class="matchday-label">Select Team:</label> -->
         <select v-model="selectedTeam" id="team-dropdown">
           <option value="">All Teams</option>
           <option v-for="team in teamList" :key="team" :value="team">
@@ -14,7 +13,6 @@
     </span>
 
     <div class="videos-list">
-      <!-- Loop through videos and display each with its description -->
       <div
         v-for="(video, index) in latestVideos"
         :key="index"
