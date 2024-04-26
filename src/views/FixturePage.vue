@@ -8,7 +8,6 @@
             {{ this.$store.state.selectedFixture }}
           </h2>
           <h2 v-else>Manchester United V Liverpool</h2>
-          <!-- <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3> -->
         </div>
         <div class="match-preview-content">
           <img
