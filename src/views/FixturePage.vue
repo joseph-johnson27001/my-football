@@ -1,7 +1,6 @@
 <template>
   <div class="fixture-page">
     <div class="fixture-content">
-      <!-- Match Preview -->
       <div class="match-preview">
         <div class="match-preview-container">
           <h2 v-if="this.$store.state.selectedFixture">
