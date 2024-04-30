@@ -3,9 +3,46 @@
     <div class="heading-container">
       <h2>{{ teamName }} Squad</h2>
     </div>
-    <div class="players-list">
+    <div class="players-section">
+      <h2>Goalkeepers</h2>
       <div
-        v-for="player in squad"
+        v-for="player in goalkeepers"
+        :key="player.id"
+        class="player-item"
+        @click="handlePlayerClick(player)"
+      >
+        <div class="player-number">{{ player.number }}</div>
+        <div class="player-name">{{ player.name }}</div>
+      </div>
+    </div>
+    <div class="players-section">
+      <h2>Defenders</h2>
+      <div
+        v-for="player in defenders"
+        :key="player.id"
+        class="player-item"
+        @click="handlePlayerClick(player)"
+      >
+        <div class="player-number">{{ player.number }}</div>
+        <div class="player-name">{{ player.name }}</div>
+      </div>
+    </div>
+    <div class="players-section">
+      <h2>Midfielders</h2>
+      <div
+        v-for="player in midfielders"
+        :key="player.id"
+        class="player-item"
+        @click="handlePlayerClick(player)"
+      >
+        <div class="player-number">{{ player.number }}</div>
+        <div class="player-name">{{ player.name }}</div>
+      </div>
+    </div>
+    <div class="players-section">
+      <h2>Attackers</h2>
+      <div
+        v-for="player in attackers"
         :key="player.id"
         class="player-item"
         @click="handlePlayerClick(player)"
@@ -34,6 +71,18 @@ export default {
     teamName() {
       return this.$store.state.selectedTeam || "Arsenal";
     },
+    goalkeepers() {
+      return this.squad.filter((player) => player.position === "Goalkeeper");
+    },
+    defenders() {
+      return this.squad.filter((player) => player.position === "Defender");
+    },
+    midfielders() {
+      return this.squad.filter((player) => player.position === "Midfielder");
+    },
+    attackers() {
+      return this.squad.filter((player) => player.position === "Attacker");
+    },
   },
   methods: {
     handlePlayerClick(player) {
@@ -45,6 +94,14 @@ export default {
 </script>
 
 <style scoped>
+.players-section {
+  margin-bottom: 20px;
+}
+
+.players-section h2 {
+  margin-bottom: 10px;
+}
+
 .players-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
