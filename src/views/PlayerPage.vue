@@ -1,6 +1,6 @@
 <template>
   <div class="heading-container">
-    <h2 v-if="teamName != null">{{ teamName }} Statistics</h2>
+    <h2 v-if="playerName">{{ playerName }}</h2>
   </div>
 </template>
 
@@ -8,8 +8,8 @@
 export default {
   data() {},
   computed: {
-    teamName() {
-      return this.$store.state.selectedTeam || "Arsenal";
+    playerName() {
+      return this.$store.state.playerName || "William Saliba";
     },
   },
 };
