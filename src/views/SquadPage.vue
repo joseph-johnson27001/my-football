@@ -3,8 +3,8 @@
     <div class="heading-container">
       <h2>{{ teamName }} Squad</h2>
     </div>
+    <h3>Goalkeepers</h3>
     <div class="players-section">
-      <h2>Goalkeepers</h2>
       <div
         v-for="player in goalkeepers"
         :key="player.id"
@@ -15,8 +15,8 @@
         <div class="player-name">{{ player.name }}</div>
       </div>
     </div>
+    <h3>Defenders</h3>
     <div class="players-section">
-      <h2>Defenders</h2>
       <div
         v-for="player in defenders"
         :key="player.id"
@@ -27,8 +27,8 @@
         <div class="player-name">{{ player.name }}</div>
       </div>
     </div>
+    <h3>Midfielders</h3>
     <div class="players-section">
-      <h2>Midfielders</h2>
       <div
         v-for="player in midfielders"
         :key="player.id"
@@ -39,8 +39,8 @@
         <div class="player-name">{{ player.name }}</div>
       </div>
     </div>
+    <h3>Attackers</h3>
     <div class="players-section">
-      <h2>Attackers</h2>
       <div
         v-for="player in attackers"
         :key="player.id"
@@ -218,12 +218,11 @@ export default {
       return this.squad.filter((player) => player.position === "Midfielder");
     },
     attackers() {
-      return this.squad.filter((player) => player.position === "Attacker");
+      return this.squad.filter((player) => player.position === "Forward");
     },
   },
   methods: {
     handlePlayerClick(player) {
-      // Handle click event for player card
       console.log("Clicked player:", player);
     },
   },
@@ -232,21 +231,18 @@ export default {
 
 <style scoped>
 .players-section {
-  margin-bottom: 20px;
-}
-
-.players-section h2 {
-  margin-bottom: 10px;
-}
-
-.players-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
+.players-section h3 {
+  margin-bottom: 10px;
+}
+
 .player-item {
   background-color: #f8f8f8;
+  padding: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
   display: flex;
@@ -256,7 +252,7 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-weight: 500;
-  padding: 20px 0;
+  padding: 20px 0px;
 }
 
 .player-item:hover {
