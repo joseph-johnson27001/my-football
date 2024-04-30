@@ -11,6 +11,7 @@ import FixturePage from "../views/FixturePage.vue";
 import ResultPage from "../views/ResultPage.vue";
 import LatestVideosPage from "@/views/LatestVideosPage.vue";
 import SquadPage from "@/views/SquadPage.vue";
+import PlayerPage from "@/views/PlayerPage.vue";
 import StatsPage from "@/views/StatsPage.vue";
 import LiveFixturePage from "@/views/LiveFixturePage.vue";
 
@@ -54,6 +55,11 @@ const routes = [
     path: "/squad",
     name: "Squad",
     component: SquadPage,
+  },
+  {
+    path: "/player",
+    name: "Player",
+    component: PlayerPage,
   },
   {
     path: "/stats",
