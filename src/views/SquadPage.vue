@@ -11,7 +11,7 @@
         class="player-item"
         @click="handlePlayerClick(player)"
       >
-        <div class="player-number">{{ player.number }}</div>
+        <h2 class="player-number">{{ player.number }}</h2>
         <div class="player-name">{{ player.name }}</div>
       </div>
     </div>
@@ -23,7 +23,7 @@
         class="player-item"
         @click="handlePlayerClick(player)"
       >
-        <div class="player-number">{{ player.number }}</div>
+        <h2 class="player-number">{{ player.number }}</h2>
         <div class="player-name">{{ player.name }}</div>
       </div>
     </div>
@@ -35,7 +35,7 @@
         class="player-item"
         @click="handlePlayerClick(player)"
       >
-        <div class="player-number">{{ player.number }}</div>
+        <h2 class="player-number">{{ player.number }}</h2>
         <div class="player-name">{{ player.name }}</div>
       </div>
     </div>
@@ -47,7 +47,7 @@
         class="player-item"
         @click="handlePlayerClick(player)"
       >
-        <div class="player-number">{{ player.number }}</div>
+        <h2 class="player-number">{{ player.number }}</h2>
         <div class="player-name">{{ player.name }}</div>
       </div>
     </div>
@@ -152,7 +152,7 @@ export default {
 <style scoped>
 .players-section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -162,7 +162,7 @@ export default {
 
 .player-item {
   background-color: #f8f8f8;
-  padding: 10px;
+  padding-bottom: 20px;
   border-radius: 4px;
   border: 1px solid #ccc;
   display: flex;
@@ -172,7 +172,6 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-weight: 500;
-  padding: 20px 0px;
 }
 
 .player-item:hover {
@@ -181,11 +180,7 @@ export default {
 }
 
 .player-number {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
-}
-
-.player-name {
-  margin-top: 10px;
 }
 </style>
