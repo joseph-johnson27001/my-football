@@ -5,5 +5,6 @@ export default createStore({
     isLoading: false,
     selectedName: null,
     selectedFixture: null,
+    playerName: null,
   },
 });

@@ -1,6 +1,6 @@
 <template>
   <div class="heading-container">
-    <h2 v-if="playerName">{{ playerName }}</h2>
+    <h2 v-if="playerName != null">{{ playerName }}</h2>
   </div>
 </template>
 
