@@ -141,6 +141,12 @@ export default {
       return this.squad.filter((player) => player.position === "Forward");
     },
   },
+  mounted() {
+    this.$store.state.isLoading = true;
+    setTimeout(() => {
+      this.$store.state.isLoading = false;
+    }, 250);
+  },
   methods: {
     handlePlayerClick(player) {
       this.$store.state.playerName = player.name;

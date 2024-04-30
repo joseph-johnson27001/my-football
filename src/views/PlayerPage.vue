@@ -12,5 +12,11 @@ export default {
       return this.$store.state.playerName || "William Saliba";
     },
   },
+  mounted() {
+    this.$store.state.isLoading = true;
+    setTimeout(() => {
+      this.$store.state.isLoading = false;
+    }, 250);
+  },
 };
 </script>
