@@ -143,7 +143,8 @@ export default {
   },
   methods: {
     handlePlayerClick(player) {
-      console.log("Clicked player:", player);
+      this.$store.state.playerName = player.name;
+      this.$router.push("player");
     },
   },
 };
