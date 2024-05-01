@@ -25,7 +25,27 @@
           </tr>
         </tbody>
       </table>
-      <table></table>
+      <h3>Individual Games</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>G</th>
+            <th>A</th>
+            <th>YC</th>
+            <th>RC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(game, index) in individualGames" :key="index">
+            <td>{{ game.team }}</td>
+            <td>{{ game.goals }}</td>
+            <td>{{ game.assists }}</td>
+            <td>{{ game.yellowCards }}</td>
+            <td>{{ game.redCards }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -42,6 +62,24 @@ export default {
         YC: 0,
         RC: 0,
       },
+      individualGames: [
+        { team: "Chelsea", goals: 1, assists: 0, yellowCards: 1, redCards: 0 },
+        {
+          team: "Liverpool",
+          goals: 0,
+          assists: 1,
+          yellowCards: 0,
+          redCards: 0,
+        },
+        {
+          team: "Manchester City",
+          goals: 0,
+          assists: 0,
+          yellowCards: 1,
+          redCards: 0,
+        },
+        // Add more games here
+      ],
     };
   },
   computed: {
