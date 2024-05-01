@@ -8,8 +8,8 @@
         <thead>
           <tr>
             <th>Pld</th>
-            <th>G</th>
-            <th>A</th>
+            <th>Gls</th>
+            <th>Ast</th>
             <th>YC</th>
             <th>RC</th>
           </tr>
@@ -29,8 +29,8 @@
         <thead>
           <tr>
             <th class="team-name" style="padding-left: 10px">Team</th>
-            <th>G</th>
-            <th>A</th>
+            <th>Gls</th>
+            <th>Ast</th>
             <th>YC</th>
             <th>RC</th>
           </tr>
@@ -191,10 +191,10 @@ export default {
 
 .player-stats th,
 .player-stats td {
-  padding: 8px;
   border: 1px solid #ccc;
   text-align: center;
   font-weight: 100;
+  padding: 10px;
 }
 
 .player-stats td {
@@ -203,7 +203,6 @@ export default {
 }
 
 .player-stats th {
-  padding: 10px 0px;
   background-color: #1f3f7f;
   color: white;
 }
