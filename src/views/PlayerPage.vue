@@ -37,7 +37,7 @@
         </thead>
         <tbody>
           <tr v-for="(game, index) in individualGames" :key="index">
-            <td>{{ game.team }}</td>
+            <td class="team-name">{{ game.team }}</td>
             <td>{{ game.goals }}</td>
             <td>{{ game.assists }}</td>
             <td>{{ game.yellowCards }}</td>
@@ -197,10 +197,21 @@ export default {
 .player-stats td {
   padding: 8px;
   border: 1px solid #ccc;
+  text-align: center;
+  font-weight: 100;
+}
+
+.player-stats td {
+  font-weight: 500;
 }
 
 .player-stats th {
-  background-color: #f2f2f2;
-  text-align: left;
+  padding: 10px 0px;
+  background-color: #1f3f7f;
+  color: white;
+}
+
+.team-name {
+  text-align: left !important;
 }
 </style>
