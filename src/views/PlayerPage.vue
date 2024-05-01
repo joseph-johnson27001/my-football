@@ -17,14 +17,15 @@
         </thead>
         <tbody>
           <tr>
-            <td>{{ stats.Pld }}</td>
-            <td>{{ stats.G }}</td>
-            <td>{{ stats.A }}</td>
-            <td>{{ stats.YC }}</td>
-            <td>{{ stats.RC }}</td>
+            <td>{{ totalStats.Pld }}</td>
+            <td>{{ totalStats.G }}</td>
+            <td>{{ totalStats.A }}</td>
+            <td>{{ totalStats.YC }}</td>
+            <td>{{ totalStats.RC }}</td>
           </tr>
         </tbody>
       </table>
+      <table></table>
     </div>
   </div>
 </template>
@@ -34,7 +35,7 @@ export default {
   data() {
     return {
       isLoading: true,
-      stats: {
+      totalStats: {
         Pld: 0,
         G: 0,
         A: 0,
@@ -52,7 +53,7 @@ export default {
     this.$store.state.isLoading = true;
 
     setTimeout(() => {
-      this.stats = {
+      this.totalStats = {
         Pld: 20,
         G: 5,
         A: 3,
