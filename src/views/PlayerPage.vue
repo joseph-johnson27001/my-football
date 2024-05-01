@@ -4,7 +4,7 @@
       <h2>{{ playerName }}</h2>
     </div>
     <div class="player-stats">
-      <table>
+      <table class="total-stats">
         <thead>
           <tr>
             <th>Pld</th>
@@ -12,6 +12,7 @@
             <th>Ast</th>
             <th>YC</th>
             <th>RC</th>
+            <th>MOTM</th>
           </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
             <td>{{ totalStats.A }}</td>
             <td>{{ totalStats.YC }}</td>
             <td>{{ totalStats.RC }}</td>
+            <td>{{ totalStats.MOTM }}</td>
           </tr>
         </tbody>
       </table>
@@ -60,6 +62,7 @@ export default {
         A: 0,
         YC: 0,
         RC: 0,
+        MOTM: 0,
       },
       individualGames: [
         { team: "Chelsea", goals: 1, assists: 0, yellowCards: 1, redCards: 0 },
@@ -176,6 +179,7 @@ export default {
         A: 3,
         YC: 2,
         RC: 0,
+        MOTM: 7,
       };
       this.$store.state.isLoading = false;
     }, 1000);
@@ -195,6 +199,11 @@ export default {
   text-align: center;
   font-weight: 100;
   padding: 10px;
+}
+
+.total-stats th,
+.total-stat td {
+  width: calc(100% / 6);
 }
 
 .player-stats td {
