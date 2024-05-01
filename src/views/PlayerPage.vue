@@ -1,10 +1,9 @@
 <template>
   <div>
     <div class="heading-container">
-      <h2>{{ playerName }}</h2>
+      <h2>{{ playerName }} Statistics</h2>
     </div>
     <div class="player-stats">
-      <h3>Totals</h3>
       <table>
         <thead>
           <tr>
@@ -25,7 +24,7 @@
           </tr>
         </tbody>
       </table>
-      <h3>Individual Games</h3>
+      <br />
       <table>
         <thead>
           <tr>
