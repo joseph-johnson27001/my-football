@@ -28,7 +28,7 @@
       <table>
         <thead>
           <tr>
-            <th>Team</th>
+            <th class="team-name" style="padding-left: 10px">Team</th>
             <th>G</th>
             <th>A</th>
             <th>YC</th>
