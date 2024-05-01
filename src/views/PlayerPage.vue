@@ -203,12 +203,17 @@ export default {
 
 .player-stats td {
   font-weight: 500;
+  cursor: pointer;
 }
 
 .player-stats th {
   padding: 10px 0px;
   background-color: #1f3f7f;
   color: white;
+}
+
+.player-stats tr:hover {
+  background-color: #f2f2f2;
 }
 
 .team-name {
