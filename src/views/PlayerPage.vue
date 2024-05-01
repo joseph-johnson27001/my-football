@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="heading-container">
-      <h2>{{ playerName }} Statistics</h2>
+      <h2>{{ playerName }}</h2>
     </div>
     <div class="player-stats">
       <table>
@@ -184,10 +184,6 @@ export default {
 </script>
 
 <style scoped>
-.player-stats {
-  margin-top: 20px;
-}
-
 .player-stats table {
   width: 100%;
   border-collapse: collapse;
