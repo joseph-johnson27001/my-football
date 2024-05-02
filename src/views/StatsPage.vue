@@ -549,5 +549,10 @@ export default {
 
 .player-name {
   text-align: left !important;
+  width: 30%;
+}
+
+.player-stats {
+  width: calc((100% - 30%) / 5);
 }
 </style>
