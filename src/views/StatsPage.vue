@@ -3,33 +3,137 @@
     <div class="heading-container">
       <h2 v-if="teamName">{{ teamName }} Statistics</h2>
     </div>
-    <div class="player-list">
-      <table>
-        <thead>
-          <tr>
-            <th class="player-name">Player</th>
-            <th>Played</th>
-            <th>Goals</th>
-            <th>Assists</th>
-            <th>Yellow Cards</th>
-            <th>Red Cards</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            @click="navigateToPlayerPage(player)"
-            v-for="(player, index) in playerList"
-            :key="index"
-          >
-            <td class="player-name">{{ player.name }}</td>
-            <td>{{ player.gamesPlayed }}</td>
-            <td>{{ player.goals }}</td>
-            <td>{{ player.assists }}</td>
-            <td>{{ player.yellowCards }}</td>
-            <td>{{ player.redCards }}</td>
-          </tr>
-        </tbody>
-      </table>
+
+    <!-- Goalkeepers -->
+    <div>
+      <h3>Goalkeepers</h3>
+      <div class="player-list">
+        <table>
+          <thead>
+            <tr>
+              <th class="player-name">Player</th>
+              <th>Played</th>
+              <th>Goals</th>
+              <th>Assists</th>
+              <th>Yellow Cards</th>
+              <th>Red Cards</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              @click="navigateToPlayerPage(player)"
+              v-for="(player, index) in goalkeepers"
+              :key="'gk-' + index"
+            >
+              <td class="player-name">{{ player.name }}</td>
+              <td>{{ player.gamesPlayed }}</td>
+              <td>{{ player.goals }}</td>
+              <td>{{ player.assists }}</td>
+              <td>{{ player.yellowCards }}</td>
+              <td>{{ player.redCards }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Defenders -->
+    <div>
+      <h3>Defenders</h3>
+      <div class="player-list">
+        <table>
+          <thead>
+            <tr>
+              <th class="player-name">Player</th>
+              <th>Played</th>
+              <th>Goals</th>
+              <th>Assists</th>
+              <th>Yellow Cards</th>
+              <th>Red Cards</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              @click="navigateToPlayerPage(player)"
+              v-for="(player, index) in defenders"
+              :key="'def-' + index"
+            >
+              <td class="player-name">{{ player.name }}</td>
+              <td>{{ player.gamesPlayed }}</td>
+              <td>{{ player.goals }}</td>
+              <td>{{ player.assists }}</td>
+              <td>{{ player.yellowCards }}</td>
+              <td>{{ player.redCards }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Midfielders -->
+    <div>
+      <h3>Midfielders</h3>
+      <div class="player-list">
+        <table>
+          <thead>
+            <tr>
+              <th class="player-name">Player</th>
+              <th>Played</th>
+              <th>Goals</th>
+              <th>Assists</th>
+              <th>Yellow Cards</th>
+              <th>Red Cards</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              @click="navigateToPlayerPage(player)"
+              v-for="(player, index) in midfielders"
+              :key="'mid-' + index"
+            >
+              <td class="player-name">{{ player.name }}</td>
+              <td>{{ player.gamesPlayed }}</td>
+              <td>{{ player.goals }}</td>
+              <td>{{ player.assists }}</td>
+              <td>{{ player.yellowCards }}</td>
+              <td>{{ player.redCards }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Forwards -->
+    <div>
+      <h3>Forwards</h3>
+      <div class="player-list">
+        <table>
+          <thead>
+            <tr>
+              <th class="player-name">Player</th>
+              <th>Played</th>
+              <th>Goals</th>
+              <th>Assists</th>
+              <th>Yellow Cards</th>
+              <th>Red Cards</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              @click="navigateToPlayerPage(player)"
+              v-for="(player, index) in forwards"
+              :key="'for-' + index"
+            >
+              <td class="player-name">{{ player.name }}</td>
+              <td>{{ player.gamesPlayed }}</td>
+              <td>{{ player.goals }}</td>
+              <td>{{ player.assists }}</td>
+              <td>{{ player.yellowCards }}</td>
+              <td>{{ player.redCards }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -48,14 +152,11 @@ export default {
     },
   },
   computed: {
-    teamName() {
-      return this.$store.state.selectedTeam || "Arsenal";
-    },
-
     playerList() {
       return [
         {
           name: "Aaron Ramsdale",
+          position: "Goalkeeper",
           gamesPlayed: 20,
           goals: 0,
           assists: 0,
@@ -64,6 +165,7 @@ export default {
         },
         {
           name: "David Raya",
+          position: "Goalkeeper",
           gamesPlayed: 18,
           goals: 0,
           assists: 0,
@@ -72,6 +174,7 @@ export default {
         },
         {
           name: "Karl Hein",
+          position: "Goalkeeper",
           gamesPlayed: 5,
           goals: 0,
           assists: 0,
@@ -80,6 +183,7 @@ export default {
         },
         {
           name: "Hubert Graczyk",
+          position: "Goalkeeper",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -88,6 +192,7 @@ export default {
         },
         {
           name: "James Hillson",
+          position: "Goalkeeper",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -96,6 +201,7 @@ export default {
         },
         {
           name: "William Saliba",
+          position: "Defender",
           gamesPlayed: 20,
           goals: 1,
           assists: 0,
@@ -104,6 +210,7 @@ export default {
         },
         {
           name: "Ben White",
+          position: "Defender",
           gamesPlayed: 19,
           goals: 1,
           assists: 2,
@@ -112,6 +219,7 @@ export default {
         },
         {
           name: "Gabriel Magalhaes",
+          position: "Defender",
           gamesPlayed: 18,
           goals: 0,
           assists: 1,
@@ -120,6 +228,7 @@ export default {
         },
         {
           name: "Cedric Soares",
+          position: "Defender",
           gamesPlayed: 17,
           goals: 0,
           assists: 2,
@@ -128,6 +237,7 @@ export default {
         },
         {
           name: "Jurrien Timber",
+          position: "Defender",
           gamesPlayed: 16,
           goals: 1,
           assists: 0,
@@ -136,6 +246,7 @@ export default {
         },
         {
           name: "Jakub Kiwior",
+          position: "Defender",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -144,6 +255,7 @@ export default {
         },
         {
           name: "Takehiro Tomiyasu",
+          position: "Defender",
           gamesPlayed: 20,
           goals: 0,
           assists: 1,
@@ -152,6 +264,7 @@ export default {
         },
         {
           name: "Oleksandr Zinchenko",
+          position: "Defender",
           gamesPlayed: 18,
           goals: 0,
           assists: 0,
@@ -160,6 +273,7 @@ export default {
         },
         {
           name: "Taylor Foran",
+          position: "Defender",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -168,6 +282,7 @@ export default {
         },
         {
           name: "Reuell Walters",
+          position: "Defender",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -176,6 +291,7 @@ export default {
         },
         {
           name: "Ayden Heaven",
+          position: "Defender",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -184,6 +300,7 @@ export default {
         },
         {
           name: "Thomas Partey",
+          position: "Midfielder",
           gamesPlayed: 20,
           goals: 3,
           assists: 2,
@@ -192,6 +309,7 @@ export default {
         },
         {
           name: "Martin Odegaard",
+          position: "Midfielder",
           gamesPlayed: 19,
           goals: 2,
           assists: 3,
@@ -200,6 +318,7 @@ export default {
         },
         {
           name: "Emile Smith Rowe",
+          position: "Midfielder",
           gamesPlayed: 20,
           goals: 1,
           assists: 4,
@@ -208,6 +327,7 @@ export default {
         },
         {
           name: "Jorginho",
+          position: "Midfielder",
           gamesPlayed: 18,
           goals: 0,
           assists: 1,
@@ -216,6 +336,7 @@ export default {
         },
         {
           name: "Fabio Vieira",
+          position: "Midfielder",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -224,6 +345,7 @@ export default {
         },
         {
           name: "Mohamed Elneny",
+          position: "Midfielder",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -232,6 +354,7 @@ export default {
         },
         {
           name: "Miguel Azeez",
+          position: "Midfielder",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -240,6 +363,7 @@ export default {
         },
         {
           name: "Mauro Bandeira",
+          position: "Midfielder",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -248,6 +372,7 @@ export default {
         },
         {
           name: "Declan Rice",
+          position: "Midfielder",
           gamesPlayed: 18,
           goals: 1,
           assists: 1,
@@ -256,6 +381,7 @@ export default {
         },
         {
           name: "Amario Cozier-Duberry",
+          position: "Midfielder",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -264,6 +390,7 @@ export default {
         },
         {
           name: "Myles Lewis-Skelly",
+          position: "Midfielder",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -272,6 +399,7 @@ export default {
         },
         {
           name: "Ethan Nwaneri",
+          position: "Midfielder",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -280,6 +408,7 @@ export default {
         },
         {
           name: "Salah-Eddine Oulad M'hand",
+          position: "Midfielder",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -288,6 +417,7 @@ export default {
         },
         {
           name: "James Sweet",
+          position: "Midfielder",
           gamesPlayed: 0,
           goals: 0,
           assists: 0,
@@ -296,6 +426,7 @@ export default {
         },
         {
           name: "Bukayo Saka",
+          position: "Forward",
           gamesPlayed: 20,
           goals: 4,
           assists: 3,
@@ -304,6 +435,7 @@ export default {
         },
         {
           name: "Gabriel Jesus",
+          position: "Forward",
           gamesPlayed: 19,
           goals: 6,
           assists: 2,
@@ -312,6 +444,7 @@ export default {
         },
         {
           name: "Gabriel Martinelli",
+          position: "Forward",
           gamesPlayed: 18,
           goals: 3,
           assists: 1,
@@ -320,6 +453,7 @@ export default {
         },
         {
           name: "Eddie Nketiah",
+          position: "Forward",
           gamesPlayed: 17,
           goals: 2,
           assists: 1,
@@ -328,6 +462,7 @@ export default {
         },
         {
           name: "Leandro Trossard",
+          position: "Forward",
           gamesPlayed: 16,
           goals: 3,
           assists: 2,
@@ -336,6 +471,7 @@ export default {
         },
         {
           name: "Reiss Nelson",
+          position: "Forward",
           gamesPlayed: 12,
           goals: 1,
           assists: 3,
@@ -344,6 +480,7 @@ export default {
         },
         {
           name: "Kai Havertz",
+          position: "Forward",
           gamesPlayed: 10,
           goals: 2,
           assists: 0,
@@ -351,6 +488,30 @@ export default {
           redCards: 0,
         },
       ];
+    },
+
+    teamName() {
+      return this.$store.state.selectedTeam || "Arsenal";
+    },
+
+    goalkeepers() {
+      return this.playerList.filter(
+        (player) => player.position === "Goalkeeper"
+      );
+    },
+
+    defenders() {
+      return this.playerList.filter((player) => player.position === "Defender");
+    },
+
+    midfielders() {
+      return this.playerList.filter(
+        (player) => player.position === "Midfielder"
+      );
+    },
+
+    forwards() {
+      return this.playerList.filter((player) => player.position === "Forward");
     },
   },
 };
