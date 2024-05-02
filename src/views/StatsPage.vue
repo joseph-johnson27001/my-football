@@ -8,7 +8,7 @@
 export default {
   data() {},
   computed: {
-    playerName() {
+    teamName() {
       return this.$store.state.selectedTeam || "Arsenal";
     },
   },
