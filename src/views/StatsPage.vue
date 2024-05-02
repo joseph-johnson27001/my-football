@@ -7,7 +7,7 @@
       <table>
         <thead>
           <tr>
-            <th>Player</th>
+            <th class="player-name">Player</th>
             <th>Games Played</th>
             <th>Goals</th>
             <th>Assists</th>
@@ -17,7 +17,7 @@
         </thead>
         <tbody>
           <tr v-for="(player, index) in playerList" :key="index">
-            <td>{{ player.name }}</td>
+            <td class="player-name">{{ player.name }}</td>
             <td>{{ player.gamesPlayed }}</td>
             <td>{{ player.goals }}</td>
             <td>{{ player.assists }}</td>
@@ -360,6 +360,7 @@ export default {
   border: 1px solid #ccc;
   text-align: center;
   padding: 8px;
+  font-weight: 500;
 }
 
 .team-stats th,
@@ -371,5 +372,10 @@ export default {
 .team-stats tr:hover,
 .player-list tr:hover {
   background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.player-name {
+  text-align: left !important;
 }
 </style>
