@@ -8,7 +8,7 @@
         <thead>
           <tr>
             <th class="player-name">Player</th>
-            <th>Games Played</th>
+            <th>Played</th>
             <th>Goals</th>
             <th>Assists</th>
             <th>Yellow Cards</th>
@@ -377,6 +377,7 @@ export default {
 .player-list th {
   background-color: #1f3f7f;
   color: white;
+  font-weight: 100;
 }
 
 .team-stats tr:hover,
