@@ -16,7 +16,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(player, index) in playerList" :key="index">
+          <tr
+            @click="navigateToPlayerPage(player)"
+            v-for="(player, index) in playerList"
+            :key="index"
+          >
             <td class="player-name">{{ player.name }}</td>
             <td>{{ player.gamesPlayed }}</td>
             <td>{{ player.goals }}</td>
@@ -36,6 +40,12 @@ export default {
     return {
       playerData: {},
     };
+  },
+  methods: {
+    navigateToPlayerPage(player) {
+      this.$store.state.playerName = player.name;
+      this.$router.push("player");
+    },
   },
   computed: {
     teamName() {
