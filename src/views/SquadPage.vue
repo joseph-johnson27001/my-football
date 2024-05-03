@@ -150,6 +150,7 @@ export default {
   methods: {
     handlePlayerClick(player) {
       this.$store.state.playerName = player.name;
+      this.$store.state.playerNumber = player.number;
       this.$router.push("player");
     },
   },
