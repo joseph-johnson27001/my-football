@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="heading-container">
-      <h2>{{ playerName }} [{{ playerNumber }}]</h2>
+      <h2>[{{ playerNumber }}] {{ playerName }}</h2>
     </div>
     <div class="player-stats">
       <table class="total-stats">
@@ -169,8 +169,8 @@ export default {
       return this.$store.state.playerName || "William Saliba";
     },
     playerNumber() {
-      return this.$store.state.playerNumber || "2"
-    }
+      return this.$store.state.playerNumber || "2";
+    },
   },
   mounted() {
     this.$store.state.isLoading = true;
