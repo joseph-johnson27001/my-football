@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="heading-container">
-      <h2>[{{ playerNumber }}] {{ playerName }}</h2>
+      <h2>{{ playerNumber }}. {{ playerName }}</h2>
     </div>
     <div class="player-stats">
       <table class="total-stats">
