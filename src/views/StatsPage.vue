@@ -91,7 +91,7 @@
               v-for="(player, index) in midfielders"
               :key="'mid-' + index"
             >
-              <td class="player-name">{{ player.name }}</td>
+              <td class="player-name">{{ player.number }} {{ player.name }}</td>
               <td>{{ player.gamesPlayed }}</td>
               <td>{{ player.goals }}</td>
               <td>{{ player.assists }}</td>
@@ -148,6 +148,7 @@ export default {
   methods: {
     navigateToPlayerPage(player) {
       this.$store.state.playerName = player.name;
+      this.$store.state.playerNumber = player.number;
       this.$router.push("player");
     },
   },
@@ -155,6 +156,7 @@ export default {
     playerList() {
       return [
         {
+          number: 22,
           name: "Aaron Ramsdale",
           position: "Goalkeeper",
           gamesPlayed: 20,
@@ -164,6 +166,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 31,
           name: "David Raya",
           position: "Goalkeeper",
           gamesPlayed: 18,
@@ -173,6 +176,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 52,
           name: "Karl Hein",
           position: "Goalkeeper",
           gamesPlayed: 5,
@@ -182,6 +186,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 54,
           name: "Hubert Graczyk",
           position: "Goalkeeper",
           gamesPlayed: 0,
@@ -191,6 +196,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 2,
           name: "James Hillson",
           position: "Goalkeeper",
           gamesPlayed: 0,
@@ -200,6 +206,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 2,
           name: "William Saliba",
           position: "Defender",
           gamesPlayed: 20,
@@ -209,6 +216,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 4,
           name: "Ben White",
           position: "Defender",
           gamesPlayed: 19,
@@ -218,6 +226,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 6,
           name: "Gabriel Magalhaes",
           position: "Defender",
           gamesPlayed: 18,
@@ -227,6 +236,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 12,
           name: "Cedric Soares",
           position: "Defender",
           gamesPlayed: 17,
@@ -236,6 +246,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 12,
           name: "Jurrien Timber",
           position: "Defender",
           gamesPlayed: 16,
@@ -245,6 +256,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 15,
           name: "Jakub Kiwior",
           position: "Defender",
           gamesPlayed: 0,
@@ -254,6 +266,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 18,
           name: "Takehiro Tomiyasu",
           position: "Defender",
           gamesPlayed: 20,
@@ -263,6 +276,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 35,
           name: "Oleksandr Zinchenko",
           position: "Defender",
           gamesPlayed: 18,
@@ -272,6 +286,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 50,
           name: "Taylor Foran",
           position: "Defender",
           gamesPlayed: 0,
@@ -281,6 +296,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 76,
           name: "Reuell Walters",
           position: "Defender",
           gamesPlayed: 0,
@@ -290,6 +306,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 79,
           name: "Ayden Heaven",
           position: "Defender",
           gamesPlayed: 0,
@@ -299,6 +316,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 5,
           name: "Thomas Partey",
           position: "Midfielder",
           gamesPlayed: 20,
@@ -308,6 +326,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 8,
           name: "Martin Odegaard",
           position: "Midfielder",
           gamesPlayed: 19,
@@ -317,6 +336,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 10,
           name: "Emile Smith Rowe",
           position: "Midfielder",
           gamesPlayed: 20,
@@ -326,6 +346,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 20,
           name: "Jorginho",
           position: "Midfielder",
           gamesPlayed: 18,
@@ -335,6 +356,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 21,
           name: "Fabio Vieira",
           position: "Midfielder",
           gamesPlayed: 0,
@@ -344,6 +366,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 25,
           name: "Mohamed Elneny",
           position: "Midfielder",
           gamesPlayed: 0,
@@ -353,6 +376,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 39,
           name: "Miguel Azeez",
           position: "Midfielder",
           gamesPlayed: 0,
@@ -362,6 +386,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 40,
           name: "Mauro Bandeira",
           position: "Midfielder",
           gamesPlayed: 0,
@@ -371,6 +396,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 41,
           name: "Declan Rice",
           position: "Midfielder",
           gamesPlayed: 18,
@@ -380,6 +406,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 45,
           name: "Amario Cozier-Duberry",
           position: "Midfielder",
           gamesPlayed: 0,
@@ -389,6 +416,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 59,
           name: "Myles Lewis-Skelly",
           position: "Midfielder",
           gamesPlayed: 0,
@@ -398,6 +426,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 63,
           name: "Ethan Nwaneri",
           position: "Midfielder",
           gamesPlayed: 0,
@@ -407,6 +436,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 65,
           name: "Salah-Eddine Oulad M'hand",
           position: "Midfielder",
           gamesPlayed: 0,
@@ -416,6 +446,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 73,
           name: "James Sweet",
           position: "Midfielder",
           gamesPlayed: 0,
@@ -425,6 +456,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 7,
           name: "Bukayo Saka",
           position: "Forward",
           gamesPlayed: 20,
@@ -434,6 +466,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 9,
           name: "Gabriel Jesus",
           position: "Forward",
           gamesPlayed: 19,
@@ -443,6 +476,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 11,
           name: "Gabriel Martinelli",
           position: "Forward",
           gamesPlayed: 18,
@@ -452,6 +486,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 14,
           name: "Eddie Nketiah",
           position: "Forward",
           gamesPlayed: 17,
@@ -461,6 +496,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 19,
           name: "Leandro Trossard",
           position: "Forward",
           gamesPlayed: 16,
@@ -470,6 +506,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 24,
           name: "Reiss Nelson",
           position: "Forward",
           gamesPlayed: 12,
@@ -479,6 +516,7 @@ export default {
           redCards: 0,
         },
         {
+          number: 29,
           name: "Kai Havertz",
           position: "Forward",
           gamesPlayed: 10,
