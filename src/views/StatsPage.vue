@@ -15,8 +15,8 @@
               <th>Played</th>
               <th>Goals</th>
               <th>Assists</th>
-              <th>Yellow Cards</th>
-              <th>Red Cards</th>
+              <th>YC</th>
+              <th>RC</th>
             </tr>
           </thead>
           <tbody>
@@ -50,8 +50,8 @@
               <th>Played</th>
               <th>Goals</th>
               <th>Assists</th>
-              <th>Yellow Cards</th>
-              <th>Red Cards</th>
+              <th>YC</th>
+              <th>RC</th>
             </tr>
           </thead>
           <tbody>
@@ -85,8 +85,8 @@
               <th>Played</th>
               <th>Goals</th>
               <th>Assists</th>
-              <th>Yellow Cards</th>
-              <th>Red Cards</th>
+              <th>YC</th>
+              <th>RC</th>
             </tr>
           </thead>
           <tbody>
@@ -120,8 +120,8 @@
               <th>Played</th>
               <th>Goals</th>
               <th>Assists</th>
-              <th>Yellow Cards</th>
-              <th>Red Cards</th>
+              <th>YC</th>
+              <th>RC</th>
             </tr>
           </thead>
           <tbody>
