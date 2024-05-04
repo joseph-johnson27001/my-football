@@ -25,7 +25,9 @@
               v-for="(player, index) in goalkeepers"
               :key="'gk-' + index"
             >
-              <td class="player-name">{{ player.name }}</td>
+              <td class="player-name">
+                {{ player.number }}. {{ player.name }}
+              </td>
               <td>{{ player.gamesPlayed }}</td>
               <td>{{ player.goals }}</td>
               <td>{{ player.assists }}</td>
@@ -58,7 +60,9 @@
               v-for="(player, index) in defenders"
               :key="'def-' + index"
             >
-              <td class="player-name">{{ player.name }}</td>
+              <td class="player-name">
+                {{ player.number }}. {{ player.name }}
+              </td>
               <td>{{ player.gamesPlayed }}</td>
               <td>{{ player.goals }}</td>
               <td>{{ player.assists }}</td>
@@ -91,7 +95,9 @@
               v-for="(player, index) in midfielders"
               :key="'mid-' + index"
             >
-              <td class="player-name">{{ player.number }} {{ player.name }}</td>
+              <td class="player-name">
+                {{ player.number }}. {{ player.name }}
+              </td>
               <td>{{ player.gamesPlayed }}</td>
               <td>{{ player.goals }}</td>
               <td>{{ player.assists }}</td>
@@ -124,7 +130,9 @@
               v-for="(player, index) in forwards"
               :key="'for-' + index"
             >
-              <td class="player-name">{{ player.name }}</td>
+              <td class="player-name">
+                {{ player.number }}. {{ player.name }}
+              </td>
               <td>{{ player.gamesPlayed }}</td>
               <td>{{ player.goals }}</td>
               <td>{{ player.assists }}</td>
@@ -156,7 +164,7 @@ export default {
     playerList() {
       return [
         {
-          number: 22,
+          number: 1,
           name: "Aaron Ramsdale",
           position: "Goalkeeper",
           gamesPlayed: 20,
