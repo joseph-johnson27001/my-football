@@ -1,7 +1,7 @@
 <template>
   <nav class="navigation-bar">
     <div class="navigation-container">
-      <!-- <router-link to="/" class="nav-link" active-class="active-link">
+      <router-link to="/" class="nav-link" active-class="active-link">
         <img
           src="@/assets/football.png"
           alt="Home"
@@ -9,7 +9,7 @@
           height="38"
           class="icon"
         />
-      </router-link> -->
+      </router-link>
       <router-link to="/news" class="nav-link" active-class="active-link"
         >News</router-link
       >
