@@ -93,7 +93,7 @@ export default {
           id: 2,
           homeTeam: {
             id: 6,
-            name: "Manchester United",
+            name: "Man United",
             crest:
               "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
           },
@@ -117,7 +117,7 @@ export default {
           },
           awayTeam: {
             id: 20,
-            name: "Manchester City",
+            name: "Manchester",
             crest:
               "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
           },
