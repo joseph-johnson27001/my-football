@@ -41,7 +41,7 @@
 }
 
 .navigation-container {
-  min-height: 50px;
+  min-height: 45px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
