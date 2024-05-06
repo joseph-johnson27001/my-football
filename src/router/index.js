@@ -5,7 +5,7 @@ import FixturesPage from "../views/FixturesPage.vue";
 import ResultsPage from "../views/ResultsPage.vue";
 import NewsPage from "../views/NewsPage.vue";
 import TeamsPage from "../views/TeamsPage.vue";
-import HomePage from "../views/HomePage.vue";
+// import HomePage from "../views/HomePage.vue";
 import TeamPage from "../views/TeamPage.vue";
 import FixturePage from "../views/FixturePage.vue";
 import ResultPage from "../views/ResultPage.vue";
@@ -18,8 +18,8 @@ import LiveFixturePage from "@/views/LiveFixturePage.vue";
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: HomePage,
+    name: "news",
+    component: NewsPage,
   },
   {
     path: "/table",
