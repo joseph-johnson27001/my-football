@@ -42,10 +42,10 @@
           <h2>Next Fixtures</h2>
         </div>
         <NextFixtures />
-        <h2 class="side-heading">Latest Results</h2>
+        <h2 class="heading-container">Latest Results</h2>
         <LatestResults />
         <div class="premier-league-table">
-          <h2 class="side-heading">Standings</h2>
+          <h2 class="heading-container">Standings</h2>
           <NarrowTable />
         </div>
       </div>
@@ -96,6 +96,18 @@ export default {
           description:
             "Chelsea FC appoints a new head coach ahead of the upcoming season, aiming for a fresh start.",
           image: "https://picsum.photos/150?random=4",
+        },
+        {
+          title: "Everton FC reveals plans for stadium renovation",
+          description:
+            "Everton FC unveils ambitious plans to renovate their stadium, promising a modern and enhanced fan experience.",
+          image: "https://picsum.photos/150?random=0",
+        },
+        {
+          title: "West Ham United signs veteran goalkeeper",
+          description:
+            "West Ham United completes the signing of an experienced goalkeeper to bolster their squad for the upcoming season.",
+          image: "https://picsum.photos/150?random=9",
         },
       ],
       mainArticle: {
