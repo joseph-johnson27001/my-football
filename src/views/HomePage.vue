@@ -41,9 +41,9 @@
         <div class="heading-container">
           <h2>Next Fixtures</h2>
         </div>
-        <NextFixture />
+        <NextFixtures />
         <h2 class="side-heading">Latest Results</h2>
-        <LatestResult />
+        <LatestResults />
         <div class="premier-league-table">
           <h2 class="side-heading">Standings</h2>
           <NarrowTable />
@@ -55,14 +55,14 @@
 
 <script>
 import NarrowTable from "@/components/NarrowTable.vue";
-import NextFixture from "@/components/NextFixture.vue";
-import LatestResult from "@/components/LatestResult.vue";
+import NextFixtures from "@/components/NextFixtures.vue";
+import LatestResults from "@/components/LatestResults.vue";
 
 export default {
   components: {
     NarrowTable,
-    NextFixture,
-    LatestResult,
+    NextFixtures,
+    LatestResults,
   },
   data() {
     return {
