@@ -117,7 +117,7 @@ export default {
           },
           awayTeam: {
             id: 20,
-            name: "ManCity",
+            name: "Man City",
             crest:
               "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
           },
