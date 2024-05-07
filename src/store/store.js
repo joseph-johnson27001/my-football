@@ -7,5 +7,6 @@ export default createStore({
     selectedFixture: null,
     playerName: null,
     playerNumber: null,
+    selectedTeam: null,
   },
 });
