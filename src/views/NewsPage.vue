@@ -92,7 +92,7 @@ export default {
           content:
             "Content providing insights and analysis on the upcoming Premier League season, including key players, teams to watch, and predictions.",
           image: "https://picsum.photos/1200/500",
-          team: "Arsenal",
+          teams: ["All"],
         },
         {
           id: 2,
@@ -102,7 +102,7 @@ export default {
           content:
             "Content dissecting the tactical strategies employed by the leading teams in the race for the Premier League championship.",
           image: "https://picsum.photos/300?random=8",
-          team: "Aston Villa",
+          teams: ["Arsenal", "Manchester City"],
         },
         {
           id: 3,
@@ -112,7 +112,7 @@ export default {
           content:
             "Content examining the significance of major transfer deals and their potential effects on the fortunes of respective Premier League teams.",
           image: "https://picsum.photos/300?random=7",
-          team: "Arsenal",
+          teams: ["Brighton & Hove Albion", "Chelsea"],
         },
         {
           id: 4,
@@ -122,7 +122,7 @@ export default {
           content:
             "Content describing the top 10 goals scored in the Premier League season so far.",
           image: "https://picsum.photos/300?random=6",
-          teamId: "Arsenal",
+          teams: ["Liverpool", "Manchester United"],
         },
         {
           id: 5,
@@ -132,7 +132,7 @@ export default {
           content:
             "Content highlighting the young football talents making a mark in the Premier League.",
           image: "https://picsum.photos/300?random=5",
-          teamId: "Arsenal",
+          teams: ["Manchester City", "Chelsea"],
         },
         {
           id: 6,
@@ -142,7 +142,7 @@ export default {
           content:
             "Content providing tactical insights and player analyses from select Premier League fixtures.",
           image: "https://picsum.photos/300?random=4",
-          teamId: 3,
+          teams: ["Manchester United", "Liverpool"],
         },
         {
           id: 7,
@@ -152,7 +152,7 @@ export default {
           content:
             "Content exploring the historical development of football tactics and the influence of different playing styles on the modern game.",
           image: "https://picsum.photos/300?random=3",
-          team: 1,
+          teams: ["Southampton", "Arsenal"],
         },
         {
           id: 8,
@@ -162,7 +162,7 @@ export default {
           content:
             "Content analyzing the implementation of VAR in the Premier League and its implications for match outcomes and officiating.",
           image: "https://picsum.photos/300?random=2",
-          team: 2,
+          teams: ["Tottenham Hotspur", "Chelsea"],
         },
         {
           id: 9,
@@ -173,7 +173,7 @@ export default {
           content:
             "Content highlighting the achievements, tactics, and managerial philosophies of iconic figures in Premier League history.",
           image: "https://picsum.photos/300?random=1",
-          team: 3,
+          teams: ["Fulham", "Liverpool"],
         },
       ],
       imagesLoaded: 0,
@@ -195,7 +195,7 @@ export default {
       } else {
         return this.articles
           .slice(1)
-          .filter((article) => article.team === this.selectedTeam);
+          .filter((article) => article.teams.includes(this.selectedTeam));
       }
     },
   },
