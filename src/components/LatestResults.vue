@@ -2,31 +2,33 @@
   <div>
     <div class="fixtures-list">
       <div
-        v-for="fixture in fixtures"
-        :key="fixture.id"
+        v-for="result in results"
+        :key="result.id"
         class="fixture-item"
-        @click="navigateToMatchPage(fixture)"
+        @click="navigateToMatchPage(result)"
       >
         <div class="team-container team-left">
           <span class="crest-container">
             <img
-              :src="getTeamCrest(fixture.homeTeam.id)"
-              :alt="fixture.homeTeam.name"
+              :src="getTeamCrest(result.homeTeam.id)"
+              :alt="result.homeTeam.name"
               class="team-crest"
             />
           </span>
-          <div class="team-name">{{ fixture.homeTeam.name }}</div>
+          <div class="team-name">{{ result.homeTeam.name }}</div>
         </div>
         <div class="score-container">
-          <span class="score">-</span>
-          <span class="fixture-time">{{ fixture.time }} </span>
+          <span class="score" v-if="result.status === 'FINISHED'">
+            {{ result.score.fullTime.home }} -
+            {{ result.score.fullTime.away }}
+          </span>
         </div>
         <div class="team-container team-right">
-          <div class="team-name">{{ fixture.awayTeam.name }}</div>
+          <div class="team-name">{{ result.awayTeam.name }}</div>
           <span class="crest-container">
             <img
-              :src="getTeamCrest(fixture.awayTeam.id)"
-              :alt="fixture.awayTeam.name"
+              :src="getTeamCrest(result.awayTeam.id)"
+              :alt="result.awayTeam.name"
               class="team-crest"
             />
           </span>
@@ -38,7 +40,7 @@
 
 <script>
 export default {
-  name: "NextFixtures",
+  name: "LatestResult",
   props: {
     teamCrestsData: {
       type: Object,
@@ -47,15 +49,14 @@ export default {
   },
   data() {
     return {
-      fixtures: [],
+      results: [],
     };
   },
-
   methods: {
     getTeamCrest(teamId) {
-      const team = this.fixtures.find(
-        (fixture) =>
-          fixture.homeTeam.id === teamId || fixture.awayTeam.id === teamId
+      const team = this.results.find(
+        (result) =>
+          result.homeTeam.id === teamId || result.awayTeam.id === teamId
       );
       if (team) {
         return team.homeTeam.id === teamId
@@ -65,71 +66,71 @@ export default {
         return "placeholder.jpg";
       }
     },
-    navigateToMatchPage(fixture) {
-      this.$store.state.selectedFixture = `${fixture.homeTeam.name} v ${fixture.awayTeam.name}`;
-      this.$router.push("fixture");
+    navigateToMatchPage(result) {
+      this.$store.state.selectedFixture = `${result.homeTeam.name} ${result.score.fullTime.home} - ${result.score.fullTime.away} ${result.awayTeam.name}`;
+      this.$router.push("result");
     },
-    async fetchFixtures() {
-      this.fixtures = [
+    async fetchResults() {
+      this.results = [
         {
           id: 1,
           homeTeam: {
-            id: 11,
+            id: 1,
             name: "Arsenal",
             crest:
               "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
           },
           awayTeam: {
-            id: 17,
-            name: "Fulham",
+            id: 4,
+            name: "Liverpool",
             crest:
-              "https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg",
+              "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
           },
           matchday: 1,
-          status: "SCHEDULED",
-          time: "17:30",
+          status: "FINISHED",
+          score: { fullTime: { home: 3, away: 2 } },
         },
         {
           id: 2,
           homeTeam: {
-            id: 6,
+            id: 2,
             name: "Man United",
             crest:
               "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
           },
           awayTeam: {
             id: 3,
-            name: "Liverpool",
-            crest:
-              "https://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg",
-          },
-          matchday: 1,
-          status: "SCHEDULED",
-          time: "15:00",
-        },
-        {
-          id: 3,
-          homeTeam: {
-            id: 8,
             name: "Chelsea",
             crest:
               "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
           },
-          awayTeam: {
-            id: 20,
+          matchday: 1,
+          status: "FINISHED",
+          score: { fullTime: { home: 1, away: 1 } },
+        },
+        {
+          id: 3,
+          homeTeam: {
+            id: 7,
             name: "Man City",
             crest:
               "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
           },
+          awayTeam: {
+            id: 8,
+            name: "Brighton",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg",
+          },
           matchday: 1,
-          status: "SCHEDULED",
-          time: "20:00",
+          status: "FINISHED",
+          score: { fullTime: { home: 2, away: 1 } },
         },
-      ].reverse();
+      ];
     },
   },
   created() {
-    this.fetchFixtures();
+    this.fetchResults();
   },
 };
 </script>
@@ -188,15 +189,9 @@ export default {
 
 .score-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.fixture-time {
-  font-size: 0.8em;
-  font-weight: 100;
 }
 
 .crest-container {
