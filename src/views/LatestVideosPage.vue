@@ -14,7 +14,7 @@
 
     <div class="videos-list">
       <div
-        v-for="(video, index) in latestVideos"
+        v-for="(video, index) in filteredVideos"
         :key="index"
         class="video-item"
       >
@@ -40,6 +40,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {
@@ -68,6 +69,7 @@ export default {
         "West Ham United",
         "Wolverhampton Wanderers",
       ],
+      filteredVideos: [],
     };
   },
   computed: {
@@ -83,48 +85,45 @@ export default {
     this.latestVideos = [
       {
         src: "https://www.youtube.com/embed/t5EhsXZwn4o?si=EiFsFIn-B4BM6dUP",
-        title: this.teamName + " V Liverpool",
+        title: "Arsenal V Liverpool",
         description:
-          "Highlights of the recent match between " +
-          this.teamName +
-          " and Liverpool.",
+          "Highlights of the recent match between Arsenal and Liverpool.",
+        teams: ["Arsenal", "Liverpool"],
       },
       {
         src: "https://www.youtube.com/embed/HtiYya12mMQ?si=H-z5o4s1HZWaiKqU",
         title: "Goals of the season",
-        description: this.teamName + "'s top goals this season.",
+        description: "Arsenal's top goals this season.",
+        teams: ["Arsenal"],
       },
       {
         src: "https://www.youtube.com/embed/89Hd99Mjfjw?si=lfiTL_C_8KI_sEEz",
-        title: this.teamName + " training sessions best bits",
-        description:
-          "Best moments from " + this.teamName + " training sessions.",
+        title: "Arsenal training sessions best bits",
+        description: "Best moments from Arsenal training sessions.",
+        teams: ["Arsenal"],
       },
-
       {
         src: "https://www.youtube.com/embed/5j5UknRuIh0?si=vpOptcIDAHVw4yuK",
         title: "Interview",
         description:
-          "Interview with the " +
-          this.teamName +
-          " coach discussing their strategies for their upcoming matches.",
+          "Interview with the Arsenal coach discussing their strategies for their upcoming matches.",
+        teams: ["Arsenal"],
       },
-
       {
         src: "https://www.youtube.com/embed/_DivH1dWGbw?si=ei4hgVZPPA-S85OK",
-        title: this.teamName + " Matchday Analysis",
-        description:
-          "Analysis of the recent " + this.teamName + " performances.",
+        title: "Arsenal Matchday Analysis",
+        description: "Analysis of the recent Arsenal performances.",
+        teams: ["Arsenal"],
       },
       {
         src: "https://www.youtube.com/embed/sWBvs-gwBvs?si=z6mA6y3nd-vvVhFw",
-        title: this.teamName + " Insights",
+        title: "Arsenal Insights",
         description:
-          "Insights into the journey of " +
-          this.teamName +
-          " in the league so far.",
+          "Insights into the journey of Arsenal in the league so far.",
+        teams: ["Arsenal"],
       },
     ];
+
     setTimeout(() => {
       this.$store.state.isLoading = false;
     }, 1000);
@@ -132,6 +131,17 @@ export default {
   methods: {
     isYouTubeVideo(video) {
       return video.src.includes("youtube.com");
+    },
+  },
+  watch: {
+    selectedTeam(newTeam) {
+      if (newTeam) {
+        this.filteredVideos = this.latestVideos.filter((video) =>
+          video.teams.includes(newTeam)
+        );
+      } else {
+        this.filteredVideos = this.latestVideos;
+      }
     },
   },
 };
