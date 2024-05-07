@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       latestVideos: [],
-      selectedTeam: "",
+      selectedTeam: null,
       teamList: [
         "Arsenal",
         "Aston Villa",
@@ -72,14 +72,11 @@ export default {
       filteredVideos: [],
     };
   },
-  computed: {
-    teamName() {
-      return this.$store.state.selectedTeam || "Arsenal";
-    },
-  },
   created() {
     if (this.$store.state.selectedTeam) {
       this.selectedTeam = this.$store.state.selectedTeam;
+    } else {
+      this.selectedTeam = "";
     }
     this.$store.state.isLoading = true;
     this.latestVideos = [
@@ -139,7 +136,8 @@ export default {
         this.filteredVideos = this.latestVideos.filter((video) =>
           video.teams.includes(newTeam)
         );
-      } else {
+      }
+      if (newTeam == "") {
         this.filteredVideos = this.latestVideos;
       }
     },
