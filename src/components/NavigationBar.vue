@@ -1,7 +1,12 @@
 <template>
   <nav class="navigation-bar">
     <div class="navigation-container">
-      <router-link to="/" class="nav-link" active-class="active-link">
+      <router-link
+        to="/"
+        class="nav-link"
+        active-class="active-link"
+        @click="resetTeam()"
+      >
         <img
           src="@/assets/football.png"
           alt="Home"
@@ -10,28 +15,62 @@
           class="icon"
         />
       </router-link>
-      <router-link to="/news" class="nav-link" active-class="active-link"
+      <router-link
+        to="/news"
+        class="nav-link"
+        active-class="active-link"
+        @click="resetTeam()"
         >News</router-link
       >
-      <router-link to="/teams" class="nav-link" active-class="active-link"
+      <router-link
+        to="/teams"
+        class="nav-link"
+        active-class="active-link"
+        @click="resetTeam()"
         >Teams</router-link
       >
 
-      <router-link to="/fixtures" class="nav-link" active-class="active-link"
+      <router-link
+        to="/fixtures"
+        class="nav-link"
+        active-class="active-link"
+        @click="resetTeam()"
         >Fixtures</router-link
       >
-      <router-link to="/results" class="nav-link" active-class="active-link"
+      <router-link
+        to="/results"
+        class="nav-link"
+        active-class="active-link"
+        @click="resetTeam()"
         >Results</router-link
       >
-      <router-link to="/videos" class="nav-link" active-class="active-link"
+      <router-link
+        to="/videos"
+        class="nav-link"
+        active-class="active-link"
+        @click="resetTeam()"
         >Videos</router-link
       >
-      <router-link to="/table" class="nav-link" active-class="active-link"
+      <router-link
+        to="/table"
+        class="nav-link"
+        active-class="active-link"
+        @click="resetTeam()"
         >Table</router-link
       >
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  methods: {
+    resetTeam() {
+      this.$store.state.selectedTeam = null;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .navigation-bar {
