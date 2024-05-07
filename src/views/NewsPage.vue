@@ -5,15 +5,10 @@
       <h2>Football News</h2>
       <div class="team-selection">
         <!-- <label for="team-select">Select Team: </label> -->
-        <select v-model="selectedTeam" id="team-select">
-          <option value="All" class="option">All Teams</option>
-          <option
-            v-for="team in teams"
-            :key="team.id"
-            :value="team.id"
-            class="option"
-          >
-            {{ team.name }}
+        <select v-model="selectedTeam" id="team-dropdown">
+          <option value="All">All Teams</option>
+          <option v-for="team in teamList" :key="team" :value="team">
+            {{ team }}
           </option>
         </select>
       </div>
@@ -66,29 +61,28 @@ export default {
   data() {
     return {
       selectedTeam: "All",
-      teams: [
-        { id: 1, name: "Arsenal" },
-        { id: 2, name: "Aston Villa" },
-        { id: 3, name: "Brentford" },
-        { id: 4, name: "Brighton & Hove Albion" },
-        { id: 5, name: "Burnley" },
-        { id: 6, name: "Chelsea" },
-        { id: 7, name: "Crystal Palace" },
-        { id: 8, name: "Everton" },
-        { id: 9, name: "Leeds United" },
-        { id: 10, name: "Leicester City" },
-        { id: 11, name: "Liverpool" },
-        { id: 12, name: "Manchester City" },
-        { id: 13, name: "Manchester United" },
-        { id: 14, name: "Newcastle United" },
-        { id: 15, name: "Norwich City" },
-        { id: 16, name: "Southampton" },
-        { id: 17, name: "Tottenham Hotspur" },
-        { id: 18, name: "Watford" },
-        { id: 19, name: "West Ham United" },
-        { id: 20, name: "Wolverhampton Wanderers" },
+      teamList: [
+        "Arsenal",
+        "Aston Villa",
+        "Brighton & Hove Albion",
+        "Burnley",
+        "Chelsea",
+        "Crystal Palace",
+        "Everton",
+        "Fulham",
+        "Leeds United",
+        "Leicester City",
+        "Liverpool",
+        "Manchester City",
+        "Manchester United",
+        "Newcastle United",
+        "Sheffield United",
+        "Southampton",
+        "Tottenham Hotspur",
+        "West Bromwich Albion",
+        "West Ham United",
+        "Wolverhampton Wanderers",
       ],
-
       articles: [
         {
           id: 1,
@@ -98,7 +92,7 @@ export default {
           content:
             "Content providing insights and analysis on the upcoming Premier League season, including key players, teams to watch, and predictions.",
           image: "https://picsum.photos/1200/500",
-          teamId: 1,
+          team: "Arsenal",
         },
         {
           id: 2,
@@ -108,7 +102,7 @@ export default {
           content:
             "Content dissecting the tactical strategies employed by the leading teams in the race for the Premier League championship.",
           image: "https://picsum.photos/300?random=8",
-          teamId: 2,
+          team: "Aston Villa",
         },
         {
           id: 3,
@@ -118,7 +112,7 @@ export default {
           content:
             "Content examining the significance of major transfer deals and their potential effects on the fortunes of respective Premier League teams.",
           image: "https://picsum.photos/300?random=7",
-          teamId: 3,
+          team: "Arsenal",
         },
         {
           id: 4,
@@ -128,7 +122,7 @@ export default {
           content:
             "Content describing the top 10 goals scored in the Premier League season so far.",
           image: "https://picsum.photos/300?random=6",
-          teamId: 1,
+          teamId: "Arsenal",
         },
         {
           id: 5,
@@ -138,7 +132,7 @@ export default {
           content:
             "Content highlighting the young football talents making a mark in the Premier League.",
           image: "https://picsum.photos/300?random=5",
-          teamId: 2,
+          teamId: "Arsenal",
         },
         {
           id: 6,
@@ -158,7 +152,7 @@ export default {
           content:
             "Content exploring the historical development of football tactics and the influence of different playing styles on the modern game.",
           image: "https://picsum.photos/300?random=3",
-          teamId: 1,
+          team: 1,
         },
         {
           id: 8,
@@ -168,7 +162,7 @@ export default {
           content:
             "Content analyzing the implementation of VAR in the Premier League and its implications for match outcomes and officiating.",
           image: "https://picsum.photos/300?random=2",
-          teamId: 2,
+          team: 2,
         },
         {
           id: 9,
@@ -179,13 +173,16 @@ export default {
           content:
             "Content highlighting the achievements, tactics, and managerial philosophies of iconic figures in Premier League history.",
           image: "https://picsum.photos/300?random=1",
-          teamId: 3,
+          team: 3,
         },
       ],
       imagesLoaded: 0,
     };
   },
   mounted() {
+    if (this.$store.state.selectedTeam) {
+      this.selectedTeam = this.$store.state.selectedTeam;
+    }
     this.$store.state.isLoading = true;
   },
   computed: {
@@ -198,7 +195,7 @@ export default {
       } else {
         return this.articles
           .slice(1)
-          .filter((article) => article.teamId === this.selectedTeam);
+          .filter((article) => article.team === this.selectedTeam);
       }
     },
   },
