@@ -360,6 +360,9 @@ export default {
     },
   },
   created() {
+    if (this.$store.state.selectedTeam) {
+      this.selectedTeam = this.$store.state.selectedTeam;
+    }
     this.fetchResults();
   },
   watch: {
