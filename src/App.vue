@@ -73,7 +73,7 @@ p {
   width: 100%;
   padding: 20px;
   border-radius: 8px;
-  margin: 10px 0px 0px 0px;
+  margin: 10px 5px 0px 5px;
 }
 
 .animation-container {
@@ -89,5 +89,13 @@ p {
   justify-content: space-between;
   align-items: center;
   font-weight: 500;
+}
+
+@media screen and (max-width: 430px) {
+  .content-container {
+    margin-top: 0px;
+    border: none;
+    margin: 0px;
+  }
 }
 </style>

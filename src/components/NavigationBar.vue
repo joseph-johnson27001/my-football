@@ -165,7 +165,7 @@ export default {
 .navigation-bar {
   background-color: #1f3f7f;
   color: #fff;
-  padding: 10px 0px 8px;
+  padding: 10px 0px;
 }
 
 .navigation-container {
