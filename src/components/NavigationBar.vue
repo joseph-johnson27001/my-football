@@ -24,14 +24,6 @@
       <!-- Dropdown menu -->
       <div class="dropdown-menu" v-if="showMenu">
         <router-link
-          to="/"
-          class="nav-link"
-          active-class="active-link"
-          @click="resetTeam"
-        >
-          Home
-        </router-link>
-        <router-link
           to="/news"
           class="nav-link"
           active-class="active-link"
