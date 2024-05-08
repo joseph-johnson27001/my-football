@@ -188,6 +188,7 @@ export default {
   font-weight: 600;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .nav-link:hover {
