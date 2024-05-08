@@ -24,7 +24,7 @@
 
     <div class="top-half-grid">
       <div class="team-news">
-        <h2 class="side-heading">Latest News</h2>
+        <h2 class="side-heading news-heading">Latest News</h2>
         <div class="latest-news">
           <!-- Main article -->
           <div v-if="mainArticle" class="news-item main-article">
@@ -240,5 +240,19 @@ export default {
   background-color: #f2f2f2;
   cursor: pointer;
   height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .top-half-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navigation-container {
+    display: none;
+  }
+
+  .news-heading {
+    display: none;
+  }
 }
 </style>
