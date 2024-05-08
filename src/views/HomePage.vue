@@ -232,4 +232,10 @@ export default {
   cursor: pointer;
   height: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  .top-half-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
