@@ -186,6 +186,8 @@ export default {
   font-family: "Titillium Web", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link:hover {
