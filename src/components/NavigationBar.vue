@@ -250,7 +250,7 @@ export default {
 
 .dropdown-menu {
   position: absolute;
-  top: 60px;
+  top: 65px;
   width: 100%;
   text-align: center;
   right: 0;
@@ -258,9 +258,12 @@ export default {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1001;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  z-index: 999;
+  border-top: 1px solid white;
 }
+
 .dropdown-menu .nav-link {
   color: #fff;
   padding: 10px;
