@@ -246,7 +246,9 @@ export default {
 
 .dropdown-menu {
   position: absolute;
-  top: 50px;
+  top: 60px;
+  width: 100%;
+  text-align: center;
   right: 0;
   background-color: #1f3f7f;
   display: flex;
