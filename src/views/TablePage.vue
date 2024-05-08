@@ -565,4 +565,19 @@ export default {
     display: none;
   }
 }
+
+@media screen and (max-width: 546px) {
+  .team-name {
+    line-height: 1;
+  }
+
+  .team-row {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 0px 0px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+}
 </style>

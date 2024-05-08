@@ -476,4 +476,10 @@ export default {
 .team-row:hover {
   background-color: #f2f2f2;
 }
+
+@media screen and (max-width: 546px) {
+  .team-name {
+    line-height: 1;
+  }
+}
 </style>
