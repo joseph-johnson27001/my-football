@@ -212,4 +212,15 @@ export default {
   max-height: 30px;
   margin: 10px;
 }
+
+@media screen and (max-width: 546px) {
+  .fixture-item {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+
+  .team-crest {
+    width: 20px;
+  }
+}
 </style>
