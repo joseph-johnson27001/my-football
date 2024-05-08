@@ -2,7 +2,7 @@
   <div class="team-page">
     <div class="top-half-grid">
       <div class="team-news">
-        <div class="heading-container">
+        <div class="side-heading">
           <h2>Latest News</h2>
         </div>
         <div class="latest-news">
@@ -38,16 +38,16 @@
         </div>
       </div>
       <div>
-        <div class="heading-container">
-          <h2>Next Fixtures</h2>
-        </div>
-        <NextFixtures />
-        <h2 class="heading-container">Latest Results</h2>
-        <LatestResults />
         <div class="premier-league-table">
           <h2 class="heading-container">Standings</h2>
           <NarrowTable />
         </div>
+        <div class="side-heading">
+          <h2>Next Fixtures</h2>
+        </div>
+        <NextFixtures />
+        <h2 class="side-heading">Latest Results</h2>
+        <LatestResults />
       </div>
     </div>
   </div>
