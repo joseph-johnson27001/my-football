@@ -3,7 +3,7 @@
     <!-- Burger button for smaller viewports -->
     <div class="burger-button-container">
       <router-link
-        to="/"
+        to="/news"
         class="nav-link"
         active-class="active-link"
         @click="resetTeam"
@@ -23,14 +23,14 @@
       </button>
       <!-- Dropdown menu -->
       <div class="dropdown-menu" v-if="showMenu">
-        <router-link
+        <!-- <router-link
           to="/news"
           class="nav-link"
           active-class="active-link"
           @click="resetTeam"
         >
           News
-        </router-link>
+        </router-link> -->
         <router-link
           to="/teams"
           class="nav-link"
@@ -77,7 +77,7 @@
     <!-- Navigation links -->
     <div class="navigation-container" :class="{ 'show-menu': showMenu }">
       <router-link
-        to="/news"
+        to="/"
         class="nav-link"
         active-class="active-link"
         @click="resetTeam"
@@ -90,14 +90,14 @@
           class="icon"
         />
       </router-link>
-      <!-- <router-link
+      <router-link
         to="/news"
         class="nav-link"
         active-class="active-link"
         @click="resetTeam"
       >
         News
-      </router-link> -->
+      </router-link>
       <router-link
         to="/teams"
         class="nav-link"
