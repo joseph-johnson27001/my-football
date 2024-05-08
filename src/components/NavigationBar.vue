@@ -261,7 +261,7 @@ export default {
   color: #fff;
   padding: 10px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.1s;
 }
 
 .dropdown-menu .nav-link:hover {
