@@ -152,6 +152,7 @@ export default {
   methods: {
     resetTeam() {
       this.$store.state.selectedTeam = null;
+      this.showMenu = false;
     },
     toggleMenu() {
       this.showMenu = !this.showMenu;
