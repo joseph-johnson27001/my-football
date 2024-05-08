@@ -1,11 +1,35 @@
 <template>
   <nav class="navigation-bar">
-    <div class="navigation-container">
+    <!-- Burger button for smaller viewports -->
+    <div class="burger-button-container">
       <router-link
         to="/"
         class="nav-link"
         active-class="active-link"
-        @click="resetTeam()"
+        @click="resetTeam"
+      >
+        <img
+          src="@/assets/football.png"
+          alt="Home"
+          width="38"
+          height="38"
+          class="icon"
+        />
+      </router-link>
+      <button class="burger-button" @click="toggleMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Navigation links -->
+    <div class="navigation-container" :class="{ 'show-menu': showMenu }">
+      <router-link
+        to="/"
+        class="nav-link"
+        active-class="active-link"
+        @click="resetTeam"
       >
         <img
           src="@/assets/football.png"
@@ -19,54 +43,67 @@
         to="/news"
         class="nav-link"
         active-class="active-link"
-        @click="resetTeam()"
-        >News</router-link
+        @click="resetTeam"
       >
+        News
+      </router-link>
       <router-link
         to="/teams"
         class="nav-link"
         active-class="active-link"
-        @click="resetTeam()"
-        >Teams</router-link
+        @click="resetTeam"
       >
-
+        Teams
+      </router-link>
       <router-link
         to="/fixtures"
         class="nav-link"
         active-class="active-link"
-        @click="resetTeam()"
-        >Fixtures</router-link
+        @click="resetTeam"
       >
+        Fixtures
+      </router-link>
       <router-link
         to="/results"
         class="nav-link"
         active-class="active-link"
-        @click="resetTeam()"
-        >Results</router-link
+        @click="resetTeam"
       >
+        Results
+      </router-link>
       <router-link
         to="/videos"
         class="nav-link"
         active-class="active-link"
-        @click="resetTeam()"
-        >Videos</router-link
+        @click="resetTeam"
       >
+        Videos
+      </router-link>
       <router-link
         to="/table"
         class="nav-link"
         active-class="active-link"
-        @click="resetTeam()"
-        >Table</router-link
+        @click="resetTeam"
       >
+        Table
+      </router-link>
     </div>
   </nav>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      showMenu: false,
+    };
+  },
   methods: {
     resetTeam() {
       this.$store.state.selectedTeam = null;
+    },
+    toggleMenu() {
+      this.showMenu = !this.showMenu;
     },
   },
 };
@@ -101,5 +138,58 @@ export default {
 
 .nav-link:hover {
   color: gold;
+}
+
+.burger-button-container {
+  display: none;
+}
+
+.burger-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.burger-button span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.show-menu .burger-button span:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.show-menu .burger-button span:nth-child(2) {
+  opacity: 0;
+}
+
+.show-menu .burger-button span:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-container {
+    display: none;
+  }
+
+  .burger-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .icon {
+    padding-left: 10px;
+  }
+
+  .burger-button {
+    display: block;
+  }
 }
 </style>
