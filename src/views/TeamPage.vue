@@ -251,6 +251,7 @@ export default {
 @media screen and (max-width: 630px) {
   .team-navigation ul li {
     padding: 5px 0px;
+    line-height: 1rem;
   }
 }
 </style>

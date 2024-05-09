@@ -165,13 +165,7 @@ export default {
   width: 100%;
 }
 
-.heading-span {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.matchday-dropdown {
+#team-dropdown {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -193,5 +187,14 @@ export default {
 
 .matchday-label {
   font-weight: 100;
+}
+
+@media screen and (max-width: 546px) {
+  .matchday-dropdown {
+    width: 100%;
+  }
+  #team-dropdown {
+    width: 100%;
+  }
 }
 </style>
