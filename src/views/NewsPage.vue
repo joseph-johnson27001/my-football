@@ -290,4 +290,11 @@ label {
   margin-right: 5px;
   font-weight: 100;
 }
+
+@media screen and (max-width: 546px) {
+  #team-dropdown {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
 </style>
