@@ -633,5 +633,17 @@ export default {
   .team-crest {
     width: 20px;
   }
+  .heading-container {
+    flex-direction: column;
+    padding: 0px;
+    width: 100%;
+    align-items: start;
+  }
+  .team-selection {
+    width: 100%;
+  }
+  .matchday-dropdown {
+    width: 100%;
+  }
 }
 </style>
