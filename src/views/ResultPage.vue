@@ -76,7 +76,7 @@
       </div>
 
       <!-- Supporter Engagement -->
-      <div class="supporter-engagement">
+      <!-- <div class="supporter-engagement">
         <h2>Socials</h2>
         <div class="social-media-links">
           <a href="#" class="social-media-link">
@@ -89,7 +89,7 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
