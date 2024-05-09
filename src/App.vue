@@ -98,4 +98,19 @@ p {
     margin: 0px;
   }
 }
+
+@media screen and (max-width: 546px) {
+  .heading-container {
+    flex-direction: column;
+    padding: 10px 0px;
+    width: 100%;
+    align-items: start;
+  }
+  .team-selection {
+    width: 100%;
+  }
+  #team-dropdown {
+    width: 100%;
+  }
+}
 </style>
