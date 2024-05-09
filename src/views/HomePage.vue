@@ -39,7 +39,7 @@
       </div>
       <div>
         <div class="premier-league-table">
-          <h2 class="heading-container">Standings</h2>
+          <h2 class="heading-container">Premier League 23/24</h2>
           <NarrowTable />
         </div>
         <div class="side-heading">

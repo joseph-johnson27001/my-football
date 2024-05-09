@@ -63,7 +63,7 @@
         <h2 class="side-heading">Latest Result</h2>
         <LatestResult />
         <div class="premier-league-table">
-          <h2 class="side-heading">Standings</h2>
+          <h2 class="side-heading">Premier League 23/24</h2>
           <NarrowTable />
         </div>
       </div>
