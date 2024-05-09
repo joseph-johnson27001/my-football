@@ -102,7 +102,7 @@ p {
 @media screen and (max-width: 546px) {
   .heading-container {
     flex-direction: column;
-    padding: 10px 0px;
+    padding: 0px;
     width: 100%;
     align-items: start;
   }
