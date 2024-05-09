@@ -231,7 +231,6 @@ export default {
 }
 
 .team-navigation ul li {
-  padding: 5px 30px;
   width: 100%;
   text-align: center;
 }
@@ -246,11 +245,7 @@ export default {
   .top-half-grid {
     grid-template-columns: 1fr;
   }
-}
-
-@media screen and (max-width: 630px) {
   .team-navigation ul li {
-    padding: 5px 0px;
     line-height: 1rem;
   }
 }
