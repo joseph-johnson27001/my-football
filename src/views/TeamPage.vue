@@ -247,12 +247,21 @@ export default {
     grid-template-columns: 1fr;
   }
 
-  .navigation-container {
+  /* .navigation-container {
     display: none;
   }
 
   .news-heading {
     display: none;
+  } */
+}
+
+@media screen and (max-width: 630px) {
+  /* .team-navigation ul {
+    flex-direction: column;
+  } */
+  .team-navigation ul li {
+    padding: 5px 0px;
   }
 }
 </style>
