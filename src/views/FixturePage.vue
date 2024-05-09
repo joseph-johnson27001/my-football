@@ -94,13 +94,13 @@
       </div>
 
       <!-- Live Updates (if available) -->
-      <div class="live-updates">
+      <!-- <div class="live-updates">
         <h2>Live Updates</h2>
         <p>Live updates will be available during the match.</p>
-      </div>
+      </div> -->
 
       <!-- Supporter Engagement -->
-      <div class="supporter-engagement">
+      <!-- <div class="supporter-engagement">
         <h2>Socials</h2>
         <div class="social-media-links">
           <a href="#" class="social-media-link">
@@ -113,7 +113,7 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
