@@ -195,6 +195,7 @@ export default {
   }
   #team-dropdown {
     width: 100%;
+    margin-bottom: 10px;
   }
 }
 </style>
