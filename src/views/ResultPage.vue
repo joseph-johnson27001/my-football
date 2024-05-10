@@ -71,25 +71,178 @@
       </div>
 
       <!-- Match Statistics -->
-      <div class="statistics">
+      <div class="statistics-section">
         <h2 style="margin-top: 15px">Stats</h2>
-      </div>
-
-      <!-- Supporter Engagement -->
-      <!-- <div class="supporter-engagement">
-        <h2>Socials</h2>
-        <div class="social-media-links">
-          <a href="#" class="social-media-link">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="social-media-link">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="social-media-link">
-            <i class="fab fa-instagram"></i>
-          </a>
+        <div class="statistic">
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeScore }}</div>
+            <div class="statistic-label">Goals</div>
+            <div class="away-value">{{ liveFixture.awayScore }}</div>
+          </div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamGoalsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamGoalsPercentage + '%' }"
+            ></div>
+          </div>
         </div>
-      </div> -->
+        <div class="statistic">
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.shots }}</div>
+            <div class="statistic-label">Shots</div>
+            <div class="away-value">{{ liveFixture.awayTeam.shots }}</div>
+          </div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamShotsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamShotsPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-values">
+            <div class="home-value">
+              {{ liveFixture.homeTeam.shotsOnTarget }}
+            </div>
+            <div class="statistic-label">Shots on Target</div>
+            <div class="away-value">
+              {{ liveFixture.awayTeam.shotsOnTarget }}
+            </div>
+          </div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamShotsOnTargetPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamShotsOnTargetPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.xG }}</div>
+            <div class="statistic-label">xG (Expected Goals)</div>
+            <div class="away-value">{{ liveFixture.awayTeam.xG }}</div>
+          </div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamXGPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamXGPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-values">
+            <div class="home-value">
+              {{ liveFixture.homeTeam.shotsOnTarget }}
+            </div>
+            <div class="statistic-label">Corners</div>
+            <div class="away-value">
+              {{ liveFixture.awayTeam.shotsOnTarget }}
+            </div>
+          </div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamShotsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamShotsPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-values">
+            <div class="home-value">
+              {{ liveFixture.homeTeam.shotsOnTarget }}
+            </div>
+            <div class="statistic-label">Fouls</div>
+            <div class="away-value">
+              {{ liveFixture.awayTeam.shotsOnTarget }}
+            </div>
+          </div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamShotsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: homeTeamShotsPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-values">
+            <div class="home-value">
+              {{ liveFixture.homeTeam.shotsOnTarget }}
+            </div>
+            <div class="statistic-label">Tackles</div>
+            <div class="away-value">
+              {{ liveFixture.awayTeam.shotsOnTarget }}
+            </div>
+          </div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamShotsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: homeTeamShotsPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.yellowCards }}</div>
+            <div class="statistic-label">Yellow Cards</div>
+            <div class="away-value">{{ liveFixture.awayTeam.yellowCards }}</div>
+          </div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamYellowCardsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamYellowCardsPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="statistic-values">
+            <div class="home-value">{{ liveFixture.homeTeam.redCards }}</div>
+            <div class="statistic-label">Red Cards</div>
+            <div class="away-value">{{ liveFixture.awayTeam.redCards }}</div>
+          </div>
+          <div class="bar-container">
+            <div
+              class="bar home-team"
+              :style="{ width: homeTeamRedCardsPercentage + '%' }"
+            ></div>
+            <div
+              class="bar away-team"
+              :style="{ width: awayTeamRedCardsPercentage + '%' }"
+            ></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -148,6 +301,37 @@ export default {
       ],
       homeTeamForm: "WWWWL",
       awayTeamForm: "DWWDL",
+      liveFixture: {
+        homeTeam: {
+          name: "Arsenal",
+          shots: 10,
+          shotsOnTarget: 6,
+          xG: 1.8,
+          yellowCards: 2,
+          redCards: 1,
+          crest:
+            "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
+          goalScorers: [
+            { name: "William Saliba", minute: 4 },
+            { name: "Gabriel", minute: 25 },
+            { name: "Gabriel Jesus", minute: 45 },
+            { name: "Bukayo Saka", minute: 84 },
+          ],
+        },
+        awayTeam: {
+          name: "Manchester City",
+          shots: 8,
+          shotsOnTarget: 4,
+          xG: 1.2,
+          yellowCards: 1,
+          redCards: 1,
+          crest:
+            "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
+          goalScorers: [{ name: "Earling Haaland", minute: 15 }],
+        },
+        homeScore: 4,
+        awayScore: 1,
+      },
     };
   },
   methods: {
@@ -164,6 +348,91 @@ export default {
     },
     handleImageLoad() {
       this.$store.state.isLoading = false;
+    },
+  },
+  computed: {
+    orderedComments() {
+      return this.liveFixture.comments.slice().reverse();
+    },
+
+    homeTeamGoalsPercentage() {
+      return (this.liveFixture.homeScore / this.maxGoals) * 100;
+    },
+
+    awayTeamGoalsPercentage() {
+      return (this.liveFixture.awayScore / this.maxGoals) * 100;
+    },
+
+    homeTeamShotsPercentage() {
+      return (this.liveFixture.homeTeam.shots / this.maxShots) * 100;
+    },
+    awayTeamShotsPercentage() {
+      return (this.liveFixture.awayTeam.shots / this.maxShots) * 100;
+    },
+    homeTeamShotsOnTargetPercentage() {
+      return (
+        (this.liveFixture.homeTeam.shotsOnTarget / this.maxShotsOnTarget) * 100
+      );
+    },
+    awayTeamShotsOnTargetPercentage() {
+      return (
+        (this.liveFixture.awayTeam.shotsOnTarget / this.maxShotsOnTarget) * 100
+      );
+    },
+    homeTeamXGPercentage() {
+      return (this.liveFixture.homeTeam.xG / this.maxXG) * 100;
+    },
+    awayTeamXGPercentage() {
+      return (this.liveFixture.awayTeam.xG / this.maxXG) * 100;
+    },
+    homeTeamYellowCardsPercentage() {
+      return (
+        (this.liveFixture.homeTeam.yellowCards / this.maxYellowCards) * 100
+      );
+    },
+    awayTeamYellowCardsPercentage() {
+      return (
+        (this.liveFixture.awayTeam.yellowCards / this.maxYellowCards) * 100
+      );
+    },
+    homeTeamRedCardsPercentage() {
+      return (this.liveFixture.homeTeam.redCards / this.maxRedCards) * 100;
+    },
+    awayTeamRedCardsPercentage() {
+      return (this.liveFixture.awayTeam.redCards / this.maxRedCards) * 100;
+    },
+    maxShots() {
+      return Math.max(
+        this.liveFixture.homeTeam.shots,
+        this.liveFixture.awayTeam.shots
+      );
+    },
+    maxShotsOnTarget() {
+      return Math.max(
+        this.liveFixture.homeTeam.shotsOnTarget,
+        this.liveFixture.awayTeam.shotsOnTarget
+      );
+    },
+    maxXG() {
+      return Math.max(
+        this.liveFixture.homeTeam.xG,
+        this.liveFixture.awayTeam.xG
+      );
+    },
+    maxYellowCards() {
+      return Math.max(
+        this.liveFixture.homeTeam.yellowCards,
+        this.liveFixture.awayTeam.yellowCards
+      );
+    },
+    maxRedCards() {
+      return Math.max(
+        this.liveFixture.homeTeam.redCards,
+        this.liveFixture.awayTeam.redCards
+      );
+    },
+    maxGoals() {
+      return Math.max(this.liveFixture.homeScore, this.liveFixture.awayScore);
     },
   },
   created() {
@@ -291,5 +560,32 @@ h2 {
 
 .lose-square {
   background-color: #ff0000;
+}
+
+.bar-container {
+  display: flex;
+  height: 20px;
+}
+
+.bar {
+  height: 100%;
+}
+
+.home-team {
+  background-color: #007bff;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.away-team {
+  background-color: #28a745;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.statistic-values {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
 </style>
