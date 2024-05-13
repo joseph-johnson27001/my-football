@@ -70,6 +70,10 @@
         </div>
       </div>
 
+      <div>
+        <!-- HOLDING AREA -->
+      </div>
+
       <!-- Match Statistics -->
       <div class="statistics-section">
         <h2 style="margin-top: 15px">Stats</h2>
