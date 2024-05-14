@@ -42,11 +42,11 @@
           <h2 class="heading-container">Premier League 23/24</h2>
           <NarrowTable />
         </div>
-        <div class="side-heading">
+        <div class="heading-container">
           <h2>Next Fixtures</h2>
         </div>
         <NextFixtures />
-        <h2 class="side-heading">Latest Results</h2>
+        <h2 class="heading-container">Latest Results</h2>
         <LatestResults />
       </div>
     </div>
