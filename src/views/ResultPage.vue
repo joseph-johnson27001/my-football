@@ -72,6 +72,32 @@
 
       <div>
         <h2 style="margin-top: 15px">Videos</h2>
+        <div class="videos-list">
+          <div
+            v-for="(video, index) in highlights"
+            :key="index"
+            class="video-item"
+          >
+            <!-- Check if the video is a YouTube video -->
+            <div v-if="isYouTubeVideo(video)">
+              <iframe
+                width="100%"
+                height="315"
+                :src="video.src"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <!-- If not a YouTube video, display the video using video tag -->
+            <div v-else>
+              <video :src="video.src" controls class="video"></video>
+            </div>
+            <div class="video-description">
+              <h3>{{ video.title }}</h3>
+              <p>{{ video.description }}</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Match Statistics -->
@@ -340,6 +366,9 @@ export default {
     };
   },
   methods: {
+    isYouTubeVideo(video) {
+      return video.src.includes("youtube.com");
+    },
     getFormColorClass(result) {
       if (result === "W") {
         return "win-square";
@@ -449,38 +478,6 @@ export default {
         description:
           "Highlights of the recent match between Arsenal and Liverpool.",
         teams: ["Arsenal", "Liverpool"],
-      },
-      {
-        src: "https://www.youtube.com/embed/HtiYya12mMQ?si=H-z5o4s1HZWaiKqU",
-        title: "Goals of the season",
-        description: "Arsenal's top goals this season.",
-        teams: ["Arsenal"],
-      },
-      {
-        src: "https://www.youtube.com/embed/89Hd99Mjfjw?si=lfiTL_C_8KI_sEEz",
-        title: "Arsenal training sessions best bits",
-        description: "Best moments from Arsenal training sessions.",
-        teams: ["Arsenal"],
-      },
-      {
-        src: "https://www.youtube.com/embed/5j5UknRuIh0?si=vpOptcIDAHVw4yuK",
-        title: "Interview",
-        description:
-          "Interview with the Arsenal coach discussing their strategies for their upcoming matches.",
-        teams: ["Arsenal"],
-      },
-      {
-        src: "https://www.youtube.com/embed/_DivH1dWGbw?si=ei4hgVZPPA-S85OK",
-        title: "Arsenal Matchday Analysis",
-        description: "Analysis of the recent Arsenal performances.",
-        teams: ["Arsenal"],
-      },
-      {
-        src: "https://www.youtube.com/embed/sWBvs-gwBvs?si=z6mA6y3nd-vvVhFw",
-        title: "Arsenal Insights",
-        description:
-          "Insights into the journey of Arsenal in the league so far.",
-        teams: ["Arsenal"],
       },
     ];
   },
