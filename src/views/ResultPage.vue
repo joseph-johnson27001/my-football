@@ -255,6 +255,7 @@
 export default {
   data() {
     return {
+      highlights: [],
       fixtureDetails: {
         date: "15th May 2024",
         time: "15:00",
@@ -441,6 +442,47 @@ export default {
   },
   created() {
     this.$store.state.isLoading = true;
+    this.highlights = [
+      {
+        src: "https://www.youtube.com/embed/t5EhsXZwn4o?si=EiFsFIn-B4BM6dUP",
+        title: "Arsenal V Liverpool",
+        description:
+          "Highlights of the recent match between Arsenal and Liverpool.",
+        teams: ["Arsenal", "Liverpool"],
+      },
+      {
+        src: "https://www.youtube.com/embed/HtiYya12mMQ?si=H-z5o4s1HZWaiKqU",
+        title: "Goals of the season",
+        description: "Arsenal's top goals this season.",
+        teams: ["Arsenal"],
+      },
+      {
+        src: "https://www.youtube.com/embed/89Hd99Mjfjw?si=lfiTL_C_8KI_sEEz",
+        title: "Arsenal training sessions best bits",
+        description: "Best moments from Arsenal training sessions.",
+        teams: ["Arsenal"],
+      },
+      {
+        src: "https://www.youtube.com/embed/5j5UknRuIh0?si=vpOptcIDAHVw4yuK",
+        title: "Interview",
+        description:
+          "Interview with the Arsenal coach discussing their strategies for their upcoming matches.",
+        teams: ["Arsenal"],
+      },
+      {
+        src: "https://www.youtube.com/embed/_DivH1dWGbw?si=ei4hgVZPPA-S85OK",
+        title: "Arsenal Matchday Analysis",
+        description: "Analysis of the recent Arsenal performances.",
+        teams: ["Arsenal"],
+      },
+      {
+        src: "https://www.youtube.com/embed/sWBvs-gwBvs?si=z6mA6y3nd-vvVhFw",
+        title: "Arsenal Insights",
+        description:
+          "Insights into the journey of Arsenal in the league so far.",
+        teams: ["Arsenal"],
+      },
+    ];
   },
 };
 </script>
