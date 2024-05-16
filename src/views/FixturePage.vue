@@ -51,6 +51,14 @@
           </div>
         </div>
       </div>
+      <!-- Additional Content -->
+      <div class="additional-content">
+        <h2>Latest News</h2>
+        <p>
+          This section can include related news articles, multimedia content, or
+          links to match highlights.
+        </p>
+      </div>
       <!-- Match Analysis -->
       <div class="match-analysis">
         <div class="recent-history">
@@ -82,15 +90,6 @@
           <p>Draws: 9</p>
           <p>{{ fixtureDetails.awayTeam }} Wins: 13</p>
         </div>
-      </div>
-
-      <!-- Additional Content -->
-      <div class="additional-content">
-        <h2>Latest News</h2>
-        <p>
-          This section can include related news articles, multimedia content, or
-          links to match highlights.
-        </p>
       </div>
 
       <!-- Live Updates (if available) -->
