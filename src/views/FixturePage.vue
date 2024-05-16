@@ -52,12 +52,34 @@
         </div>
       </div>
       <!-- Additional Content -->
-      <div class="additional-content">
-        <h2>Latest News</h2>
-        <p>
-          This section can include related news articles, multimedia content, or
-          links to match highlights.
-        </p>
+      <div>
+        <h2 style="margin-top: 15px">Videos</h2>
+        <div class="videos-list">
+          <div
+            v-for="(video, index) in recentVideos"
+            :key="index"
+            class="video-item"
+          >
+            <!-- Check if the video is a YouTube video -->
+            <div v-if="isYouTubeVideo(video)">
+              <iframe
+                width="100%"
+                height="315"
+                :src="video.src"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <!-- If not a YouTube video, display the video using video tag -->
+            <div v-else>
+              <video :src="video.src" controls class="video"></video>
+            </div>
+            <div class="video-description">
+              <h3>{{ video.title }}</h3>
+              <p>{{ video.description }}</p>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- Match Analysis -->
       <div class="match-analysis">
@@ -164,6 +186,9 @@ export default {
     };
   },
   methods: {
+    isYouTubeVideo(video) {
+      return video.src.includes("youtube.com");
+    },
     getFormColorClass(result) {
       if (result === "W") {
         return "win-square";
@@ -181,6 +206,15 @@ export default {
   },
   created() {
     this.$store.state.isLoading = true;
+    this.recentVideos = [
+      {
+        src: "https://www.youtube.com/embed/t5EhsXZwn4o?si=EiFsFIn-B4BM6dUP",
+        title: "Arsenal V Liverpool",
+        description:
+          "Highlights of the recent match between Arsenal and Liverpool.",
+        teams: ["Arsenal", "Liverpool"],
+      },
+    ];
   },
 };
 </script>
