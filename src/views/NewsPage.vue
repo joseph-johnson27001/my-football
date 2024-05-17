@@ -309,6 +309,8 @@ export default {
 .article {
   cursor: pointer;
   border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
 }
 
 .article:hover {
@@ -331,16 +333,15 @@ export default {
 }
 
 .source-logo {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: auto;
   display: flex;
   align-items: flex-end;
   justify-content: end;
 }
 
 .logo-image {
+  height: 50px;
   width: 50px;
-  height: auto;
 }
 
 select {
