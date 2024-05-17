@@ -236,6 +236,7 @@ export default {
 
 .source-logo {
   margin-top: 10px;
+  margin-bottom: 10px;
   text-align: right;
 }
 
