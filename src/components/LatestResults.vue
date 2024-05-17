@@ -126,6 +126,24 @@ export default {
           status: "FINISHED",
           score: { fullTime: { home: 2, away: 1 } },
         },
+        {
+          id: 4,
+          homeTeam: {
+            id: 5,
+            name: "Leeds United",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg",
+          },
+          awayTeam: {
+            id: 6,
+            name: "Fulham",
+            crest:
+              "https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg",
+          },
+          matchday: 1,
+          status: "FINISHED",
+          score: { fullTime: { home: 2, away: 0 } },
+        },
       ];
     },
   },
