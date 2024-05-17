@@ -30,13 +30,13 @@
         <div
           v-if="mainArticle.source && mainArticle.source.logo"
           class="source-logo"
-          style="text-align: center"
+          style="justify-content: center"
         >
           <img
             :src="mainArticle.source.logo"
             alt="Source Logo"
             class="logo-image"
-            style="text-align: center"
+            style="justify-content: center"
           />
         </div>
       </div>
@@ -61,16 +61,13 @@
           <div class="article-content">
             <h3 class="article-title">{{ article.title }}</h3>
             <p class="article-description">{{ article.description }}</p>
-            <div
-              v-if="article.source && article.source.logo"
-              class="source-logo"
-            >
-              <img
-                :src="article.source.logo"
-                alt="Source Logo"
-                class="logo-image"
-              />
-            </div>
+          </div>
+          <div v-if="article.source && article.source.logo" class="source-logo">
+            <img
+              :src="article.source.logo"
+              alt="Source Logo"
+              class="logo-image"
+            />
           </div>
         </div>
       </div>
