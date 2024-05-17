@@ -27,6 +27,18 @@
       <div class="article-content">
         <h3 class="article-title">{{ mainArticle.title }}</h3>
         <p class="article-description">{{ mainArticle.description }}</p>
+        <div
+          v-if="mainArticle.source && mainArticle.source.logo"
+          class="source-logo"
+          style="text-align: center"
+        >
+          <img
+            :src="mainArticle.source.logo"
+            alt="Source Logo"
+            class="logo-image"
+            style="text-align: center"
+          />
+        </div>
       </div>
     </div>
 
@@ -49,6 +61,16 @@
           <div class="article-content">
             <h3 class="article-title">{{ article.title }}</h3>
             <p class="article-description">{{ article.description }}</p>
+            <div
+              v-if="article.source && article.source.logo"
+              class="source-logo"
+            >
+              <img
+                :src="article.source.logo"
+                alt="Source Logo"
+                class="logo-image"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -93,6 +115,10 @@ export default {
             "Content providing insights and analysis on the upcoming Premier League season, including key players, teams to watch, and predictions.",
           image: "https://picsum.photos/1200/500",
           teams: ["All"],
+          source: {
+            name: "BBC Sport",
+            logo: "https://www.cdnlogo.com/logos/b/30/bbc-sport.svg",
+          },
         },
         {
           id: 2,
@@ -103,77 +129,10 @@ export default {
             "Content dissecting the tactical strategies employed by the leading teams in the race for the Premier League championship.",
           image: "https://picsum.photos/300?random=8",
           teams: ["Arsenal", "Manchester City"],
-        },
-        {
-          id: 3,
-          title: "Key Transfers: Impact on Premier League Clubs",
-          description:
-            "Assess the impact of key transfer signings on Premier League clubs.",
-          content:
-            "Content examining the significance of major transfer deals and their potential effects on the fortunes of respective Premier League teams.",
-          image: "https://picsum.photos/300?random=7",
-          teams: ["Brighton & Hove Albion", "Chelsea"],
-        },
-        {
-          id: 4,
-          title: "Top 10 Goals of the Premier League Season",
-          description:
-            "A roundup of the most spectacular goals from the Premier League.",
-          content:
-            "Content describing the top 10 goals scored in the Premier League season so far.",
-          image: "https://picsum.photos/300?random=6",
-          teams: ["Liverpool", "Manchester United"],
-        },
-        {
-          id: 5,
-          title: "Rising Stars: Young Talent in the Premier League",
-          description:
-            "Exploring the emergence of promising young players in the Premier League.",
-          content:
-            "Content highlighting the young football talents making a mark in the Premier League.",
-          image: "https://picsum.photos/300?random=5",
-          teams: ["Manchester City", "Chelsea"],
-        },
-        {
-          id: 6,
-          title: "Matchday Analysis: Tactical Insights and Player Performances",
-          description:
-            "Analyze key moments and performances from recent Premier League matches.",
-          content:
-            "Content providing tactical insights and player analyses from select Premier League fixtures.",
-          image: "https://picsum.photos/300?random=4",
-          teams: ["Manchester United", "Liverpool"],
-        },
-        {
-          id: 7,
-          title: "Evolution of Football Tactics: From Catenaccio to Tiki-Taka",
-          description:
-            "Trace the evolution of football tactics from defensive systems like Catenaccio to possession-based strategies like Tiki-Taka.",
-          content:
-            "Content exploring the historical development of football tactics and the influence of different playing styles on the modern game.",
-          image: "https://picsum.photos/300?random=3",
-          teams: ["Southampton", "Arsenal"],
-        },
-        {
-          id: 8,
-          title: "Impact of VAR on Premier League Matches",
-          description:
-            "Examine the impact of Video Assistant Referee (VAR) technology on decision-making and game dynamics in the Premier League.",
-          content:
-            "Content analyzing the implementation of VAR in the Premier League and its implications for match outcomes and officiating.",
-          image: "https://picsum.photos/300?random=2",
-          teams: ["Tottenham Hotspur", "Chelsea"],
-        },
-        {
-          id: 9,
-          title:
-            "Legendary Premier League Managers: Their Legacy and Influence",
-          description:
-            "Celebrate the legacy and influence of legendary managers who have left an indelible mark on the Premier League.",
-          content:
-            "Content highlighting the achievements, tactics, and managerial philosophies of iconic figures in Premier League history.",
-          image: "https://picsum.photos/300?random=1",
-          teams: ["Fulham", "Liverpool"],
+          source: {
+            name: "Sky Sports",
+            logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
+          },
         },
       ],
       imagesLoaded: 0,
@@ -216,7 +175,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .team-selection {
   display: flex;
@@ -274,6 +232,16 @@ export default {
 
 .article-content {
   padding: 0px 10px;
+}
+
+.source-logo {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.logo-image {
+  width: 50px;
+  height: auto;
 }
 
 select {
