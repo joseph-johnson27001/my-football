@@ -21,7 +21,12 @@
             @load="handleImageLoad"
           />
           <h3>{{ matchPreviewHeading }}</h3>
-          <p>{{ matchPreview }}</p>
+          <div class="preview-container">
+            <p>{{ matchPreview }}</p>
+            <div v-if="source && source.logo" class="source-logo">
+              <img :src="source.logo" alt="Source Logo" class="logo-image" />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -155,6 +160,10 @@ export default {
       matchPreview:
         "Manchester United and Liverpool face off in a highly anticipated clash at Old Trafford. This is a dummy match preview.",
       matchPreviewHeading: "Manchester United V Liverpool Pre-Match Analysis",
+      source: {
+        name: "Sky Sports",
+        logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
+      },
       homeLineup: [
         { id: 1, name: "David De Gea" },
         { id: 2, name: "Aaron Wan-Bissaka" },
@@ -338,5 +347,22 @@ h2 {
 
 .lose-square {
   background-color: #ff0000;
+}
+
+.source-logo {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.logo-image {
+  height: 50px;
+  width: 50px;
+}
+
+.preview-container {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
 }
 </style>
