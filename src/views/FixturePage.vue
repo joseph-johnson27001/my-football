@@ -155,7 +155,7 @@ export default {
         referee: "Martin Atkinson",
         homeTeam: "Manchester United",
         awayTeam: "Liverpool",
-        image: "https://picsum.photos/800/400",
+        image: require("@/assets/premierleague.jpg"),
       },
       matchPreview:
         "Manchester United and Liverpool face off in a highly anticipated clash at Old Trafford. This is a dummy match preview.",
