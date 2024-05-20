@@ -38,6 +38,16 @@
               <h3 class="main-news-title">{{ mainArticle.title }}</h3>
               <p class="main-news-description">{{ mainArticle.description }}</p>
             </div>
+            <div
+              v-if="mainArticle.source && mainArticle.source.logo"
+              class="source-logo"
+            >
+              <img
+                :src="mainArticle.source.logo"
+                alt="Source Logo"
+                class="logo-image"
+              />
+            </div>
           </div>
           <div
             v-for="(article, index) in newsArticles"
@@ -53,6 +63,16 @@
             <div class="news-content">
               <h3 class="news-title">{{ article.title }}</h3>
               <p class="news-description">{{ article.description }}</p>
+              <div
+                v-if="article.source && article.source.logo"
+                class="source-logo"
+              >
+                <img
+                  :src="article.source.logo"
+                  alt="Source Logo"
+                  class="logo-image"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -90,37 +110,61 @@ export default {
           description:
             "Manchester United completes the signing of a new striker for the upcoming season.",
           image: "https://picsum.photos/150?random=8",
+          source: {
+            name: "Sky Sports",
+            logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
+          },
         },
         {
           title: "Liverpool announces new sponsorship deal",
           description:
             "Liverpool Football Club announces a new sponsorship deal with a major international brand.",
           image: "https://picsum.photos/150?random=7",
+          source: {
+            name: "BBC Sport",
+            logo: "https://www.cdnlogo.com/logos/b/30/bbc-sport.svg",
+          },
         },
         {
           title: "Premier League introduces new rule changes",
           description:
             "The Premier League reveals new rule changes for the upcoming season to enhance fair play.",
           image: "https://picsum.photos/150?random=6",
+          source: {
+            name: "Sky Sports",
+            logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
+          },
         },
         {
           title: "Arsenal FC unveils plans for stadium expansion",
           description:
             "Arsenal FC announces ambitious plans for expanding their stadium capacity to accommodate more fans.",
           image: "https://picsum.photos/150?random=5",
+          source: {
+            name: "Sky Sports",
+            logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
+          },
         },
-        {
-          title: "Chelsea FC appoints new head coach",
-          description:
-            "Chelsea FC appoints a new head coach ahead of the upcoming season, aiming for a fresh start.",
-          image: "https://picsum.photos/150?random=4",
-        },
+        // {
+        //   title: "Chelsea FC appoints new head coach",
+        //   description:
+        //     "Chelsea FC appoints a new head coach ahead of the upcoming season, aiming for a fresh start.",
+        //   image: "https://picsum.photos/150?random=4",
+        //   source: {
+        //     name: "BBC Sport",
+        //     logo: "https://www.cdnlogo.com/logos/b/30/bbc-sport.svg",
+        //   },
+        // },
       ],
       mainArticle: {
         title: "Exciting Transfer Rumors Rock Premier League Clubs",
         description:
           "Get the latest scoop on the transfer rumors swirling around the Premier League's top clubs as they gear up for the upcoming season.",
         image: "https://picsum.photos/600/300?random=9",
+        source: {
+          name: "Sky Sports",
+          logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
+        },
       },
       imagesLoaded: 0,
     };
@@ -239,6 +283,18 @@ export default {
   background-color: #f2f2f2;
   cursor: pointer;
   height: 100%;
+}
+
+.source-logo {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.logo-image {
+  height: 50px;
+  width: 50px;
 }
 
 @media screen and (max-width: 768px) {
