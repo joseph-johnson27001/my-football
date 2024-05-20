@@ -38,7 +38,7 @@
       </div>
       <!-- GOALSCORERS -->
       <div style="display: grid; grid-template-columns: 1fr 1fr">
-        <div style="display: flex; justify-content: end">
+        <div style="display: flex; justify-content: flex-end">
           <ul
             style="
               list-style-type: none;

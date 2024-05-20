@@ -336,7 +336,7 @@ export default {
   margin-top: auto;
   display: flex;
   align-items: flex-end;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .logo-image {
