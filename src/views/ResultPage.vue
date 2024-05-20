@@ -43,14 +43,14 @@
                 <p>{{ player.name }}</p>
               </li>
             </ul>
-            <div>
+            <!-- <div>
               <h3>Subs</h3>
               <ul>
                 <li v-for="player in homeSubstitutes" :key="player.id">
                   <p>{{ player.name }}</p>
                 </li>
               </ul>
-            </div>
+            </div> -->
           </div>
           <div class="away-lineup">
             <h3>{{ fixtureDetails.awayTeam }}</h3>
@@ -59,14 +59,14 @@
                 <p>{{ player.name }}</p>
               </li>
             </ul>
-            <div>
+            <!-- <div>
               <h3>Subs</h3>
               <ul>
                 <li v-for="player in awaySubstitutes" :key="player.id">
                   <p>{{ player.name }}</p>
                 </li>
               </ul>
-            </div>
+            </div> -->
           </div>
           <div class="referee-info">
             <p>Referee: {{ fixtureDetails.referee }}</p>
@@ -532,7 +532,6 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
 }
 
 .match-overview-content {
