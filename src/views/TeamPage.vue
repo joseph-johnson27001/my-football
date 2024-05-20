@@ -160,7 +160,7 @@ export default {
         title: "Exciting Transfer Rumors Rock Premier League Clubs",
         description:
           "Get the latest scoop on the transfer rumors swirling around the Premier League's top clubs as they gear up for the upcoming season.",
-        image: require("@/assets/premierleague.jpg"),
+        image: require("@/assets/Arsenal.jpg"),
         source: {
           name: "Sky Sports",
           logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
