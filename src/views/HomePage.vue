@@ -209,6 +209,10 @@ export default {
   flex-direction: column;
 }
 
+.news-description {
+  margin-bottom: 0px;
+}
+
 .news-item {
   display: grid;
   grid-template-columns: 1fr 4fr;
