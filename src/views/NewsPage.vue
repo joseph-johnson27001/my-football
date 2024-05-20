@@ -110,7 +110,7 @@ export default {
             "Get ready for the new Premier League season with our in-depth preview.",
           content:
             "Content providing insights and analysis on the upcoming Premier League season, including key players, teams to watch, and predictions.",
-          image: "https://picsum.photos/1200/500",
+          image: require("@/assets/premierleague.jpg"),
           teams: ["All"],
           source: {
             name: "BBC Sport",
@@ -124,7 +124,7 @@ export default {
             "Analyze the tactical approaches of the top contenders for the Premier League title.",
           content:
             "Content dissecting the tactical strategies employed by the leading teams in the race for the Premier League championship.",
-          image: "https://picsum.photos/300?random=8",
+          image: require("@/assets/fans.jpg"),
           teams: ["Arsenal", "Manchester City"],
           source: {
             name: "Sky Sports",
@@ -138,7 +138,7 @@ export default {
             "Assess the impact of key transfer signings on Premier League clubs.",
           content:
             "Content examining the significance of major transfer deals and their potential effects on the fortunes of respective Premier League teams.",
-          image: "https://picsum.photos/300?random=7",
+          image: require("@/assets/goal.jpg"),
           teams: ["Brighton & Hove Albion", "Chelsea"],
           source: {
             name: "BBC Sport",
@@ -152,7 +152,7 @@ export default {
             "A roundup of the most spectacular goals from the Premier League.",
           content:
             "Content describing the top 10 goals scored in the Premier League season so far.",
-          image: "https://picsum.photos/300?random=6",
+          image: require("@/assets/kai.jpg"),
           teams: ["Liverpool", "Manchester United"],
           source: {
             name: "Sky Sports",
@@ -166,7 +166,7 @@ export default {
             "Exploring the emergence of promising young players in the Premier League.",
           content:
             "Content highlighting the young football talents making a mark in the Premier League.",
-          image: "https://picsum.photos/300?random=5",
+          image: require("@/assets/rice.jpg"),
           teams: ["Manchester City", "Chelsea"],
           source: {
             name: "BBC Sport",
@@ -180,7 +180,7 @@ export default {
             "Analyze key moments and performances from recent Premier League matches.",
           content:
             "Content providing tactical insights and player analyses from select Premier League fixtures.",
-          image: "https://picsum.photos/300?random=4",
+          image: require("@/assets/saka.jpg"),
           teams: ["Manchester United", "Liverpool"],
           source: {
             name: "Sky Sports",
@@ -194,7 +194,7 @@ export default {
             "Trace the evolution of football tactics from defensive systems like Catenaccio to possession-based strategies like Tiki-Taka.",
           content:
             "Content exploring the historical development of football tactics and the influence of different playing styles on the modern game.",
-          image: "https://picsum.photos/300?random=3",
+          image: require("@/assets/shield.jpg"),
           teams: ["Southampton", "Arsenal"],
           source: {
             name: "BBC Sport",
@@ -208,7 +208,7 @@ export default {
             "Examine the impact of Video Assistant Referee (VAR) technology on decision-making and game dynamics in the Premier League.",
           content:
             "Content analyzing the implementation of VAR in the Premier League and its implications for match outcomes and officiating.",
-          image: "https://picsum.photos/300?random=2",
+          image: require("@/assets/stadium.jpg"),
           teams: ["Tottenham Hotspur", "Chelsea"],
           source: {
             name: "Sky Sports",
@@ -223,7 +223,7 @@ export default {
             "Celebrate the legacy and influence of legendary managers who have left an indelible mark on the Premier League.",
           content:
             "Content highlighting the achievements, tactics, and managerial philosophies of iconic figures in Premier League history.",
-          image: "https://picsum.photos/300?random=1",
+          image: require("@/assets/tomi.jpg"),
           teams: ["Fulham", "Liverpool"],
           source: {
             name: "BBC Sport",
