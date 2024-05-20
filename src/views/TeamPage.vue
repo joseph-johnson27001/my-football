@@ -109,7 +109,7 @@ export default {
           title: "Manchester United signs new striker",
           description:
             "Manchester United completes the signing of a new striker for the upcoming season.",
-          image: "https://picsum.photos/150?random=8",
+          image: require("@/assets/saka.jpg"),
           source: {
             name: "Sky Sports",
             logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
@@ -119,7 +119,7 @@ export default {
           title: "Liverpool announces new sponsorship deal",
           description:
             "Liverpool Football Club announces a new sponsorship deal with a major international brand.",
-          image: "https://picsum.photos/150?random=7",
+          image: require("@/assets/kai.jpg"),
           source: {
             name: "BBC Sport",
             logo: "https://www.cdnlogo.com/logos/b/30/bbc-sport.svg",
@@ -129,7 +129,7 @@ export default {
           title: "Premier League introduces new rule changes",
           description:
             "The Premier League reveals new rule changes for the upcoming season to enhance fair play.",
-          image: "https://picsum.photos/150?random=6",
+          image: require("@/assets/goal.jpg"),
           source: {
             name: "Sky Sports",
             logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
@@ -139,7 +139,7 @@ export default {
           title: "Arsenal FC unveils plans for stadium expansion",
           description:
             "Arsenal FC announces ambitious plans for expanding their stadium capacity to accommodate more fans.",
-          image: "https://picsum.photos/150?random=5",
+          image: require("@/assets/shield.jpg"),
           source: {
             name: "Sky Sports",
             logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
@@ -160,7 +160,7 @@ export default {
         title: "Exciting Transfer Rumors Rock Premier League Clubs",
         description:
           "Get the latest scoop on the transfer rumors swirling around the Premier League's top clubs as they gear up for the upcoming season.",
-        image: "https://picsum.photos/600/300?random=9",
+        image: require("@/assets/premierleague.jpg"),
         source: {
           name: "Sky Sports",
           logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
@@ -231,6 +231,7 @@ export default {
   border-radius: 4px;
   border: 1px solid #ddd;
   margin-left: 10px;
+  max-height: 150px;
 }
 
 .main-news-image {
@@ -241,6 +242,10 @@ export default {
 
 .news-title {
   font-weight: 500;
+}
+
+.news-description {
+  margin-bottom: 0px;
 }
 
 .main-news-title {
