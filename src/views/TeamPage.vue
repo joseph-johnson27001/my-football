@@ -171,16 +171,19 @@ export default {
   },
   mounted() {
     this.$store.state.isLoading = true;
+    setTimeout(() => {
+      this.$store.state.isLoading = false;
+    }, 500);
   },
   methods: {
     navigateToPage(route) {
       this.$router.push(route);
     },
     checkAllImagesLoaded() {
-      this.imagesLoaded++;
-      if (this.imagesLoaded === this.getTotalImageCount()) {
-        this.$store.state.isLoading = false;
-      }
+      // this.imagesLoaded++;
+      // if (this.imagesLoaded === this.getTotalImageCount()) {
+      //   this.$store.state.isLoading = false;
+      // }
     },
     getTotalImageCount() {
       let count = this.mainArticle ? 1 : 0;
