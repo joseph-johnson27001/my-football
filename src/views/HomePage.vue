@@ -92,7 +92,7 @@ export default {
           title: "Manchester United signs new striker",
           description:
             "Manchester United completes the signing of a new striker for the upcoming season.",
-          image: "https://picsum.photos/150?random=8",
+          image: require("@/assets/fans.jpg"),
           source: {
             name: "Sky Sports",
             logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
@@ -102,7 +102,7 @@ export default {
           title: "Liverpool announces new sponsorship deal",
           description:
             "Liverpool Football Club announces a new sponsorship deal with a major international brand.",
-          image: "https://picsum.photos/150?random=7",
+          image: require("@/assets/goal.jpg"),
           source: {
             name: "BBC Sport",
             logo: "https://www.cdnlogo.com/logos/b/30/bbc-sport.svg",
@@ -112,7 +112,7 @@ export default {
           title: "Premier League introduces new rule changes",
           description:
             "The Premier League reveals new rule changes for the upcoming season to enhance fair play.",
-          image: "https://picsum.photos/150?random=6",
+          image: require("@/assets/kai.jpg"),
           source: {
             name: "Sky Sports",
             logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
@@ -122,7 +122,7 @@ export default {
           title: "Arsenal FC unveils plans for stadium expansion",
           description:
             "Arsenal FC announces ambitious plans for expanding their stadium capacity to accommodate more fans.",
-          image: "https://picsum.photos/150?random=5",
+          image: require("@/assets/stadium.jpg"),
           source: {
             name: "BBC Sport",
             logo: "https://www.cdnlogo.com/logos/b/30/bbc-sport.svg",
@@ -132,7 +132,7 @@ export default {
           title: "Chelsea FC appoints new head coach",
           description:
             "Chelsea FC appoints a new head coach ahead of the upcoming season, aiming for a fresh start.",
-          image: "https://picsum.photos/150?random=4",
+          image: require("@/assets/tomi.jpg"),
           source: {
             name: "Sky Sports",
             logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
@@ -142,7 +142,7 @@ export default {
           title: "Everton FC reveals plans for stadium renovation",
           description:
             "Everton FC unveils ambitious plans to renovate their stadium, promising a modern and enhanced fan experience.",
-          image: "https://picsum.photos/150?random=0",
+          image: require("@/assets/rice.jpg"),
           source: {
             name: "BBC Sport",
             logo: "https://www.cdnlogo.com/logos/b/30/bbc-sport.svg",
@@ -152,7 +152,7 @@ export default {
           title: "West Ham United signs veteran goalkeeper",
           description:
             "West Ham United completes the signing of an experienced goalkeeper to bolster their squad for the upcoming season.",
-          image: "https://picsum.photos/150?random=9",
+          image: require("@/assets/shield.jpg"),
           source: {
             name: "Sky Sports",
             logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
@@ -163,7 +163,7 @@ export default {
         title: "Exciting Transfer Rumors Rock Premier League Clubs",
         description:
           "Get the latest scoop on the transfer rumors swirling around the Premier League's top clubs as they gear up for the upcoming season.",
-        image: "https://picsum.photos/600/300?random=9",
+        image: require("@/assets/premierleague.jpg"),
         source: {
           name: "Sky Sports",
           logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
@@ -235,6 +235,7 @@ export default {
   border-radius: 4px;
   border: 1px solid #ddd;
   margin-left: 10px;
+  max-height: 150px;
 }
 
 .main-news-image {
