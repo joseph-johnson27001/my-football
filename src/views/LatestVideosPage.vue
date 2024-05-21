@@ -123,7 +123,7 @@ export default {
 
     setTimeout(() => {
       this.$store.state.isLoading = false;
-    }, 1000);
+    }, 1250);
   },
   methods: {
     isYouTubeVideo(video) {
