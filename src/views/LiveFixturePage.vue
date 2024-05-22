@@ -642,4 +642,19 @@ export default {
   justify-content: space-between;
   font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+  .team-crest {
+    max-height: 80px;
+  }
+}
+
+@media screen and (max-width: 546px) {
+  .team-crest {
+    max-height: 45px;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+}
 </style>
