@@ -11,8 +11,8 @@
           <th @click="sortBy('won')" class="stats">W</th>
           <th @click="sortBy('draw')" class="stats">D</th>
           <th @click="sortBy('lost')" class="stats">L</th>
-          <th @click="sortBy('goalsFor')" class="stats">GF</th>
-          <th @click="sortBy('goalsAgainst')" class="stats">GA</th>
+          <th @click="sortBy('goalsFor')" class="stats hide">GF</th>
+          <th @click="sortBy('goalsAgainst')" class="stats hide">GA</th>
           <th @click="sortBy('goalDifference')" class="stats">GD</th>
           <th @click="sortBy('points')" class="stats">Pts</th>
           <th @click="sortBy('form')" class="form-header">Form</th>
@@ -43,8 +43,8 @@
           <td class="stats">{{ team.draw }}</td>
           <td class="stats">{{ team.lost }}</td>
           <td class="stats">{{ team.goalsFor }}</td>
-          <td class="stats">{{ team.goalsAgainst }}</td>
-          <td class="stats">{{ team.goalDifference }}</td>
+          <td class="stats hide">{{ team.goalsAgainst }}</td>
+          <td class="stats hide">{{ team.goalDifference }}</td>
           <td class="form-points stats">{{ team.points }}</td>
           <td class="form-container">
             <span
@@ -578,6 +578,10 @@ export default {
     padding: 0px 0px;
     cursor: pointer;
     font-size: 0.9rem;
+  }
+
+  .hide {
+    display: none;
   }
 }
 </style>
