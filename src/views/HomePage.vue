@@ -310,5 +310,9 @@ export default {
   .top-half-grid {
     grid-template-columns: 1fr;
   }
+  .news-item {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 </style>
