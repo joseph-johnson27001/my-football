@@ -236,6 +236,8 @@ export default {
   border: 1px solid #ddd;
   margin-left: 10px;
   max-height: 150px;
+  display: flex;
+  align-self: center;
 }
 
 .main-news-image {
