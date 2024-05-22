@@ -326,5 +326,11 @@ export default {
   .team-navigation ul li {
     line-height: 1rem;
   }
+  .navigation-container {
+    display: none;
+  }
+  .news-heading {
+    display: none;
+  }
 }
 </style>
