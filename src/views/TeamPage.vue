@@ -311,6 +311,18 @@ export default {
   .top-half-grid {
     grid-template-columns: 1fr;
   }
+  .top-half-grid {
+    grid-template-columns: 1fr;
+  }
+  .news-item {
+    grid-template-columns: 1fr;
+  }
+  .news-image {
+    justify-self: center;
+    display: flex;
+    max-height: none;
+    width: 100%;
+  }
   .team-navigation ul li {
     line-height: 1rem;
   }
