@@ -197,5 +197,9 @@ export default {
     width: 100%;
     margin-bottom: 10px;
   }
+  .videos-list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 </style>
