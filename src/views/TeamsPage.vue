@@ -200,4 +200,16 @@ export default {
   width: auto;
   max-height: 100px;
 }
+
+@media screen and (max-width: 768px) {
+  .teams-list {
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    font-size: 0.8rem;
+  }
+  .team-crest {
+    max-width: 50px;
+    width: auto;
+    max-height: 50px;
+  }
+}
 </style>
