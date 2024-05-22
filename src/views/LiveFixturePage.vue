@@ -582,8 +582,9 @@ export default {
 
 .live-commentary {
   table {
-    width: 100%;
+    width: 95%;
     border-collapse: collapse;
+    margin: auto;
   }
 
   td {
@@ -606,7 +607,7 @@ export default {
 }
 
 .statistic {
-  width: 100%;
+  width: 95%;
   margin-bottom: 20px;
 }
 
