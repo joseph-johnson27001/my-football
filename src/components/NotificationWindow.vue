@@ -4,8 +4,8 @@
       <h2>Welcome to Our Site</h2>
       <p>
         Please note that the site is currently under construction. As such,
-        external links are disabled and the information provided is all dummy
-        data.
+        external links are disabled and all of the data provided is purely
+        placeholder, dummy information.
       </p>
       <div class="button-container">
         <button @click="hideNotification">Close</button>
