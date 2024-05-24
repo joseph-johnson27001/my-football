@@ -1,5 +1,5 @@
 <template>
-  <div class="notification">
+  <div v-if="showNotification" class="notification">
     <div class="info-content">
       <h2>Welcome to Our Site</h2>
       <p>
@@ -16,9 +16,21 @@
 
 <script>
 export default {
+  data() {
+    return {
+      showNotification: true,
+    };
+  },
+  mounted() {
+    const notificationHidden = localStorage.getItem("notificationHidden");
+    if (notificationHidden) {
+      this.showNotification = false;
+    }
+  },
   methods: {
     hideNotification() {
-      this.$store.state.showNotification = false;
+      this.showNotification = false;
+      localStorage.setItem("notificationHidden", "true");
     },
   },
 };

@@ -8,6 +8,5 @@ export default createStore({
     playerName: null,
     playerNumber: null,
     selectedTeam: null,
-    showNotification: true,
   },
 });

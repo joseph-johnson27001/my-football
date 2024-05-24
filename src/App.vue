@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavigationBar />
-    <NotificationWindow v-if="this.$store.state.showNotification" />
+    <NotificationWindow />
     <div class="background">
       <div class="content-container">
         <!-- This is where matched components will be rendered -->
