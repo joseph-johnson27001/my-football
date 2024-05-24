@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <NavigationBar />
+    <NotificationWindow v-if="this.$store.state.showNotification" />
     <div class="background">
       <div class="content-container">
         <!-- This is where matched components will be rendered -->
@@ -18,12 +19,14 @@
 import { mapState } from "vuex";
 import NavigationBar from "./components/NavigationBar.vue";
 import LoadingAnimation from "./components/LoadingAnimation.vue";
+import NotificationWindow from "./components/NotificationWindow.vue";
 
 export default {
   name: "App",
   components: {
     NavigationBar,
     LoadingAnimation,
+    NotificationWindow,
   },
   computed: {
     ...mapState({
