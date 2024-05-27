@@ -8,7 +8,7 @@
         purely placeholder, dummy information.
       </p>
       <div class="button-container">
-        <button @click="hideNotification">Close</button>
+        <button @click="hideNotification">CLOSE</button>
       </div>
     </div>
   </div>
@@ -67,7 +67,10 @@ export default {
   border-radius: 3px;
   cursor: pointer;
   border: 1px solid #1f3f7f;
-  transition: background-color 0.1s ease, color 0.1s ease;
+  transition: color 0.1s ease;
+  font-family: "Titillium Web", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .notification button:hover {
