@@ -60,13 +60,18 @@ export default {
 }
 
 .notification button {
-  background-color: #fff;
-  color: #1f3f7f;
+  background-color: #1f3f7f;
+  color: #fff;
   border: none;
   padding: 8px 16px;
   border-radius: 3px;
   cursor: pointer;
   border: 1px solid #1f3f7f;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.notification button:hover {
+  color: gold;
 }
 
 .info-content {
