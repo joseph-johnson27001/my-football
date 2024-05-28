@@ -4,12 +4,10 @@
     <NotificationWindow />
     <div class="background">
       <div class="content-container">
-        <!-- This is where matched components will be rendered -->
         <div v-show="isLoading" class="animation-container">
           <LoadingAnimation />
         </div>
         <router-view v-show="!isLoading" />
-        <!-- Vue Router will render matched components here -->
       </div>
     </div>
   </div>
