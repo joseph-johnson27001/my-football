@@ -2,6 +2,7 @@
   <div id="app">
     <NavigationBar />
     <NotificationWindow />
+    <WarningAlert />
     <div class="background">
       <div class="content-container">
         <div v-show="isLoading" class="animation-container">
@@ -18,6 +19,7 @@ import { mapState } from "vuex";
 import NavigationBar from "./components/NavigationBar.vue";
 import LoadingAnimation from "./components/LoadingAnimation.vue";
 import NotificationWindow from "./components/NotificationWindow.vue";
+import WarningAlert from "./components/WarningAlert.vue";
 
 export default {
   name: "App",
@@ -25,6 +27,7 @@ export default {
     NavigationBar,
     LoadingAnimation,
     NotificationWindow,
+    WarningAlert,
   },
   computed: {
     ...mapState({

@@ -8,5 +8,6 @@ export default createStore({
     playerName: null,
     playerNumber: null,
     selectedTeam: null,
+    showWarning: false,
   },
 });
