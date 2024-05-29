@@ -15,7 +15,11 @@
     </div>
 
     <!-- Main Article -->
-    <div v-if="mainArticle" class="main-article">
+    <div
+      v-if="mainArticle"
+      class="main-article"
+      @click="showNotificationWarning()"
+    >
       <img
         v-if="mainArticle.image"
         :src="mainArticle.image"
@@ -49,6 +53,7 @@
           v-for="article in filteredArticlesExceptMain"
           :key="article.id"
           class="article"
+          @click="showNotificationWarning()"
         >
           <img
             v-if="article.image"
@@ -255,6 +260,9 @@ export default {
     },
   },
   methods: {
+    showNotificationWarning() {
+      this.$store.state.showWarning = true;
+    },
     checkAllImagesLoaded() {
       this.imagesLoaded++;
       if (this.imagesLoaded === this.getTotalImageCount()) {

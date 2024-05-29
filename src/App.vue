@@ -29,6 +29,7 @@ export default {
     NotificationWindow,
     WarningAlert,
   },
+
   computed: {
     ...mapState({
       isLoading: (state) => state.isLoading,
