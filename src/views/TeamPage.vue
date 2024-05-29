@@ -27,7 +27,11 @@
         <h2 class="side-heading news-heading">Latest News</h2>
         <div class="latest-news">
           <!-- Main article -->
-          <div v-if="mainArticle" class="news-item main-article">
+          <div
+            v-if="mainArticle"
+            class="news-item main-article"
+            @click="showNotificationWarning()"
+          >
             <img
               :src="mainArticle.image"
               :alt="mainArticle.title"
@@ -53,6 +57,7 @@
             v-for="(article, index) in newsArticles"
             :key="index"
             class="news-item"
+            @click="showNotificationWarning()"
           >
             <img
               :src="article.image"
@@ -176,6 +181,9 @@ export default {
     }, 500);
   },
   methods: {
+    showNotificationWarning() {
+      this.$store.state.showWarning = true;
+    },
     navigateToPage(route) {
       this.$router.push(route);
     },
