@@ -7,7 +7,11 @@
         </div>
         <div class="latest-news">
           <!-- Main article -->
-          <div v-if="mainArticle" class="news-item main-article">
+          <div
+            v-if="mainArticle"
+            class="news-item main-article"
+            @click="showNotificationWarning()"
+          >
             <img
               :src="mainArticle.image"
               :alt="mainArticle.title"
@@ -34,6 +38,7 @@
             v-for="(article, index) in newsArticles"
             :key="index"
             class="news-item"
+            @click="showNotificationWarning()"
           >
             <img
               :src="article.image"
@@ -176,6 +181,9 @@ export default {
     this.$store.state.isLoading = true;
   },
   methods: {
+    showNotificationWarning() {
+      this.$store.state.showWarning = true;
+    },
     checkAllImagesLoaded() {
       this.imagesLoaded++;
       if (this.imagesLoaded === this.getTotalImageCount()) {
