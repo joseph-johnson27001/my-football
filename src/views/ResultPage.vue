@@ -10,7 +10,7 @@
           <h2 v-else>Manchester United V Liverpool</h2>
           <!-- <h3>{{ fixtureDetails.date }} - {{ fixtureDetails.time }}</h3> -->
         </div>
-        <div class="match-overview-content">
+        <div class="match-overview-content" @click="showNotificationWarning()">
           <img
             :src="fixtureDetails.image"
             alt="Match Overview Image"
@@ -375,6 +375,9 @@ export default {
     };
   },
   methods: {
+    showNotificationWarning() {
+      this.$store.state.showWarning = true;
+    },
     isYouTubeVideo(video) {
       return video.src.includes("youtube.com");
     },

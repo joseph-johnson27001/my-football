@@ -8,7 +8,7 @@
           </h2>
           <h2 v-else>Manchester United V Liverpool</h2>
         </div>
-        <div class="match-preview-content">
+        <div class="match-preview-content" @click="showNotificationWarning()">
           <img
             :src="fixtureDetails.image"
             alt="Match Preview Image"
@@ -195,6 +195,9 @@ export default {
     };
   },
   methods: {
+    showNotificationWarning() {
+      this.$store.state.showWarning = true;
+    },
     isYouTubeVideo(video) {
       return video.src.includes("youtube.com");
     },
