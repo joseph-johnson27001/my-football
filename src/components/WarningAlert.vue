@@ -2,7 +2,7 @@
   <div v-if="this.$store.state.showWarning" class="notification">
     <div class="info-content">
       <h2>NOTICE</h2>
-      <p>Please note that the site is currently under construction.</p>
+      <p>Please note that this site is still under construction.</p>
       <p>
         As such, external links are disabled and all of the data provided is
         purely placeholder, dummy information.
