@@ -150,16 +150,6 @@ export default {
             logo: "https://upload.wikimedia.org/wikipedia/en/b/b7/Sky_Sports_logo_2020.svg",
           },
         },
-        // {
-        //   title: "Chelsea FC appoints new head coach",
-        //   description:
-        //     "Chelsea FC appoints a new head coach ahead of the upcoming season, aiming for a fresh start.",
-        //   image: "https://picsum.photos/150?random=4",
-        //   source: {
-        //     name: "BBC Sport",
-        //     logo: "https://www.cdnlogo.com/logos/b/30/bbc-sport.svg",
-        //   },
-        // },
       ],
       mainArticle: {
         title: "Exciting Transfer Rumors Rock Premier League Clubs",
@@ -188,10 +178,7 @@ export default {
       this.$router.push(route);
     },
     checkAllImagesLoaded() {
-      // this.imagesLoaded++;
-      // if (this.imagesLoaded === this.getTotalImageCount()) {
-      //   this.$store.state.isLoading = false;
-      // }
+      // Holding area - In future will check for all image loads before page load
     },
     getTotalImageCount() {
       let count = this.mainArticle ? 1 : 0;
