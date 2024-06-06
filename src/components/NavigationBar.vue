@@ -74,7 +74,7 @@
       </div>
     </div>
 
-    <!-- Navigation links -->
+    <!-- Navigation links on full screen -->
     <div class="navigation-container" :class="{ 'show-menu': showMenu }">
       <router-link
         to="/"
