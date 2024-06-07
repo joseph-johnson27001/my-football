@@ -4,7 +4,6 @@
     <div class="heading-container">
       <h2>Football News</h2>
       <div class="team-selection">
-        <!-- <label for="team-select">Select Team: </label> -->
         <select v-model="selectedTeam" id="team-dropdown">
           <option value="All">All Teams</option>
           <option v-for="team in teamList" :key="team" :value="team">
